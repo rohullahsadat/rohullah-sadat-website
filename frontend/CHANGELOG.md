@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>404 | Page Not Found</title>
+
+    <meta name="description"
+          content="The page you are looking for could not be found.">
+
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<div id="scroll-progress"></div>
+
+
+<header class="header">
+
+<div class="container">
+
+<a href="index.html" class="logo">
+
+Rohullah Sadat
+
+</a>
+
+<nav class="navbar">
+
+<ul class="nav-list">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="books.html">Books</a></li>
+
+<li><a href="articles.html">Articles</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="resume.html">Resume</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button class="theme-toggle">
+
+🌙
+
+</button>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+<section class="error-page reveal">
+
+<div class="container">
+
+<div class="error-content">
+
+<div class="error-number">
+
+404
+
+</div>
+
+<div class="error-icon">
+
+🚀
+
+</div>
+
+<h1>
+
+Oops!
+
+</h1>
+
+<p>
+
+The page you're looking for doesn't exist,
+
+has been moved,
+
+or the URL is incorrect.
+
+</p>
+
+<div class="error-buttons">
+
+<a href="index.html"
+
+class="btn btn-primary">
+
+<i class="fas fa-home"></i>
+
+Back Home
+
+</a>
+
+<a href="projects.html"
+
+class="btn btn-secondary">
+
+<i class="fas fa-code"></i>
+
+My Projects
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="quick-links reveal">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+
+You may be looking for
+
+</h2>
+
+</div>
+
+<div class="quick-links-grid">
+
+<a href="about.html">
+
+👤 About Me
+
+</a>
+
+<a href="projects.html">
+
+💻 Projects
+
+</a>
+
+<a href="books.html">
+
+📚 Books
+
+</a>
+
+<a href="articles.html">
+
+📰 Articles
+
+</a>
+
+<a href="gallery.html">
+
+🖼 Gallery
+
+</a>
+
+<a href="resume.html">
+
+📄 Resume
+
+</a>
+
+<a href="contact.html">
+
+📬 Contact
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Rohullah Sadat.
+
+All Rights Reserved.
+
+</p>
+
+<p>
+
+Built with ❤️ using HTML, CSS & JavaScript.
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<button id="backToTop"
+
+class="back-to-top">
+
+<i class="fas fa-arrow-up"></i>
+
+</button>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

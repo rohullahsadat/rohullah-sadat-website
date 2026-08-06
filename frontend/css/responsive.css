@@ -1,0 +1,89 @@
+/*==================================
+        TABLET
+===================================*/
+
+@media (max-width:992px){
+.hero-container,
+.about-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+}
+
+
+/*==================================
+        MOBILE
+===================================*/
+
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .navbar{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+       background:var(--color-surface);
+        border-top:1px solid #ddd;
+        padding:20px 0;
+    }
+
+    .navbar.show{
+        display:block;
+    }
+
+    .nav-list{
+        flex-direction:column;
+        gap:20px;
+        align-items:center;
+    }
+
+}
+
+
+/*==================================
+      SMALL MOBILE
+===================================*/
+
+@media (max-width:576px){
+.hero-title{
+
+    font-size:2.3rem;
+
+}
+
+.section-header h2{
+
+    font-size:2rem;
+
+}
+}
+/*==================================
+    CERTIFICATIONS RESPONSIVE
+===================================*/
+
+@media(max-width:768px){
+
+.certifications-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.certificate-buttons{
+
+    flex-direction:column;
+
+}
+
+.certificate-buttons .btn{
+
+    width:100%;
+
+}
+
+}

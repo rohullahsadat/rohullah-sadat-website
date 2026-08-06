@@ -1,0 +1,95 @@
+/* =========================
+   Global Reset
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:var(--font-primary);
+
+   background: var(--color-background);
+
+color: var(--color-text);
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   Images
+========================= */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* =========================
+   Links
+========================= */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* =========================
+   Lists
+========================= */
+
+ul{
+
+    list-style:none;
+
+}
+
+/* =========================
+   Container
+========================= */
+
+.container{
+
+    width:min(90%,var(--container-width));
+
+    margin-inline:auto;
+
+}
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
