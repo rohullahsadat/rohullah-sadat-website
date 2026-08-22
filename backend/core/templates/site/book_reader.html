@@ -1,0 +1,211 @@
+{% extends "site/base.html" %}
+{% load static %}
+
+{% block title %}
+{{ book.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block content %}
+
+<main class="book-reader-page">
+
+    <!-- ================= READER HEADER ================= -->
+
+    <section class="reader-header">
+
+        <div class="container">
+
+            <div class="reader-top">
+
+                <a
+                    href="{% url 'books' %}"
+                    class="reader-back"
+                >
+                    ← Back to Books
+                </a>
+
+                <div class="reader-actions">
+
+                    {% if book.pdf_file %}
+
+                        <a
+                            href="{{ book.pdf_file.url }}"
+                            class="reader-download"
+                            download
+                        >
+                            📥 Download PDF
+                        </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <div class="reader-info">
+
+                <div class="reader-cover">
+
+                    {% if book.cover %}
+
+                        <img
+                            src="{{ book.cover.url }}"
+                            alt="{{ book.title }} book cover"
+                        >
+
+                    {% else %}
+
+                        <div class="reader-cover-placeholder">
+                            📖
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <div class="reader-details">
+
+                    <span class="section-tag">
+                        Book Reader
+                    </span>
+
+                    <h1>
+                        {{ book.title }}
+                    </h1>
+
+                    {% if book.author %}
+
+                        <p class="reader-author">
+                            By {{ book.author }}
+                        </p>
+
+                    {% endif %}
+
+
+                    {% if book.description %}
+
+                        <p class="reader-description">
+                            {{ book.description }}
+                        </p>
+
+                    {% endif %}
+
+
+                    <div class="reader-meta">
+
+                        <span class="book-status {{ book.status }}">
+                            {{ book.get_status_display }}
+                        </span>
+
+                        {% if book.access_type == "free" %}
+
+                            <span class="book-access free">
+                                Free
+                            </span>
+
+                        {% elif book.access_type == "paid" %}
+
+                            <span class="book-access paid">
+                                {{ book.price }} {{ book.currency }}
+                            </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PDF READER ================= -->
+
+    <section class="reader-content">
+
+        <div class="container">
+
+            {% if book.pdf_file %}
+
+                <div class="pdf-reader-wrapper">
+
+                    <div class="pdf-reader-toolbar">
+
+                        <div>
+                            <strong>
+                                {{ book.title }}
+                            </strong>
+                        </div>
+
+                        <div class="pdf-toolbar-actions">
+
+                            <a
+                                href="{{ book.pdf_file.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="pdf-toolbar-button"
+                            >
+                                ↗ Open Full Screen
+                            </a>
+
+                            <a
+                                href="{{ book.pdf_file.url }}"
+                                download
+                                class="pdf-toolbar-button"
+                            >
+                                📥 Download
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <iframe
+                        src="{{ book.pdf_file.url }}"
+                        class="book-pdf-frame"
+                        title="{{ book.title }} PDF Reader"
+                    >
+                    </iframe>
+
+                </div>
+
+            {% else %}
+
+                <div class="pdf-unavailable">
+
+                    <div class="pdf-unavailable-icon">
+                        📕
+                    </div>
+
+                    <h2>
+                        PDF Not Available
+                    </h2>
+
+                    <p>
+                        The PDF for this book has not been uploaded yet.
+                    </p>
+
+                    <a
+                        href="{% url 'books' %}"
+                        class="btn btn-primary"
+                    >
+                        ← Back to Books
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}

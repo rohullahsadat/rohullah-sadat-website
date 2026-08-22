@@ -1,0 +1,692 @@
+
+{% extends "site/base.html" %}
+{% load static %}
+
+{% block title %}
+Rohullah Sadat | Personal Website
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================
+     Page Loader
+========================= -->
+<div id="loader">
+    <div class="loader-spinner"></div>
+    <p>Loading...</p>
+</div>
+
+
+<!-- =========================
+     Header
+========================= -->
+<header class="header">
+
+    <div class="container">
+
+        <a href="{% url 'home' %}" class="logo">
+            Rohullah Sadat
+        </a>
+
+        <nav class="navbar">
+            <ul class="nav-list">
+
+                <li>
+                    <a href="{% url 'home' %}">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'about' %}">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'projects' %}">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'books' %}">
+                        Books
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'articles' %}">
+                        Articles
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'gallery' %}">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'resume' %}">
+                        Resume
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contact' %}">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <button
+            class="menu-toggle"
+            aria-label="Open Menu"
+            type="button"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle Theme"
+        >
+            🌙
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     Main Content
+========================= -->
+<main>
+
+
+    <!-- =========================
+         Hero Section
+    ========================= -->
+    <section class="hero ">
+
+        <div class="container hero-container">
+
+            <div class="hero-content">
+
+                <p class="hero-greeting">
+                    👋 Hello, I'm
+                </p>
+
+                <h1 class="hero-title">
+                    Rohullah Sadat
+                </h1>
+
+                <h2 class="hero-subtitle">
+
+                    <span id="typing-text">
+                        Full Stack Developer
+                    </span>
+
+                </h2>
+
+                <p class="hero-description">
+                    Building technology that creates opportunities through
+                    software development, education and innovation.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="{% url 'projects' %}"
+                        class="btn btn-primary"
+                    >
+                        View Projects
+                    </a>
+
+                    <a
+                        href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                        class="btn btn-secondary"
+                        download
+                    >
+                        Download CV
+                    </a>
+
+                    <a
+                        href="{% url 'contact' %}"
+                        class="btn btn-outline"
+                    >
+                        Contact Me
+                    </a>
+
+                </div>
+
+
+                <!-- Social Links -->
+                <div class="social-links">
+
+                    <a
+                        href="https://github.com/rohullahsadat1997"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/rohullah-sadat-524424236"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/share/1HW17D2uUG/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fab fa-facebook"></i>
+                    </a>
+
+                    <a
+                        href="https://B2n.ir/rohulllahinst"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Twitter"
+                    >
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <a
+                        href="mailto:rohullahsadat1997@gmail.com"
+                        aria-label="Email"
+                    >
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hero Image -->
+            <div class="hero-image">
+
+                <img
+                    src="{% static 'site/images/prof.jpg' %}"
+                    alt="Portrait of Rohullah Sadat"
+                    loading="eager"
+                    decoding="async"
+                >
+
+            </div>
+
+
+            <!-- Floating Cards -->
+            <div class="floating-card card-one">
+
+                <h3
+                    class="counter"
+                    data-target="20"
+                    data-suffix="+"
+                >
+                    0
+                </h3>
+
+                <p>
+                    💻 20+ Projects
+                </p>
+
+            </div>
+
+
+            <div class="floating-card card-two">
+                📚 Author
+            </div>
+
+
+            <div class="floating-card card-three">
+                🤖 AI Journey
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Skills Section
+    ========================= -->
+    <section class="skills ">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>
+                    Technical Skills
+                </h2>
+
+                <p>
+                    Technologies and tools I use to build modern software.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <!-- Front-End -->
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Front-End
+                    </h3>
+
+                    <ul class="skill-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                    </ul>
+
+                </article>
+
+
+                <!-- Back-End -->
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Back-End
+                    </h3>
+
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>REST API</li>
+                    </ul>
+
+                </article>
+
+
+                <!-- Database -->
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        🗄
+                    </div>
+
+                    <h3>
+                        Database
+                    </h3>
+
+                    <ul class="skill-list">
+                        <li>MYSQL</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+
+                </article>
+
+
+                <!-- Tools -->
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        🛠
+                    </div>
+
+                    <h3>
+                        Tools
+                    </h3>
+
+                    <ul class="skill-list">
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>VS Code</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Projects Section
+    ========================= -->
+    <section class="projects">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>
+                    Featured Projects
+                </h2>
+
+                <p>
+                    Explore my software development projects across multiple
+                    technologies and skill levels.
+                </p>
+
+            </div>
+
+
+            <div class="project-filter">
+
+                <button
+                    class="filter-btn active"
+                    data-filter="all"
+                    type="button"
+                >
+                    All
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="web"
+                    type="button"
+                >
+                    Web
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="python"
+                    type="button"
+                >
+                    Python
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="fullstack"
+                    type="button"
+                >
+                    Full Stack
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="ai"
+                    type="button"
+                >
+                    AI
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Projects CTA
+    ========================= -->
+    <section class="projects-cta ">
+
+        <div class="container">
+
+            <h2>
+                Let's Build Something Great Together
+            </h2>
+
+            <p>
+                I'm always open to discussing new projects, creative ideas,
+                and opportunities to build meaningful software.
+            </p>
+
+
+            <div class="cta-buttons">
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="btn btn-primary"
+                >
+                    Contact Me
+                </a>
+
+                <a
+                    href="{% url 'resume' %}"
+                    class="btn btn-secondary"
+                >
+                    View Resume
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     Footer
+========================= -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <!-- About -->
+            <div class="footer-column">
+
+                <h3>
+                    Rohullah Sadat
+                </h3>
+
+                <p>
+                    Full Stack Developer, Author, and Future AI Entrepreneur
+                    passionate about building impactful digital products.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'books' %}">
+                            Books
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'articles' %}">
+                            Articles
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gallery' %}">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resume' %}">
+                            Resume
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h3>
+                    Resources
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="https://github.com/rohullahsadat1997"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/rohullah-sadat-524424236"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:rohullahsadat1997@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                            download
+                        >
+                            <i class="fas fa-file-pdf"></i>
+                            Download Resume
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <a href="mailto:rohullahsadat1997@gmail.com">
+                        Email Me
+                    </a>
+                </p>
+
+                <p>
+                    Available for Freelance
+                </p>
+
+                <p>
+                    Open to Collaboration
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Rohullah Sadat.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Built with ❤️ using HTML, CSS &amp; JavaScript.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     Back To Top
+========================= -->
+<button
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+{% endblock %}
+

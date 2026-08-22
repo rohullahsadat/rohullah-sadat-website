@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="{% block meta_description %}Official portfolio of Rohullah Sadat — Full Stack Developer, Author, and Future AI Entrepreneur.{% endblock %}"
+    >
+
+    <meta name="author" content="Rohullah Sadat">
+    <meta name="theme-color" content="#2563eb">
+
+    <meta property="og:type" content="website">
+
+    <meta
+        property="og:title"
+        content="{% block og_title %}Rohullah Sadat | Full Stack Developer{% endblock %}"
+    >
+
+    <meta
+        property="og:description"
+        content="{% block og_description %}Official portfolio of Rohullah Sadat — Full Stack Developer, Author, and Future AI Entrepreneur.{% endblock %}"
+    >
+
+    <meta
+        property="og:image"
+        content="{% static 'site/images/portfolio-preview.png' %}"
+    >
+
+    <meta
+        property="og:url"
+        content="{{ request.build_absolute_uri }}"
+    >
+
+    <title>
+        {% block title %}Rohullah Sadat | Full Stack Developer{% endblock %}
+    </title>
+
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="{% static 'site/assets/favicon.ico' %}"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="{% static 'site/assets/favicon-32x32.png' %}"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="{% static 'site/assets/apple-touch-icon.png' %}"
+    >
+
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="{% static 'site/css/variables.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'site/css/font.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'site/css/layout.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'site/css/components.css' %}"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{% static 'site/css/responsive.css' %}"
+    >
+
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- Back To Top -->
+    <button
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Back to top"
+    >
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Main JavaScript -->
+    <script src="{% static 'site/js/app.js' %}"></script>
+
+    <script src="{% static 'site/js/animation.js' %}"></script>
+
+
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

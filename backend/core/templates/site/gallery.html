@@ -1,0 +1,626 @@
+
+{% extends "site/base.html" %}
+{% load static %}
+
+{% block title %}gallery | Rohullah Sadat{% endblock %}
+
+{% block content %}
+
+
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <a href="{% url 'home' %}" class="logo">
+                Rohullah Sadat
+            </a>
+
+
+            <nav class="navbar">
+
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'books' %}">
+                            Books
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'articles' %}">
+                            Articles
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gallery' %}" class="active">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resume' %}">
+                            Resume
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Mobile Menu -->
+            <button
+                class="menu-toggle"
+                aria-label="Open Menu"
+                type="button"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+            <!-- Theme Toggle -->
+            <button
+                class="theme-toggle"
+                type="button"
+                aria-label="Toggle dark mode"
+            >
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="gallery-hero">
+
+            <div class="container">
+
+                <p class="section-tag">
+                    Gallery
+                </p>
+
+                <h1>
+                    My Journey in Pictures
+                </h1>
+
+                <p class="gallery-hero-text">
+                    A visual collection of my projects, certificates,
+                    coding journey, events, achievements, and future milestones.
+                </p>
+
+            </div>
+
+        </section>
+
+
+<!-- =========================
+     GALLERY FILTER
+========================== -->
+
+<section class="gallery-filter">
+
+    <div class="container">
+
+        <button
+            class="gallery-btn active"
+            data-filter="all"
+            type="button"
+        >
+            All
+        </button>
+
+        <button
+            class="gallery-btn"
+            data-filter="projects"
+            type="button"
+        >
+            Projects
+        </button>
+
+        <button
+            class="gallery-btn"
+            data-filter="programming"
+            type="button"
+        >
+            Programming
+        </button>
+
+        <button
+            class="gallery-btn"
+            data-filter="education"
+            type="button"
+        >
+            Education
+        </button>
+
+        <button
+            class="gallery-btn"
+            data-filter="technology"
+            type="button"
+        >
+            Technology
+        </button>
+
+        <button
+            class="gallery-btn"
+            data-filter="events"
+            type="button"
+        >
+            Events
+        </button>
+
+        <button
+            class="gallery-btn"
+            data-filter="videos"
+            type="button"
+        >
+            Videos
+        </button>
+
+        <button
+    class="gallery-btn"
+    data-filter="certificates"
+    type="button"
+>
+    Certificates
+</button>
+
+    </div>
+
+</section>
+
+      
+<!-- =========================
+     GALLERY
+========================== -->
+
+<section class="gallery-grid-section">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Gallery</h2>
+
+            <p>
+                A collection of moments from my projects,
+                learning journey, events, and technology work.
+            </p>
+        </div>
+
+
+        <div class="gallery-grid">
+
+            {% for gallery_image in gallery_images %}
+
+                <article
+                    class="gallery-card"
+                    data-category="{{ gallery_image.category }}"
+                >
+
+                    <div class="gallery-image">
+
+                        <img
+                            src="{{ gallery_image.image.url }}"
+                            alt="{{ gallery_image.title|default:'Gallery image' }}"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-overlay">
+
+                        {% if gallery_image.title %}
+
+                            <h3>
+                                {{ gallery_image.title }}
+                            </h3>
+
+                        {% endif %}
+
+
+                        <span class="gallery-category">
+                            {{ gallery_image.get_category_display }}
+                        </span>
+
+
+                        {% if gallery_image.description %}
+
+                            <p>
+                                {{ gallery_image.description }}
+                            </p>
+
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+
+            {% empty %}
+
+                <div class="empty-gallery">
+
+                    <p>
+                        No gallery images available yet.
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =========================
+             VIDEOS
+        ========================== -->
+
+        <section
+            class="video-gallery "
+            data-category="videos"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Videos
+                    </h2>
+
+                    <p>
+                        A collection of development and portfolio videos.
+                    </p>
+
+                </div>
+
+
+               <div class="video-grid">
+
+    {% for gallery_video in gallery_videos %}
+
+        <article
+            class="video-card"
+            data-category="videos"
+        >
+
+            <video
+                controls
+                preload="metadata"
+            >
+
+                <source
+                    src="{{ gallery_video.video.url }}"
+                >
+
+                Your browser does not support the video element.
+
+            </video>
+
+
+            {% if gallery_video.title or gallery_video.description %}
+
+                <div class="video-content">
+
+                    {% if gallery_video.title %}
+                        <h3>
+                            {{ gallery_video.title }}
+                        </h3>
+                    {% endif %}
+
+
+                    {% if gallery_video.description %}
+                        <p>
+                            {{ gallery_video.description }}
+                        </p>
+                    {% endif %}
+
+                </div>
+
+            {% endif %}
+
+        </article>
+
+    {% empty %}
+
+        <p class="empty-gallery">
+            No videos available yet.
+        </p>
+
+    {% endfor %}
+
+</div>
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CERTIFICATES
+        ========================== -->
+
+        <section class="gallery-certificates ">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Certificates
+                    </h2>
+
+                    <p>
+                        Certificates and achievements from my learning journey.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    
+                    Add certificate cards here later.
+                    Example:
+
+                  <article
+    class="gallery-card"
+    data-category="certificates"
+>
+
+    <img
+        src="{% static 'site/images/frontend certificate.png' %}"
+        alt="Frontend Certificate"
+        loading="lazy"
+        decoding="async"
+    >
+
+    <div class="gallery-overlay">
+
+        <h3>
+            Frontend Certificate
+        </h3>
+
+        <p>
+            Meta Front-End Developer
+        </p>
+
+    </div>
+
+</article>
+                
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             BEHIND THE SCENES
+        ========================== -->
+
+        <!-- =========================
+     BEHIND THE SCENES
+========================== -->
+
+<section class="behind-scenes">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                Behind the Scenes
+            </h2>
+
+            <p>
+                Photos from coding sessions, workspaces,
+                learning, books, and my development process.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <article
+                class="gallery-card"
+                data-category="events"
+            >
+
+                <img
+                    src="{% static 'images/workspace.jpg' %}"
+                    alt="Rohullah Sadat coding workspace"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Coding Workspace
+                    </h3>
+
+                    <p>
+                        Behind the scenes
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="projects-cta">
+
+            <div class="container">
+
+                <h2>
+                    Interested in Working Together?
+                </h2>
+
+                <p>
+                    I'm always open to discussing new projects,
+                    creative ideas, and opportunities to build
+                    meaningful software.
+                </p>
+
+
+                <div class="cta-buttons">
+
+                    <a
+                        href="{% url 'contact' %}"
+                        class="btn btn-primary"
+                    >
+                        Contact Me
+                    </a>
+
+                    <a
+                        href="{% static 'assets/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        View Resume
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+
+
+    <!-- Back To Top -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+
+    <div
+        class="lightbox"
+        aria-hidden="true"
+    >
+
+        <button
+            class="close-lightbox"
+            type="button"
+            aria-label="Close image"
+        >
+            &times;
+        </button>
+
+
+        <img
+            class="lightbox-image"
+            src=""
+            alt=""
+        >
+
+
+        <button
+            class="lightbox-prev"
+            type="button"
+            aria-label="Previous image"
+        >
+            &#10094;
+        </button>
+
+
+        <button
+            class="lightbox-next"
+            type="button"
+            aria-label="Next image"
+        >
+            &#10095;
+        </button>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+ 
+
+</body>
+</html>
+{% endblock %}

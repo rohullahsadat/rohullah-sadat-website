@@ -1,317 +1,203 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:type" content="website">
+{% extends "site/base.html" %}
+{% load static %}
 
-<meta property="og:title" content="Rohullah Sadat | Full Stack Developer">
+{% block title %}Articles | Rohullah Sadat{% endblock %}
 
-<meta property="og:description" content="Official portfolio of Rohullah Sadat - Full Stack Developer, Author and Future AI Entrepreneur.">
+{% block content %}
 
-<meta property="og:image" content="https://rohullahsadat1997.github.io/portfolio/images/portfolio-preview.png">
-
-<meta property="og:url" content="https://rohullahsadat1997.github.io/portfolio/">
-    <meta
-    name="description"
-    content="Programming tutorials, AI articles, web development guides, and software engineering insights by Rohullah Sadat.">
-      <link rel="stylesheet" href="./css/font.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/responsive.css">
-      <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    <title>Articles | Rohullah Sadat</title>
-</head>
-<body>
-    <div id="scroll-progress"></div>
-      <header class="header">
-<div class="container">
-    <a href="index.html" class="logo">
-        Rohullah Sadat
-    </a>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-
-            <li><a href="about.html">About</a></li>
-
-            <li><a href="projects.html">Projects</a></li>
-
-            <li><a href="books.html">Books</a></li>
-
-            <li><a href="articles.html">Articles</a></li>
-
-            <li><a href="gallery.html">Gallery</a></li>
-
-            <li><a href="resume.html">Resume</a></li>
-
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <button class="menu-toggle" aria-label="Open Menu">
-    <i class="fas fa-bars"></i>
-</button>
-    <button class="theme-toggle ">
-        🌙
-    </button>
-</div>
-</header>
-    <main>
-        <section class="articles-hero">
+<main>
+<section class="articles-hero">
     <div class="container">
         <p class="section-tag">
             Knowledge Hub
         </p>
-        <h1>
-            Articles
-        </h1>
+
+        <h1>Articles</h1>
+
         <p class="articles-hero-text">
             Sharing knowledge, programming tutorials, AI insights,
             software engineering experiences, and technology articles.
         </p>
     </div>
 </section>
-<section class="featured-articles  reveal">
+
+
+<section class="featured-articles">
     <div class="container">
+
         <div class="section-header">
-            <h2>
-                Featured Articles
-            </h2>
+            <h2>Featured Articles</h2>
+
             <p>
                 Some of my most valuable articles and tutorials.
             </p>
         </div>
+
         <div class="articles-grid">
+
             <article class="article-card">
+
                 <img
-src="images/article1.jpg"
-alt="How I Started Learning Python"
-loading="lazy"
-decoding="async">
+                src="{% static 'site/images/article1.jpg' %}"
+                    alt="How I Started Learning Python"
+                    loading="lazy"
+                    decoding="async"
+                >
+
                 <div class="article-content">
+
                     <span class="article-category">
                         Python
                     </span>
+
                     <h3>
                         How I Started Learning Python
                     </h3>
+
                     <p>
-                        My journey from zero programming knowledge to building real-world Python projects.
+                        My journey from zero programming knowledge
+                        to building real-world Python projects.
                     </p>
+
                     <div class="article-meta">
                         <span>📅 2026</span>
                         <span>⏱ 6 min read</span>
                     </div>
+
+                    <!-- Article detail will be connected later -->
                     <a href="#" class="btn-details">
                         Read Article
                     </a>
+
                 </div>
+
             </article>
+
         </div>
     </div>
 </section>
+
+
 <section class="article-categories">
-<div class="container">
-<div class="section-header">
-<h2>
-Categories
-</h2>
-<p>
-Browse articles by topic.
-</p>
-</div>
-<div class="categories-grid">
-<span><a href="#">Python</a></span>
-<span><a href="#">HTML</a></span>
-<span><a href="#">CSS</a></span>
-<span><a href="#">JavaScript</a></span>
-<span> <a href="#">Git</a></span>
-<span><a href="#">Django</a></span>
-<span>  <a href="#">AI</a></span>
-<span>  <a href="#">Programing</a></span>
-<span>  <a href="#">Career</a></span>
-<span>  <a href="#">Technalogy</a></span>
-</div>
-</div>
-</section>
-<section class="popular-topics">
-<div class="container">
-<div class="section-header">
-<h2>
-Popular Topics
-</h2>
-</div>
-<div class="topics">
-<span><a href="#">Python</a></span>
-<span><a href="#">HTML</a></span>
-<span><a href="#">CSS</a></span>
-<span><a href="#">JavaScript</a></span>
-<span> <a href="#">Git</a></span>
-<span><a href="#">Django</a></span>
-<span>  <a href="#">AI</a></span>
-<span>  <a href="#">Programing</a></span>
-<span>  <a href="#">Career</a></span>
-</div>
-</div>
-</section>
-<section class="newsletter  reveal">
-<div class="container">
-<h2>
-Stay Updated
-</h2>
-<p>
-Subscribe to receive my latest articles and tutorials.
-</p>
-<form>
-<input
-type="email"
-placeholder="Your Email">
-<button class="btn btn-primary">
-Subscribe
-</button>
-</form>
-</div>
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Categories</h2>
+
+            <p>
+                Browse articles by topic.
+            </p>
+        </div>
+
+        <div class="categories-grid">
+
+            <span><a href="#">Python</a></span>
+            <span><a href="#">HTML</a></span>
+            <span><a href="#">CSS</a></span>
+            <span><a href="#">JavaScript</a></span>
+            <span><a href="#">Git</a></span>
+            <span><a href="#">Django</a></span>
+            <span><a href="#">AI</a></span>
+            <span><a href="#">Programming</a></span>
+            <span><a href="#">Career</a></span>
+            <span><a href="#">Technology</a></span>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!--این بخش به پایان شامل فراخوان و راه ارتباطی میشود-->
-<section class="projects-cta  reveal">
+
+<section class="popular-topics">
+
     <div class="container">
+
+        <div class="section-header">
+            <h2>Popular Topics</h2>
+        </div>
+
+        <div class="topics">
+
+            <span><a href="#">Python</a></span>
+            <span><a href="#">HTML</a></span>
+            <span><a href="#">CSS</a></span>
+            <span><a href="#">JavaScript</a></span>
+            <span><a href="#">Git</a></span>
+            <span><a href="#">Django</a></span>
+            <span><a href="#">AI</a></span>
+            <span><a href="#">Programming</a></span>
+            <span><a href="#">Career</a></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="newsletter">
+
+    <div class="container">
+
+        <h2>Stay Updated</h2>
+
+        <p>
+            Subscribe to receive my latest articles and tutorials.
+        </p>
+
+        <form>
+            <input
+                type="email"
+                placeholder="Your Email"
+            >
+
+            <button class="btn btn-primary" type="submit">
+                Subscribe
+            </button>
+        </form>
+
+    </div>
+
+</section>
+
+
+<section class="projects-cta">
+
+    <div class="container">
+
         <h2>
             Interested in Working Together?
         </h2>
+
         <p>
-            I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software.
+            I'm always open to discussing new projects,
+            creative ideas, and opportunities to build
+            meaningful software.
         </p>
+
         <div class="cta-buttons">
-            <a href="contact.html" class="btn btn-primary">
+
+            <a
+                href="{% url 'contact' %}"
+                class="btn btn-primary"
+            >
                 Contact Me
             </a>
-            <a href="assets/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf" class="btn btn-secondary">
+
+            <a
+                href="{% url 'resume' %}"
+                class="btn btn-secondary"
+            >
                 View Resume
             </a>
+
         </div>
+
     </div>
+
 </section>
-    </main>
-     <footer class="footer">
 
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <!-- About -->
-
-            <div class="footer-column">
-
-                <h3>Rohullah Sadat</h3>
-
-                <p>
-                    Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products.
-                </p>
-
-            </div>
-
-            <!-- Quick Links -->
-
-            <div class="footer-column">
-
-                <h3>Quick Links</h3>
-
-                <ul>
-
-                    <li><a href="index.html">Home</a></li>
-
-                    <li><a href="about.html">About</a></li>
-
-                    <li><a href="projects.html">Projects</a></li>
-
-                    <li><a href="books.html">Books</a></li>
-
-                    <li><a href="articles.html">Articles</a></li>
-
-                    <li><a href="gallery.html">Gallery</a></li>
-
-                    <li><a href="resume.html">Resume</a></li>
-
-                    <li><a href="contact.html">Contact</a></li>
-
-                </ul>
-
-            </div>
-            <!-- Resources -->
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-
-                   <li>
-    <a href="https://github.com/rohullahsadat1997" target="_blank">
-        <i class="fab fa-github"></i> GitHub
-    </a>
-</li>
-
-<li>
-    <a href="https://www.linkedin.com/in/rohullah-sadat-524424236" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-</li>
-
-<li>
-    <a href="mailto:rohullahsadat1997@gmail.com">
-        <i class="fas fa-envelope"></i> Email
-    </a>
-</li>
-
-                   <li>
-    <a href="resume.html">
-        <i class="fas fa-file-pdf"></i> Download Resume
-    </a>
-</li>
-                </ul>
-            </div>
-            <!-- Contact -->
-            <div class="footer-column">
-                <h3>Contact</h3>
-              
-        
-</p>
-<a href="mailto:rohullahsadat1997@gmail.com">
-
-<i class="fas fa-envelope"></i>
-
-rohullahsadat1997@gmail.com
-
-</a>
-
-</p>
-                
-                <p>Available for Freelance</p>
-                <p>Open to Collaboration</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>
-                © 2026 Rohullah Sadat.
-                All Rights Reserved.
-            </p>
-            <p>
-                Built with ❤️ using HTML, CSS & JavaScript.
-            </p>
-        </div>
-    </div>
-</footer>
-<button id="backToTop" class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
-</button>
-
-<script src="js/app.js"></script>
-<script src="js/animation.js"></script>
-</body>
-</html>
+</main>
+{% endblock %}

@@ -1,0 +1,404 @@
+{% extends "site/base.html" %}
+{% load static %}
+{% block title %}
+ Rohullah Sadat | Project
+{% endblock %}
+
+{% block content %}
+
+<div id="scroll-progress"></div>
+
+
+     <header class="header">
+<div class="container">
+    <a href="{% url' home' % }" class="logo">
+        Rohullah Sadat
+    </a>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="{% url 'home' %}">Home</a></li>
+
+            <li><a href="{% url 'about' %}">About</a></li>
+
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+
+            <li><a href="{% url 'books' %}">Books</a></li>
+
+            <li><a href="{% url 'articles' %}">Articles</a></li>
+
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+
+            <li><a href="{% url 'resume' %}">Resume</a></li>
+
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Open Menu">
+<i class="fas fa-bars"></i>
+</button>
+    <button class="theme-toggle">
+        🌙
+    </button>
+</div>
+</header>
+    <main>
+    <!-- Hero -->
+    <!-- Statistics -->
+    <!-- Filter -->
+    <!-- Projects -->
+    <!-- CTA -->
+     <section class="projects-hero">
+    <div class="container">
+        <p class="section-tag">
+            My Portfolio
+        </p>
+        <h1>
+            My Projects
+        </h1>
+        <p class="projects-hero-text">
+            Explore my journey through web development, Python, full-stack applications, and future AI projects. Every project represents a step toward becoming a better software engineer.
+        </p>
+    </div>
+</section>
+<section class="project-stats">
+    <div class="container">
+        
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h3 class="counter" data-target="20" data-suffix="+">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-box">
+               <h3 class="counter" data-target="5" data-suffix="+">0</h3>
+                <p>Technologies Used</p>
+            </div>
+            <div class="stat-box">
+               <h3 class="counter" data-target="3" data-suffix="+">0</h3>
+                <p>Learning Years</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>∞</h3>
+                <p>Passion for Learning</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="project-filter-section">
+
+<div class="container">
+
+<div class="project-filter">
+
+
+<button class="filter-btn active" data-filter="all">
+    All
+</button>
+
+<button class="filter-btn" data-filter="frontend">
+    Frontend
+</button>
+
+<button class="filter-btn" data-filter="python">
+    Python
+</button>
+
+<button class="filter-btn" data-filter="fullstack">
+    Full Stack
+</button>
+
+<button class="filter-btn" data-filter="ai">
+    AI
+</button>
+</div>
+</div>
+<div class="project-filter level-filter">
+
+    <button class="filter-btn level-btn" data-level="all">
+        All Levels
+    </button>
+
+    <button class="filter-btn level-btn" data-level="beginner">
+        Beginner
+    </button>
+
+    <button class="filter-btn level-btn" data-level="intermediate">
+        Intermediate
+    </button>
+
+    <button class="filter-btn level-btn" data-level="advanced">
+        Advanced
+    </button>
+
+</div>
+</section>
+<section class="projects-grid-section">
+    <div class="container">
+
+      <div class="projects-grid">
+
+    {% for project in projects %}
+
+        <article
+            class="project-card"
+            data-project="{{ project.id }}"
+            data-category="{{ project.category }}"
+            data-level="{{ project.level }}"
+        >
+
+            {% if project.is_featured %}
+                <div class="project-badge">
+                    ⭐ Featured
+                </div>
+            {% endif %}
+
+            <div class="project-image">
+
+                {% if project.image %}
+                    <img
+                        src="{{ project.image.url }}"
+                        alt="{{ project.title }}"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                {% endif %}
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-labels">
+
+                    <span class="project-category">
+                        {{ project.get_category_display }}
+                    </span>
+
+                    <span class="project-level">
+                        {{ project.get_level_display }}
+                    </span>
+
+                </div>
+
+                <h3>
+                    {{ project.title }}
+                </h3>
+
+                <p>
+                    {{ project.description }}
+                </p>
+
+                <div class="project-tech">
+
+                    {% for tech in project.technology_list %}
+                        <span>{{ tech }}</span>
+                    {% endfor %}
+
+                </div>
+
+                <div class="project-meta">
+
+                    <span>
+                        📅 {{ project.year }}
+                    </span>
+
+                    {% if project.duration %}
+                        <span>
+                            ⏱ {{ project.duration }}
+                        </span>
+                    {% endif %}
+
+                    <span class="project-status {{ project.status }}">
+                        {{ project.get_status_display }}
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    {% if project.live_url %}
+                        <a
+                            href="{{ project.live_url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-demo"
+                        >
+                            🌐 Live Demo
+                        </a>
+                    {% endif %}
+
+                    {% if project.github_url %}
+                        <a
+                            href="{{ project.github_url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-github"
+                        >
+                            💻 GitHub
+                        </a>
+                    {% endif %}
+
+                    <a
+                        href="{% url 'project_details' project.id %}"
+                        class="btn-details"
+                    >
+                        📄 Details
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    {% empty %}
+
+        <p>No projects available yet.</p>
+
+    {% endfor %}
+
+</div>
+
+    </div>
+</section>
+<section class="projects-cta">
+    <div class="container">
+        <h2>
+            Interested in Working Together?
+        </h2>
+        <p>
+            I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software.
+        </p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">
+                Contact Me
+            </a>
+            <a href="{% url 'resume' %}" class="btn btn-secondary">
+                View Resume
+            </a>
+        </div>
+    </div>
+</section>
+</main>
+   
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- About -->
+
+            <div class="footer-column">
+
+                <h3>Rohullah Sadat</h3>
+
+                <p>
+                    Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products.
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                   <li><a href="{% url 'home' %}">Home</a></li>
+
+            <li><a href="{% url 'about' %}">About</a></li>
+
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+
+            <li><a href="{% url 'books' %}">Books</a></li>
+
+            <li><a href="{% url 'articles' %}">Articles</a></li>
+
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+
+            <li><a href="{% url 'resume' %}">Resume</a></li>
+
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                </ul>
+
+            </div>
+            <!-- Resources -->
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+
+                  <li>
+    <a href="https://github.com/rohullahsadat1997" target="_blank "rel="noopener noreferrer">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+</li>
+
+<li>
+    <a href="https://www.linkedin.com/in/rohullah-sadat-524424236" target="_blank"rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+</li>
+
+<li>
+    <a href="mailto:rohullahsadat1997@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+    </a>
+</li>
+
+                    <li>
+    <a href="resume.html">
+        <i class="fas fa-file-pdf"></i> Download Resume
+    </a>
+</li>
+                </ul>
+            </div>
+            <!-- Contact -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>
+    <a href="mailto:rohullahsadat1997@gmail.com">
+
+    <i class="fas fa-envelope"></i>
+
+    rohullahsadat1997@gmail.com
+
+    </a>
+    </p>
+                <p>Available for Freelance</p>
+                <p>Open to Collaboration</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                © 2026 Rohullah Sadat.
+                All Rights Reserved.
+            </p>
+            <p>
+                Built with ❤️ using HTML, CSS & JavaScript.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<div class="lightbox">
+    <span class="close-lightbox">&times;</span>
+
+    <img class="lightbox-image" src="" alt="">
+
+    <button class="lightbox-prev">
+        &#10094;
+    </button>
+
+    <button class="lightbox-next">
+        &#10095;
+    </button>
+
+</div>
+{% endblock %}

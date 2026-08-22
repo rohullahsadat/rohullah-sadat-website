@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/utilities.css">
+   
     <link rel="stylesheet" href="css/responsive.css">
 
     <link rel="stylesheet"

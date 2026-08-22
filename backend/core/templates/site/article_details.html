@@ -1,0 +1,92 @@
+{% extends "site/base.html" %}
+
+{% load static %}
+
+{% block title %}
+{{ article.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block content %}
+
+<main class="article-details">
+
+    <article class="article-single">
+
+        <div class="container">
+
+            {% if article.cover %}
+
+                <div class="article-single-cover">
+
+                    <img
+                        src="{{ article.cover.url }}"
+                        alt="{{ article.title }}"
+                    >
+
+                </div>
+
+            {% endif %}
+
+
+            {% if article.category %}
+
+                <span class="article-category">
+                    {{ article.get_category_display }}
+                </span>
+
+            {% endif %}
+
+
+            <h1>
+                {{ article.title }}
+            </h1>
+
+
+            <div class="article-meta">
+
+                <span>
+                    By {{ article.author }}
+                </span>
+
+                {% if article.published_at %}
+
+                    <span>
+                        {{ article.published_at|date:"F d, Y" }}
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            {% if article.excerpt %}
+
+                <p class="article-excerpt">
+                    {{ article.excerpt }}
+                </p>
+
+            {% endif %}
+
+
+            <div class="article-body">
+
+                {{ article.content|linebreaks }}
+
+            </div>
+
+
+            <div class="article-back">
+
+                <a href="{% url 'articles' %}">
+                    ← Back to Articles
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</main>
+
+{% endblock %}

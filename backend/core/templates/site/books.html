@@ -1,0 +1,710 @@
+
+{% extends "site/base.html" %}
+{% load static %}
+
+{% block title %}
+Books | Rohullah Sadat
+{% endblock %}
+
+{% block content %}
+
+<div id="scroll-progress"></div>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+    <div class="container">
+
+    <a href="{% url 'home' %}" class="logo">
+        Rohullah Sadat
+    </a>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+
+            <li>
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+
+            <li>
+                <a href="{% url 'about' %}">About</a>
+            </li>
+
+            <li>
+                <a href="{% url 'projects' %}">Projects</a>
+            </li>
+
+            <li>
+                <a href="{% url 'books' %}" class="active">Books</a>
+            </li>
+
+            <li>
+                <a href="{% url 'articles' %}">Articles</a>
+            </li>
+
+            <li>
+                <a href="{% url 'gallery' %}">Gallery</a>
+            </li>
+
+            <li>
+                <a href="{% url 'resume' %}">Resume</a>
+            </li>
+
+            <li>
+                <a href="{% url 'contact' %}">Contact</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <button
+        class="menu-toggle"
+        aria-label="Open Menu"
+        type="button"
+    >
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+    >
+        🌙
+    </button>
+
+</div>
+
+</header>
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+<!-- Books Hero -->
+
+<section class="books-hero">
+
+    <div class="container">
+
+        <p class="section-tag">
+            Books
+        </p>
+
+        <h1>
+            Books &amp; Publications
+        </h1>
+
+        <p class="books-hero-text">
+            Explore my published books, ongoing writing projects,
+            favorite programming books, and resources that have shaped
+            my learning journey.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PUBLISHED BOOKS ================= -->
+
+<section class="published-books">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                Published Books
+            </h2>
+
+            <p>
+                Books I have written and published.
+            </p>
+
+        </div>
+
+        <div class="books-grid">
+
+            {% for book in published_books %}
+
+                <article class="book-card">
+
+                    <div class="book-cover">
+
+                        {% if book.cover %}
+                            <img
+                                src="{{ book.cover.url }}"
+                                alt="{{ book.title }} book cover"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        {% endif %}
+
+                    </div>
+
+                    <h3>
+                        {{ book.title }}
+                    </h3>
+
+                    {% if book.author %}
+                        <p class="book-author">
+                            By {{ book.author }}
+                        </p>
+                    {% endif %}
+
+                    {% if book.description %}
+                        <p>
+                            {{ book.description }}
+                        </p>
+                    {% endif %}
+
+                    <span class="book-status {{ book.status }}">
+                        {{ book.get_status_display }}
+                    </span>
+
+                    {% if book.access_type == "free" %}
+
+                        <span class="book-access free">
+                            Free
+                        </span>
+
+                    {% elif book.access_type == "paid" %}
+
+                        <span class="book-access paid">
+                            {{ book.price }} {{ book.currency }}
+                        </span>
+
+                    {% endif %}
+
+                    <div class="book-actions">
+
+                        <a
+                            href="{% url 'book_reader' book.id %}"
+                            class="book-action read-online"
+                        >
+                            📖 Read Online
+                        </a>
+
+                        {% if book.pdf_file %}
+                            <a
+                                href="{{ book.pdf_file.url }}"
+                                class="book-action download-pdf"
+                                download
+                            >
+                                📥 Download PDF
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>
+                    No published books available yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= READING LIST ================= -->
+
+<section class="reading-list">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                Reading List
+            </h2>
+
+            <p>
+                Books that inspire my programming journey.
+            </p>
+
+        </div>
+
+        <div class="books-grid">
+
+            {% for book in reading_books %}
+
+                <article class="book-card">
+
+                    <div class="book-cover">
+
+                        {% if book.cover %}
+                            <img
+                                src="{{ book.cover.url }}"
+                                alt="{{ book.title }} book cover"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        {% endif %}
+
+                    </div>
+
+                    <h3>
+                        {{ book.title }}
+                    </h3>
+
+                    {% if book.author %}
+                        <p class="book-author">
+                            By {{ book.author }}
+                        </p>
+                    {% endif %}
+
+                    {% if book.description %}
+                        <p>
+                            {{ book.description }}
+                        </p>
+                    {% endif %}
+
+                    <span class="book-status {{ book.status }}">
+                        {{ book.get_status_display }}
+                    </span>
+
+                    <div class="book-actions">
+
+                        <a
+                            href="{% url 'book_reader' book.id %}"
+                            class="book-action read-online"
+                        >
+                            📖 Read Online
+                        </a>
+
+                        {% if book.pdf_file %}
+                            <a
+                                href="{{ book.pdf_file.url }}"
+                                class="book-action download-pdf"
+                                download
+                            >
+                                📥 Download PDF
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>
+                    No books in the reading list yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FAVORITE BOOKS ================= -->
+
+<section class="favorite-books">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                Favorite Books
+            </h2>
+
+            <p>
+                Books that inspire my thinking, creativity,
+                and personal growth.
+            </p>
+
+        </div>
+
+        <div class="books-grid">
+
+            {% for book in favorite_books %}
+
+                <article class="book-card">
+
+                    <div class="book-cover">
+
+                        {% if book.cover %}
+                            <img
+                                src="{{ book.cover.url }}"
+                                alt="{{ book.title }} book cover"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        {% endif %}
+
+                    </div>
+
+                    <h3>
+                        {{ book.title }}
+                    </h3>
+
+                    {% if book.author %}
+                        <p class="book-author">
+                            By {{ book.author }}
+                        </p>
+                    {% endif %}
+
+                    {% if book.description %}
+                        <p>
+                            {{ book.description }}
+                        </p>
+                    {% endif %}
+
+                    <span class="book-status">
+                        Favorite
+                    </span>
+
+                    <div class="book-actions">
+
+                        <a
+                            href="{% url 'book_reader' book.id %}"
+                            class="book-action read-online"
+                        >
+                            📖 Read Online
+                        </a>
+
+                        {% if book.pdf_file %}
+                            <a
+                                href="{{ book.pdf_file.url }}"
+                                class="book-action download-pdf"
+                                download
+                            >
+                                📥 Download PDF
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>
+                    No favorite books added yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= PLANNED BOOKS ================= -->
+
+<section class="planned-books">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                Planned Books
+            </h2>
+
+            <p>
+                Books I plan to write in the future.
+            </p>
+
+        </div>
+
+        <div class="books-grid">
+
+            {% for book in planned_books %}
+
+                <article class="book-card">
+
+                    <div class="book-cover">
+
+                        {% if book.cover %}
+                            <img
+                                src="{{ book.cover.url }}"
+                                alt="{{ book.title }} book cover"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        {% endif %}
+
+                    </div>
+
+                    <h3>
+                        {{ book.title }}
+                    </h3>
+
+                    {% if book.author %}
+                        <p class="book-author">
+                            By {{ book.author }}
+                        </p>
+                    {% endif %}
+
+                    {% if book.description %}
+                        <p>
+                            {{ book.description }}
+                        </p>
+                    {% endif %}
+
+                    <span class="book-status {{ book.status }}">
+                        {{ book.get_status_display }}
+                    </span>
+
+                </article>
+
+            {% empty %}
+
+                <p>
+                    No planned books yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= COMING SOON ================= -->
+
+<section class="coming-soon-books">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                Coming Soon
+            </h2>
+
+            <p>
+                Upcoming books and publications.
+            </p>
+
+        </div>
+
+        <div class="books-grid">
+
+            {% for book in coming_soon_books %}
+
+                <article class="book-card">
+
+                    <div class="book-cover">
+
+                        {% if book.cover %}
+                            <img
+                                src="{{ book.cover.url }}"
+                                alt="{{ book.title }} book cover"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        {% endif %}
+
+                    </div>
+
+                    <h3>
+                        {{ book.title }}
+                    </h3>
+
+                    {% if book.author %}
+                        <p class="book-author">
+                            By {{ book.author }}
+                        </p>
+                    {% endif %}
+
+                    {% if book.description %}
+                        <p>
+                            {{ book.description }}
+                        </p>
+                    {% endif %}
+
+                    <span class="book-status {{ book.status }}">
+                        {{ book.get_status_display }}
+                    </span>
+
+                </article>
+
+            {% empty %}
+
+                <p>
+                    No upcoming books yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOK STATS ================= -->
+
+<section class="books-stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <!-- Published -->
+
+            <div class="stat-box">
+
+                <h3
+                    class="counter"
+                    data-target="{{ published_count }}"
+                    data-suffix="+"
+                >
+                    0
+                </h3>
+
+                <p>
+                    Published Books
+                </p>
+
+            </div>
+
+
+            <!-- Reading -->
+
+            <div class="stat-box">
+
+                <h3
+                    class="counter"
+                    data-target="{{ reading_count }}"
+                    data-suffix="+"
+                >
+                    0
+                </h3>
+
+                <p>
+                    Books in Progress
+                </p>
+
+            </div>
+
+
+            <!-- Favorite -->
+
+            <div class="stat-box">
+
+                <h3
+                    class="counter"
+                    data-target="{{ favorite_count }}"
+                    data-suffix="+"
+                >
+                    0
+                </h3>
+
+                <p>
+                    Favorite Books
+                </p>
+
+            </div>
+
+
+            <!-- Planned -->
+
+            <div class="stat-box">
+
+                <h3
+                    class="counter"
+                    data-target="{{ planned_count }}"
+                    data-suffix="+"
+                >
+                    0
+                </h3>
+
+                <p>
+                    Books Planned
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="projects-cta">
+
+    <div class="container">
+
+        <h2>
+            Interested in Working Together?
+        </h2>
+
+        <p>
+            I'm always open to discussing new projects,
+            creative ideas, and opportunities to build
+            meaningful software.
+        </p>
+
+        <div class="cta-buttons">
+
+            <a
+                href="{% url 'contact' %}"
+                class="btn btn-primary"
+            >
+                Contact Me
+            </a>
+
+            <a
+                href="{% url 'resume' %}"
+                class="btn btn-secondary"
+            >
+                View Resume
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+        <p>
+            © 2026 Rohullah Sadat.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Built with ❤️ using HTML, CSS &amp; JavaScript.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button
+id="backToTop"
+class="back-to-top"
+type="button"
+aria-label="Back to top"
+
+>
+
+
+<i class="fas fa-arrow-up"></i>
+
+
+</button>
+
+{% endblock %}

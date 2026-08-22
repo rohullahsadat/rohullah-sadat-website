@@ -2539,7 +2539,8 @@ body.dark-mode .header{
 /* Form */
 
 .contact-form-section{
-    padding:90px 0;
+    display: grid;
+
 }
 
 .contact-form{

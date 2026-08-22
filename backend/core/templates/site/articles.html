@@ -1,0 +1,521 @@
+
+{% extends "site/base.html" %}
+{% load static %}
+
+{% block title %}Articles | Rohullah Sadat{% endblock %}
+
+{% block content %}
+
+<!-- =========================
+     Header
+========================= -->
+<header class="header">
+
+    <div class="container">
+
+        <a href="{% url 'home' %}" class="logo">
+            Rohullah Sadat
+        </a>
+
+        <nav class="navbar">
+            <ul class="nav-list">
+
+                <li>
+                    <a href="{% url 'home' %}">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'about' %}">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'projects' %}">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'books' %}">
+                        Books
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'articles' %}">
+                        Articles
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'gallery' %}">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'resume' %}">
+                        Resume
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contact' %}">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <button
+            class="menu-toggle"
+            aria-label="Open Menu"
+            type="button"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle Theme"
+        >
+            🌙
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="articles-hero">
+    <div class="container">
+        <p class="section-tag">
+            Knowledge Hub
+        </p>
+
+        <h1>Articles</h1>
+
+        <p class="articles-hero-text">
+            Sharing knowledge, programming tutorials, AI insights,
+            software engineering experiences, and technology articles.
+        </p>
+    </div>
+</section>
+
+
+<section class="featured-articles">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Featured Articles</h2>
+
+            <p>
+                Some of my most valuable articles and tutorials.
+            </p>
+        </div>
+
+        <div class="articles-grid">
+
+    {% for article in articles %}
+
+        <article class="article-card">
+
+            <div class="article-cover">
+
+                {% if article.cover %}
+
+                    <img
+                        src="{{ article.cover.url }}"
+                        alt="{{ article.title }}"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                {% else %}
+
+                    <div class="article-cover-placeholder">
+                        📝
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    {{ article.get_category_display }}
+                </span>
+
+
+                <h3>
+                    {{ article.title }}
+                </h3>
+
+
+                {% if article.excerpt %}
+
+                    <p>
+                        {{ article.excerpt }}
+                    </p>
+
+                {% endif %}
+
+
+                <div class="article-meta">
+
+                    {% if article.published_at %}
+
+                        <span>
+                            📅 {{ article.published_at|date:"Y" }}
+                        </span>
+
+                    {% else %}
+
+                        <span>
+                            📅 {{ article.created_at|date:"Y" }}
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+
+                <a
+                    href="{% url 'article_details' article.slug %}"
+                    class="article-action"
+                >
+                    Read Article →
+                </a>
+
+            </div>
+
+        </article>
+
+    {% empty %}
+
+        <p class="no-articles">
+            No articles available yet.
+        </p>
+
+    {% endfor %}
+
+</div>
+        </div>
+    </div>
+</section>
+
+
+<section class="article-categories">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Categories</h2>
+
+            <p>
+                Browse articles by topic.
+            </p>
+        </div>
+
+        <div class="categories-grid">
+
+            <span><a href="#">Python</a></span>
+            <span><a href="#">HTML</a></span>
+            <span><a href="#">CSS</a></span>
+            <span><a href="#">JavaScript</a></span>
+            <span><a href="#">Git</a></span>
+            <span><a href="#">Django</a></span>
+            <span><a href="#">AI</a></span>
+            <span><a href="#">Programming</a></span>
+            <span><a href="#">Career</a></span>
+            <span><a href="#">Technology</a></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="popular-topics">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Popular Topics</h2>
+        </div>
+
+        <div class="topics">
+
+            <span><a href="#">Python</a></span>
+            <span><a href="#">HTML</a></span>
+            <span><a href="#">CSS</a></span>
+            <span><a href="#">JavaScript</a></span>
+            <span><a href="#">Git</a></span>
+            <span><a href="#">Django</a></span>
+            <span><a href="#">AI</a></span>
+            <span><a href="#">Programming</a></span>
+            <span><a href="#">Career</a></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="newsletter">
+
+    <div class="container">
+
+        <h2>Stay Updated</h2>
+
+        <p>
+            Subscribe to receive my latest articles and tutorials.
+        </p>
+
+        <form>
+            <input
+                type="email"
+                placeholder="Your Email"
+            >
+
+            <button class="btn btn-primary" type="submit">
+                Subscribe
+            </button>
+        </form>
+
+    </div>
+
+</section>
+
+
+<section class="projects-cta">
+
+    <div class="container">
+
+        <h2>
+            Interested in Working Together?
+        </h2>
+
+        <p>
+            I'm always open to discussing new projects,
+            creative ideas, and opportunities to build
+            meaningful software.
+        </p>
+
+        <div class="cta-buttons">
+
+            <a
+                href="{% url 'contact' %}"
+                class="btn btn-primary"
+            >
+                Contact Me
+            </a>
+
+            <a
+                href="{% url 'resume' %}"
+                class="btn btn-secondary"
+            >
+                View Resume
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+<!-- =========================
+     Footer
+========================= -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <!-- About -->
+            <div class="footer-column">
+
+                <h3>
+                    Rohullah Sadat
+                </h3>
+
+                <p>
+                    Full Stack Developer, Author, and Future AI Entrepreneur
+                    passionate about building impactful digital products.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'books' %}">
+                            Books
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'articles' %}">
+                            Articles
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gallery' %}">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resume' %}">
+                            Resume
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h3>
+                    Resources
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="https://github.com/rohullahsadat1997"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/rohullah-sadat-524424236"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:rohullahsadat1997@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                            download
+                        >
+                            <i class="fas fa-file-pdf"></i>
+                            Download Resume
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <a href="mailto:rohullahsadat1997@gmail.com">
+                        Email Me
+                    </a>
+                </p>
+
+                <p>
+                    Available for Freelance
+                </p>
+
+                <p>
+                    Open to Collaboration
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Rohullah Sadat.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Built with ❤️ using HTML, CSS &amp; JavaScript.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+{% endblock %}
