@@ -17,40 +17,46 @@ from core.views import (
     article_details,
 )
 
+
 urlpatterns = [
+
+    # Admin
     path("admin/", admin.site.urls),
 
+    # Main pages
     path("", home, name="home"),
     path("about/", about, name="about"),
-    
     path("projects/", projects, name="projects"),
     path("books/", books, name="books"),
-     path("articles/", articles, name="articles"),
-    
-   path(
-    "book-reader/<int:book_id>/",
-    book_reader,
-    name="book_reader"
-),
-   
-    path(
-    "articles/<slug:slug>/",
-    article_details,
-    name="article_details",
-),
-    
+    path("articles/", articles, name="articles"),
     path("gallery/", gallery, name="gallery"),
     path("resume/", resume, name="resume"),
     path("contact/", contact, name="contact"),
-    
-path(
-    "project-details/<int:project_id>/",
-    project_details,
-    name="project_details"
-),
 
+    # Books
+    path(
+        "book-reader/<int:book_id>/",
+        book_reader,
+        name="book_reader",
+    ),
+
+    # Articles
+    path(
+        "articles/<slug:slug>/",
+        article_details,
+        name="article_details",
+    ),
+
+    # Projects
+    path(
+        "project-details/<int:project_id>/",
+        project_details,
+        name="project_details",
+    ),
 ]
 
+
+# Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL,
