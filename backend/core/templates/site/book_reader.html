@@ -4,6 +4,25 @@
 {% block title %}
 {{ book.title }} | Rohullah Sadat
 {% endblock %}
+{% block meta_description %}
+{{ book.description|truncatewords:30 }}
+{% endblock %}
+
+{% block og_title %}
+{{ book.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block og_description %}
+{{ book.description|truncatewords:30 }}
+{% endblock %}
+
+{% block twitter_title %}
+{{ book.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block twitter_description %}
+{{ book.description|truncatewords:30 }}
+{% endblock %}
 
 {% block content %}
 
