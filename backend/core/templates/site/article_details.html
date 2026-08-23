@@ -5,6 +5,25 @@
 {% block title %}
 {{ article.title }} | Rohullah Sadat
 {% endblock %}
+{% block meta_description %}
+{{ article.excerpt|default:article.title }}
+{% endblock %}
+
+{% block og_title %}
+{{ article.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block og_description %}
+{{ article.excerpt|default:article.title }}
+{% endblock %}
+
+{% block twitter_title %}
+{{ article.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block twitter_description %}
+{{ article.excerpt|default:article.title }}
+{% endblock %}
 
 {% block content %}
 
