@@ -1,7 +1,26 @@
 {% extends "site/base.html" %}
 {% load static %}
 {% block title %}
- Rohullah Sadat | Project
+{{ project.title }} | Rohullah Sadat
+{% endblock %}
+{% block meta_description %}
+{{ project.description|truncatewords:30 }}
+{% endblock %}
+
+{% block og_title %}
+{{ project.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block og_description %}
+{{ project.description|truncatewords:30 }}
+{% endblock %}
+
+{% block twitter_title %}
+{{ project.title }} | Rohullah Sadat
+{% endblock %}
+
+{% block twitter_description %}
+{{ project.description|truncatewords:30 }}
 {% endblock %}
 
 {% block content %}
