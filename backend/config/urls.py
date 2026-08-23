@@ -2,6 +2,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from django.views.generic import TemplateView
+from core.sitemaps import (
+    StaticViewSitemap,
+    ProjectSitemap,
+    BookSitemap,
+    ArticleSitemap,
+)
 
 from core.views import (
     home,
@@ -32,7 +40,27 @@ urlpatterns = [
     path("gallery/", gallery, name="gallery"),
     path("resume/", resume, name="resume"),
     path("contact/", contact, name="contact"),
-
+    path(
+    "sitemap.xml",
+    sitemap,
+    {
+        "sitemaps": {
+            "static": StaticViewSitemap,
+            "projects": ProjectSitemap,
+            "books": BookSitemap,
+            "articles": ArticleSitemap,
+        }
+    },
+    name="sitemap",
+),
+    path(
+    "robots.txt",
+    TemplateView.as_view(
+        template_name="robots.txt",
+        content_type="text/plain",
+    ),
+    name="robots",
+),
     # Books
     path(
         "book-reader/<int:book_id>/",
@@ -54,8 +82,6 @@ urlpatterns = [
         name="project_details",
     ),
 ]
-
-
 # Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(

@@ -12,6 +12,10 @@ load_dotenv(BASE_DIR / ".env")
 # =========================================================
 
 SECRET_KEY = os.getenv("SECRET_KEY")
+SITE_URL = os.getenv(
+    "SITE_URL",
+    "https://rohullahsadat.com",
+)
 
 DEBUG = True
 
@@ -32,6 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
 
     "core",
 ]
@@ -80,6 +85,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "core.context_processors.site_settings",
             ],
         },
     },
