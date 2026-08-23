@@ -17,6 +17,37 @@
 
     <meta name="author" content="Rohullah Sadat">
     <meta name="theme-color" content="#2563eb">
+    <!-- SEO -->
+<link
+    rel="canonical"
+    href="{{ request.build_absolute_uri }}"
+>
+
+<meta
+    name="robots"
+    content="index, follow"
+>
+
+<!-- Twitter / X -->
+<meta
+    name="twitter:card"
+    content="summary_large_image"
+>
+
+<meta
+    name="twitter:title"
+    content="{% block twitter_title %}Rohullah Sadat | Full Stack Developer{% endblock %}"
+>
+
+<meta
+    name="twitter:description"
+    content="{% block twitter_description %}Official portfolio of Rohullah Sadat — Full Stack Developer, Author, and Future AI Entrepreneur.{% endblock %}"
+>
+
+<meta
+    name="twitter:image"
+    content="{% static 'site/images/portfolio-preview.png' %}"
+>
 
     <meta property="og:type" content="website">
 
