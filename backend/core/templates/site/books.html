@@ -1,6 +1,7 @@
 
 {% extends "site/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
 Books | Rohullah Sadat
@@ -41,41 +42,54 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
     <nav class="navbar">
         <ul class="nav-list">
 
-            <li>
-                <a href="{% url 'home' %}">Home</a>
-            </li>
+           <a href="{% url 'home' %}">
+        {% trans "Home" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'about' %}">About</a>
-            </li>
+<li>
+    <a href="{% url 'about' %}">
+        {% trans "About" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'projects' %}">Projects</a>
-            </li>
+<li>
+    <a href="{% url 'projects' %}">
+        {% trans "Projects" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'books' %}" class="active">Books</a>
-            </li>
+<li>
+    <a href="{% url 'books' %}">
+        {% trans "Books" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'articles' %}">Articles</a>
-            </li>
+<li>
+    <a href="{% url 'articles' %}">
+        {% trans "Articles" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'gallery' %}">Gallery</a>
-            </li>
+<li>
+    <a href="{% url 'gallery' %}">
+        {% trans "Gallery" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'resume' %}">Resume</a>
-            </li>
+<li>
+    <a href="{% url 'resume' %}">
+        {% trans "Resume" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'contact' %}">Contact</a>
-            </li>
-
+<li>
+    <a href="{% url 'contact' %}">
+        {% trans "Contact" %}
+    </a>
         </ul>
     </nav>
-
+{% include "site/partials/language_switcher.html" %}
     <button
         class="menu-toggle"
         aria-label="Open Menu"
@@ -96,7 +110,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 
 </header>
 
-<!-- ================= MAIN ================= -->
+
 
 <main>
 
@@ -107,17 +121,15 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
     <div class="container">
 
         <p class="section-tag">
-            Books
+            {% trans "Books" %}
         </p>
 
         <h1>
-            Books &amp; Publications
+            {% trans "Books &amp; Publications" %}
         </h1>
 
         <p class="books-hero-text">
-            Explore my published books, ongoing writing projects,
-            favorite programming books, and resources that have shaped
-            my learning journey.
+            {% trans "Explore my published books, ongoing writing projects, favorite programming books, and resources that have shaped my learning journey." %}
         </p>
 
     </div>
@@ -134,11 +146,11 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
         <div class="section-header">
 
             <h2>
-                Published Books
+                {% trans "Published Books" %}
             </h2>
 
             <p>
-                Books I have written and published.
+                {% trans "Books I have written and published." %}
             </p>
 
         </div>
@@ -168,7 +180,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 
                     {% if book.author %}
                         <p class="book-author">
-                            By {{ book.author }}
+                            {% trans "By" %} {{ book.author }}
                         </p>
                     {% endif %}
 
@@ -185,7 +197,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                     {% if book.access_type == "free" %}
 
                         <span class="book-access free">
-                            Free
+                            {% trans "Free" %}
                         </span>
 
                     {% elif book.access_type == "paid" %}
@@ -202,7 +214,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                             href="{% url 'book_reader' book.id %}"
                             class="book-action read-online"
                         >
-                            📖 Read Online
+                            📖 {% trans "Read Online" %}
                         </a>
 
                         {% if book.pdf_file %}
@@ -211,7 +223,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                                 class="book-action download-pdf"
                                 download
                             >
-                                📥 Download PDF
+                                📥 {% trans "Download PDF" %}
                             </a>
                         {% endif %}
 
@@ -222,7 +234,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
             {% empty %}
 
                 <p>
-                    No published books available yet.
+                    {% trans "No published books available yet." %}
                 </p>
 
             {% endfor %}
@@ -232,7 +244,6 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
     </div>
 
 </section>
-
 <!-- ================= READING LIST ================= -->
 
 <section class="reading-list">
@@ -242,11 +253,11 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
         <div class="section-header">
 
             <h2>
-                Reading List
+                {% trans "Reading List" %}
             </h2>
 
             <p>
-                Books that inspire my programming journey.
+                {% trans "Books that inspire my programming journey." %}
             </p>
 
         </div>
@@ -276,7 +287,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 
                     {% if book.author %}
                         <p class="book-author">
-                            By {{ book.author }}
+                            {% trans "By" %} {{ book.author }}
                         </p>
                     {% endif %}
 
@@ -296,7 +307,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                             href="{% url 'book_reader' book.id %}"
                             class="book-action read-online"
                         >
-                            📖 Read Online
+                            📖 {% trans "Read Online" %}
                         </a>
 
                         {% if book.pdf_file %}
@@ -305,7 +316,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                                 class="book-action download-pdf"
                                 download
                             >
-                                📥 Download PDF
+                                📥 {% trans "Download PDF" %}
                             </a>
                         {% endif %}
 
@@ -316,7 +327,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
             {% empty %}
 
                 <p>
-                    No books in the reading list yet.
+                    {% trans "No books in the reading list yet." %}
                 </p>
 
             {% endfor %}
@@ -336,12 +347,11 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
         <div class="section-header">
 
             <h2>
-                Favorite Books
+                {% trans "Favorite Books" %}
             </h2>
 
             <p>
-                Books that inspire my thinking, creativity,
-                and personal growth.
+                {% trans "Books that inspire my thinking, creativity, and personal growth." %}
             </p>
 
         </div>
@@ -371,7 +381,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 
                     {% if book.author %}
                         <p class="book-author">
-                            By {{ book.author }}
+                            {% trans "By" %} {{ book.author }}
                         </p>
                     {% endif %}
 
@@ -382,7 +392,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                     {% endif %}
 
                     <span class="book-status">
-                        Favorite
+                        {% trans "Favorite" %}
                     </span>
 
                     <div class="book-actions">
@@ -391,7 +401,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                             href="{% url 'book_reader' book.id %}"
                             class="book-action read-online"
                         >
-                            📖 Read Online
+                            📖 {% trans "Read Online" %}
                         </a>
 
                         {% if book.pdf_file %}
@@ -400,7 +410,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                                 class="book-action download-pdf"
                                 download
                             >
-                                📥 Download PDF
+                                📥 {% trans "Download PDF" %}
                             </a>
                         {% endif %}
 
@@ -411,7 +421,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
             {% empty %}
 
                 <p>
-                    No favorite books added yet.
+                    {% trans "No favorite books added yet." %}
                 </p>
 
             {% endfor %}
@@ -421,6 +431,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
     </div>
 
 </section>
+
 <!-- ================= PLANNED BOOKS ================= -->
 
 <section class="planned-books">
@@ -430,11 +441,11 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
         <div class="section-header">
 
             <h2>
-                Planned Books
+                {% trans "Planned Books" %}
             </h2>
 
             <p>
-                Books I plan to write in the future.
+                {% trans "Books I plan to write in the future." %}
             </p>
 
         </div>
@@ -464,7 +475,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 
                     {% if book.author %}
                         <p class="book-author">
-                            By {{ book.author }}
+                            {% trans "By" %} {{ book.author }}
                         </p>
                     {% endif %}
 
@@ -483,7 +494,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
             {% empty %}
 
                 <p>
-                    No planned books yet.
+                    {% trans "No planned books yet." %}
                 </p>
 
             {% endfor %}
@@ -493,6 +504,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
     </div>
 
 </section>
+
 <!-- ================= COMING SOON ================= -->
 
 <section class="coming-soon-books">
@@ -502,11 +514,11 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
         <div class="section-header">
 
             <h2>
-                Coming Soon
+                {% trans "Coming Soon" %}
             </h2>
 
             <p>
-                Upcoming books and publications.
+                {% trans "Upcoming books and publications." %}
             </p>
 
         </div>
@@ -536,7 +548,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 
                     {% if book.author %}
                         <p class="book-author">
-                            By {{ book.author }}
+                            {% trans "By" %} {{ book.author }}
                         </p>
                     {% endif %}
 
@@ -555,7 +567,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
             {% empty %}
 
                 <p>
-                    No upcoming books yet.
+                    {% trans "No upcoming books yet." %}
                 </p>
 
             {% endfor %}
@@ -565,8 +577,6 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
     </div>
 
 </section>
-
-
 <!-- ================= BOOK STATS ================= -->
 
 <section class="books-stats">
@@ -588,7 +598,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                 </h3>
 
                 <p>
-                    Published Books
+                    {% trans "Published Books" %}
                 </p>
 
             </div>
@@ -607,7 +617,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                 </h3>
 
                 <p>
-                    Books in Progress
+                    {% trans "Books in Progress" %}
                 </p>
 
             </div>
@@ -626,7 +636,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                 </h3>
 
                 <p>
-                    Favorite Books
+                    {% trans "Favorite Books" %}
                 </p>
 
             </div>
@@ -645,7 +655,7 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                 </h3>
 
                 <p>
-                    Books Planned
+                    {% trans "Books Planned" %}
                 </p>
 
             </div>
@@ -656,21 +666,23 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 
 </section>
 
-<!-- ================= CTA ================= -->
+<!-- =========================
+     CTA
+========================= -->
 
 <section class="projects-cta">
 
     <div class="container">
 
         <h2>
-            Interested in Working Together?
+            {% trans "Interested in Working Together?" %}
         </h2>
 
+
         <p>
-            I'm always open to discussing new projects,
-            creative ideas, and opportunities to build
-            meaningful software.
+            {% trans "I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software." %}
         </p>
+
 
         <div class="cta-buttons">
 
@@ -678,14 +690,15 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
                 href="{% url 'contact' %}"
                 class="btn btn-primary"
             >
-                Contact Me
+                {% trans "Contact Me" %}
             </a>
+
 
             <a
                 href="{% url 'resume' %}"
                 class="btn btn-secondary"
             >
-                View Resume
+                {% trans "View Resume" %}
             </a>
 
         </div>
@@ -695,35 +708,203 @@ Explore Rohullah Sadat's books and publications on programming, technology, pers
 </section>
 
 
+
+
 </main>
 
-        <p>
-            © 2026 Rohullah Sadat.
-            All Rights Reserved.
-        </p>
+        
+<!-- =========================
+     Footer
+========================= -->
+<footer class="footer">
 
-        <p>
-            Built with ❤️ using HTML, CSS &amp; JavaScript.
-        </p>
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <!-- About -->
+            <div class="footer-column">
+
+                <h3>
+                    Rohullah Sadat
+                </h3>
+
+                <p>
+                    {% trans "Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products." %}
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Quick Links" %}
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="{% url 'home' %}">
+                            {% trans "Home" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            {% trans "About" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            {% trans "Projects" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'books' %}">
+                            {% trans "Books" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'articles' %}">
+                            {% trans "Articles" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gallery' %}">
+                            {% trans "Gallery" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resume' %}">
+                            {% trans "Resume" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            {% trans "Contact" %}
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Resources" %}
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="https://github.com/rohullahsadat1997"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/rohullah-sadat-524424236"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:rohullahsadat1997@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            {% trans "Email" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                            download
+                        >
+                            <i class="fas fa-file-pdf"></i>
+                            {% trans "Download Resume" %}
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Contact" %}
+                </h3>
+
+                <p>
+                    <a href="mailto:rohullahsadat1997@gmail.com">
+                        {% trans "Email Me" %}
+                    </a>
+                </p>
+
+                <p>
+                    {% trans "Available for Freelance" %}
+                </p>
+
+                <p>
+                    {% trans "Open to Collaboration" %}
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Rohullah Sadat.
+                {% trans "All Rights Reserved." %}
+            </p>
+
+            <p>
+                {% trans "Built with ❤️ using HTML, CSS &amp; JavaScript." %}
+            </p>
+
+        </div>
 
     </div>
 
-</div>
+</footer>
 
-<!-- ================= BACK TO TOP ================= -->
 
+<!-- =========================
+     Back To Top
+========================= -->
 <button
-id="backToTop"
-class="back-to-top"
-type="button"
-aria-label="Back to top"
-
+    class="back-to-top"
+    type="button"
+    aria-label="{% trans 'Back to top' %}"
 >
-
-
-<i class="fas fa-arrow-up"></i>
-
-
+    <i class="fas fa-arrow-up"></i>
 </button>
 
 {% endblock %}

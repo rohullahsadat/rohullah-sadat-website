@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<div class="language-switcher">
+    {% get_current_language as CURRENT_LANGUAGE %}
+
+    {% if CURRENT_LANGUAGE == "fa" %}
+        <a
+            href="/en{{ request.path|slice:'3:' }}"
+            class="language-link"
+            aria-label="Switch to English"
+        >
+            English
+        </a>
+    {% else %}
+        <a
+            href="/fa{{ request.path|slice:'3:' }}"
+            class="language-link"
+            aria-label="تغییر زبان به فارسی"
+        >
+            فارسی
+        </a>
+    {% endif %}
+</div>

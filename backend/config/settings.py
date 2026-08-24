@@ -17,13 +17,13 @@ SITE_URL = os.getenv(
     "https://rohullahsadat.com",
 )
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "testserver",
 ]
-
 
 # =========================================================
 # APPLICATIONS
@@ -45,17 +45,18 @@ INSTALLED_APPS = [
 # =========================================================
 # MIDDLEWARE
 # =========================================================
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+
+    "django.middleware.locale.LocaleMiddleware",
+
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
 
 # =========================================================
 # URL / WSGI
@@ -128,14 +129,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # INTERNATIONALIZATION
 # =========================================================
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
 
-TIME_ZONE = "Asia/Kabul"
+LANGUAGES = [
+    ("fa", "فارسی"),
+    ("en", "English"),
+]
 
 USE_I18N = True
 
-USE_TZ = True
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
 
+TIME_ZONE = "Asia/Kabul"
+
+USE_TZ = True
 
 # =========================================================
 # STATIC FILES

@@ -1,6 +1,6 @@
 {% extends "site/base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block title %}
 Resume | Rohullah Sadat
 {% endblock %}
@@ -90,7 +90,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
 
             </ul>
         </nav>
-
+        {% include "site/partials/language_switcher.html" %}
         <button
             class="menu-toggle"
             aria-label="Open Menu"
@@ -115,358 +115,348 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
 <main>
 
     <!-- Resume Hero -->
-    <section class="resume-hero">
+<section class="resume-hero">
 
-        <div class="container">
+    <div class="container">
 
-            <p class="section-tag">
-                Resume
-            </p>
+        <p class="section-tag">
+            {% trans "Resume" %}
+        </p>
 
-            <h1>
-                Professional Resume
-            </h1>
+        <h1>
+            {% trans "Professional Resume" %}
+        </h1>
 
-            <p class="resume-hero-text">
-                Explore my education, professional experience, technical skills,
-                certifications, and career journey as a future Full Stack Developer
-                and AI Engineer.
-            </p>
+        <p class="resume-hero-text">
+            {% trans "Explore my education, professional experience, technical skills, certifications, and career journey as a future Full Stack Developer and AI Engineer." %}
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Professional Summary -->
+<section class="resume-summary">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                {% trans "Professional Summary" %}
+            </h2>
 
         </div>
 
-    </section>
+        <p>
+            {% trans "Passionate Full Stack Developer with a strong interest in Python, Web Development, Artificial Intelligence, and building real-world software solutions. Dedicated to continuous learning, solving complex problems, and creating technology that makes a positive impact." %}
+        </p>
+
+    </div>
+
+</section>
 
 
-    <!-- Professional Summary -->
-    <section class="resume-summary">
+<!-- Technical Skills -->
+<section class="resume-skills">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-header">
+        <div class="section-header">
 
-                <h2>
-                    Professional Summary
-                </h2>
-
-            </div>
+            <h2>
+                {% trans "Technical Skills" %}
+            </h2>
 
             <p>
-                Passionate Full Stack Developer with a strong interest in Python,
-                Web Development, Artificial Intelligence, and building real-world
-                software solutions. Dedicated to continuous learning, solving
-                complex problems, and creating technology that makes a positive
-                impact.
+                {% trans "Technologies and tools I use to build modern software solutions." %}
             </p>
 
         </div>
 
-    </section>
+
+        <div class="skills-grid">
+
+            <article class="skill-card">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    {% trans "Front-End" %}
+                </h3>
+
+                <ul class="skill-list">
+
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>{% trans "Responsive Design" %}</li>
+
+                </ul>
+
+            </article>
 
 
-    <!-- Technical Skills -->
-    <section class="resume-skills">
+            <article class="skill-card">
 
-        <div class="container">
+                <div class="skill-icon">
+                    ⚙️
+                </div>
 
-            <div class="section-header">
+                <h3>
+                    {% trans "Back-End" %}
+                </h3>
 
-                <h2>
-                    Technical Skills
-                </h2>
+                <ul class="skill-list">
 
-                <p>
-                    Technologies and tools I use to build modern software solutions.
-                </p>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>{% trans "REST API" %}</li>
 
-            </div>
+                </ul>
 
-
-            <div class="skills-grid">
-
-                <article class="skill-card">
-
-                    <div class="skill-icon">
-                        🌐
-                    </div>
-
-                    <h3>
-                        Front-End
-                    </h3>
-
-                    <ul class="skill-list">
-
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>Responsive Design</li>
-
-                    </ul>
-
-                </article>
+            </article>
 
 
-                <article class="skill-card">
+            <article class="skill-card">
 
-                    <div class="skill-icon">
-                        ⚙️
-                    </div>
+                <div class="skill-icon">
+                    🗄️
+                </div>
 
-                    <h3>
-                        Back-End
-                    </h3>
+                <h3>
+                    {% trans "Database" %}
+                </h3>
 
-                    <ul class="skill-list">
+                <ul class="skill-list">
 
-                        <li>Python</li>
-                        <li>Django</li>
-                        <li>REST API</li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
 
-                    </ul>
+                </ul>
 
-                </article>
-
-
-                <article class="skill-card">
-
-                    <div class="skill-icon">
-                        🗄️
-                    </div>
-
-                    <h3>
-                        Database
-                    </h3>
-
-                    <ul class="skill-list">
-
-                        <li>MySQL</li>
-                        <li>PostgreSQL</li>
-
-                    </ul>
-
-                </article>
+            </article>
 
 
-                <article class="skill-card">
+            <article class="skill-card">
 
-                    <div class="skill-icon">
-                        🛠️
-                    </div>
+                <div class="skill-icon">
+                    🛠️
+                </div>
 
-                    <h3>
-                        Tools
-                    </h3>
+                <h3>
+                    {% trans "Tools" %}
+                </h3>
 
-                    <ul class="skill-list">
+                <ul class="skill-list">
 
-                        <li>Git</li>
-                        <li>GitHub</li>
-                        <li>VS Code</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>VS Code</li>
 
-                    </ul>
+                </ul>
 
-                </article>
-
-            </div>
+            </article>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- Education -->
-    <section class="resume-education">
+<!-- Education -->
+<section class="resume-education">
 
-        <div class="container">
+    <div class="container">
+
+        <h2>
+            {% trans "Education" %}
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                {% trans "Bachelor of Logistics" %}
+            </h3>
+
+            <p>
+                {% trans "University of Kabul" %}
+            </p>
+
+            <span>
+                2016 – 2020
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Experience -->
+<section class="resume-experience">
+
+    <div class="container">
+
+        <h2>
+            {% trans "Experience" %}
+        </h2>
+
+        <div class="experience-card">
+
+            <h3>
+                {% trans "Communication & Computer Officer" %}
+            </h3>
+
+            <p>
+                {% trans "Managed communication systems, computer maintenance, technical support, and IT operations." %}
+            </p>
+
+            <span>
+                2020 – 2021
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Favorite Programming Books -->
+<section class="resume-books">
+
+    <div class="container">
+
+        <div class="section-header">
 
             <h2>
-                Education
+                {% trans "Favorite Programming Books" %}
             </h2>
 
-            <div class="education-card">
+            <p>
+                {% trans "Books that helped shape my programming journey and the books I plan to study next." %}
+            </p>
+
+        </div>
+
+
+        <div class="books-grid">
+
+            <article class="book-card">
 
                 <h3>
-                    Bachelor of Logistics
+                    Python Crash Course
                 </h3>
 
                 <p>
-                    University of Kabul
+                    Eric Matthes
                 </p>
 
-                <span>
-                    2016 – 2020
+                <span class="book-status completed">
+                    {% trans "Completed" %}
                 </span>
 
-            </div>
-
-        </div>
-
-    </section>
+            </article>
 
 
-    <!-- Experience -->
-    <section class="resume-experience">
-
-        <div class="container">
-
-            <h2>
-                Experience
-            </h2>
-
-            <div class="experience-card">
+            <article class="book-card">
 
                 <h3>
-                    Communication & Computer Officer
+                    Automate the Boring Stuff with Python
                 </h3>
 
                 <p>
-                    Managed communication systems,
-                    computer maintenance,
-                    technical support,
-                    and IT operations.
+                    Al Sweigart
                 </p>
 
-                <span>
-                    2020 – 2021
+                <span class="book-status completed">
+                    {% trans "Completed" %}
                 </span>
 
-            </div>
-
-        </div>
-
-    </section>
+            </article>
 
 
-    <!-- Favorite Programming Books -->
-    <section class="resume-books">
+            <article class="book-card">
 
-        <div class="container">
-
-            <div class="section-header">
-
-                <h2>
-                    Favorite Programming Books
-                </h2>
+                <h3>
+                    Eloquent JavaScript
+                </h3>
 
                 <p>
-                    Books that helped shape my programming journey and the books
-                    I plan to study next.
+                    Marijn Haverbeke
                 </p>
 
-            </div>
+                <span class="book-status learning">
+                    {% trans "Learning" %}
+                </span>
+
+            </article>
 
 
-            <div class="books-grid">
+            <article class="book-card">
 
-                <article class="book-card">
+                <h3>
+                    Clean Code
+                </h3>
 
-                    <h3>
-                        Python Crash Course
-                    </h3>
+                <p>
+                    Robert C. Martin
+                </p>
 
-                    <p>
-                        Eric Matthes
-                    </p>
+                <span class="book-status planned">
+                    {% trans "Planned" %}
+                </span>
 
-                    <span class="book-status completed">
-                        Completed
-                    </span>
-
-                </article>
+            </article>
 
 
-                <article class="book-card">
+            <article class="book-card">
 
-                    <h3>
-                        Automate the Boring Stuff with Python
-                    </h3>
+                <h3>
+                    Designing Data-Intensive Applications
+                </h3>
 
-                    <p>
-                        Al Sweigart
-                    </p>
+                <p>
+                    Martin Kleppmann
+                </p>
 
-                    <span class="book-status completed">
-                        Completed
-                    </span>
+                <span class="book-status planned">
+                    {% trans "Planned" %}
+                </span>
 
-                </article>
-
-
-                <article class="book-card">
-
-                    <h3>
-                        Eloquent JavaScript
-                    </h3>
-
-                    <p>
-                        Marijn Haverbeke
-                    </p>
-
-                    <span class="book-status learning">
-                        Learning
-                    </span>
-
-                </article>
+            </article>
 
 
-                <article class="book-card">
+            <article class="book-card">
 
-                    <h3>
-                        Clean Code
-                    </h3>
+                <h3>
+                    Introduction to Algorithms
+                </h3>
 
-                    <p>
-                        Robert C. Martin
-                    </p>
+                <p>
+                    Cormen, Leiserson, Rivest & Stein
+                </p>
 
-                    <span class="book-status planned">
-                        Planned
-                    </span>
+                <span class="book-status planned">
+                    {% trans "Planned" %}
+                </span>
 
-                </article>
-
-
-                <article class="book-card">
-
-                    <h3>
-                        Designing Data-Intensive Applications
-                    </h3>
-
-                    <p>
-                        Martin Kleppmann
-                    </p>
-
-                    <span class="book-status planned">
-                        Planned
-                    </span>
-
-                </article>
-
-
-                <article class="book-card">
-
-                    <h3>
-                        Introduction to Algorithms
-                    </h3>
-
-                    <p>
-                        Cormen, Leiserson, Rivest & Stein
-                    </p>
-
-                    <span class="book-status planned">
-                        Planned
-                    </span>
-
-                </article>
-
-            </div>
+            </article>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-   <!-- Certifications -->
+<!-- Certifications -->
 <section class="resume-certifications">
 
     <div class="container">
@@ -474,14 +464,11 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
         <div class="section-header">
 
             <h2>
-                Professional Certifications
+                {% trans "Professional Certifications" %}
             </h2>
 
             <p>
-                Professional certifications earned through internationally
-                recognized universities, technology companies, and online
-                learning platforms, demonstrating continuous learning and
-                technical growth.
+                {% trans "Professional certifications earned through internationally recognized universities, technology companies, and online learning platforms, demonstrating continuous learning and technical growth." %}
             </p>
 
         </div>
@@ -520,7 +507,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                     <div class="certificate-meta">
 
                         <span>
-                            <strong>Organization:</strong>
+                            <strong>{% trans "Organization:" %}</strong>
                             {{ certification.organization }}
                         </span>
 
@@ -528,7 +515,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                         {% if certification.platform %}
 
                             <span>
-                                <strong>Platform:</strong>
+                                <strong>{% trans "Platform:" %}</strong>
                                 {{ certification.platform }}
                             </span>
 
@@ -538,7 +525,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                         {% if certification.issued_date %}
 
                             <span>
-                                <strong>Issued:</strong>
+                                <strong>{% trans "Issued:" %}</strong>
                                 {{ certification.issued_date|date:"F j, Y" }}
                             </span>
 
@@ -566,7 +553,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                View PDF
+                                {% trans "View PDF" %}
                             </a>
 
                         {% endif %}
@@ -580,7 +567,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Verify Credential
+                                {% trans "Verify Credential" %}
                             </a>
 
                         {% endif %}
@@ -592,7 +579,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
             {% empty %}
 
                 <p>
-                    No certifications available at the moment.
+                    {% trans "No certifications available at the moment." %}
                 </p>
 
             {% endfor %}
@@ -604,224 +591,226 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
 </section>
 
 
-    <!-- Achievements -->
-    <section class="resume-achievements">
+<!-- Achievements -->
+<section class="resume-achievements">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-header">
-
-                <h2>
-                    Achievements & Highlights
-                </h2>
-
-                <p>
-                    Important milestones throughout my software development journey.
-                </p>
-
-            </div>
-
-
-            <div class="achievement-grid">
-
-                <div class="achievement-card">
-
-                    <i class="fas fa-laptop-code"></i>
-
-                    <h3>
-                        20+
-                    </h3>
-
-                    <p>
-                        Front-End Projects Completed
-                    </p>
-
-                </div>
-
-
-                <div class="achievement-card">
-
-                    <i class="fab fa-python"></i>
-
-                    <h3>
-                        Python
-                    </h3>
-
-                    <p>
-                        Completed Professional Training
-                    </p>
-
-                </div>
-
-
-                <div class="achievement-card">
-
-                    <i class="fas fa-book"></i>
-
-                    <h3>
-                        Book
-                    </h3>
-
-                    <p>
-                        Programming Book In Progress
-                    </p>
-
-                </div>
-
-
-                <div class="achievement-card">
-
-                    <i class="fas fa-globe"></i>
-
-                    <h3>
-                        Portfolio
-                    </h3>
-
-                    <p>
-                        Personal Website Published
-                    </p>
-
-                </div>
-
-
-                <div class="achievement-card">
-
-                    <i class="fas fa-rocket"></i>
-
-                    <h3>
-                        Future Goal
-                    </h3>
-
-                    <p>
-                        AI & Software Company
-                    </p>
-
-                </div>
-
-
-                <div class="achievement-card">
-
-                    <i class="fab fa-github"></i>
-
-                    <h3>
-                        GitHub
-                    </h3>
-
-                    <p>
-                        Active Project Portfolio
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Languages -->
-    <section class="resume-languages">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <h2>
-                    Languages
-                </h2>
-
-                <p>
-                    Languages I use for communication and professional work.
-                </p>
-
-            </div>
-
-
-            <div class="language-grid">
-
-                <article class="language-card">
-
-                    <h3>
-                        🇦🇫 Persian (Dari)
-                    </h3>
-
-                    <p>
-                        Native Proficiency
-                    </p>
-
-                </article>
-
-
-                <article class="language-card">
-
-                    <h3>
-                        🇦🇫 Pashto
-                    </h3>
-
-                    <p>
-                        Native Proficiency
-                    </p>
-
-                </article>
-
-
-                <article class="language-card">
-
-                    <h3>
-                        🇬🇧 English
-                    </h3>
-
-                    <p>
-                        Upper Intermediate (B2)
-                    </p>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CTA -->
-    <section class="projects-cta">
-
-        <div class="container">
+        <div class="section-header">
 
             <h2>
-                Interested in Working Together?
+                {% trans "Achievements & Highlights" %}
             </h2>
 
             <p>
-                I'm always open to discussing new projects, creative ideas,
-                and opportunities to build meaningful software.
+                {% trans "Important milestones throughout my software development journey." %}
             </p>
 
-
-            <div class="cta-buttons">
-
-                <a
-                    href="{% url 'contact' %}"
-                    class="btn btn-primary"
-                >
-                    Contact Me
-                </a>
+        </div>
 
 
-                <a
-                    href="{% url 'resume' %}"
-                    class="btn btn-secondary"
-                >
-                    View Resume
-                </a>
+        <div class="achievement-grid">
+
+            <div class="achievement-card">
+
+                <i class="fas fa-laptop-code"></i>
+
+                <h3>
+                    20+
+                </h3>
+
+                <p>
+                    {% trans "Front-End Projects Completed" %}
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i class="fab fa-python"></i>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    {% trans "Completed Professional Training" %}
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i class="fas fa-book"></i>
+
+                <h3>
+                    {% trans "Book" %}
+                </h3>
+
+                <p>
+                    {% trans "Programming Book In Progress" %}
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i class="fas fa-globe"></i>
+
+                <h3>
+                    {% trans "Portfolio" %}
+                </h3>
+
+                <p>
+                    {% trans "Personal Website Published" %}
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i class="fas fa-rocket"></i>
+
+                <h3>
+                    {% trans "Future Goal" %}
+                </h3>
+
+                <p>
+                    {% trans "AI & Software Company" %}
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i class="fab fa-github"></i>
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    {% trans "Active Project Portfolio" %}
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+<!-- Languages -->
+<section class="resume-languages">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                {% translate "Languages" %}
+            </h2>
+
+            <p>
+                {% translate "Languages I use for communication and professional work." %}
+            </p>
+
+        </div>
+
+
+        <div class="language-grid">
+
+            <article class="language-card">
+
+                <h3>
+                    🇦🇫 {% translate "Persian (Dari)" %}
+                </h3>
+
+                <p>
+                    {% translate "Native Proficiency" %}
+                </p>
+
+            </article>
+
+
+            <article class="language-card">
+
+                <h3>
+                    🇦🇫 {% translate "Pashto" %}
+                </h3>
+
+                <p>
+                    {% translate "Native Proficiency" %}
+                </p>
+
+            </article>
+
+
+            <article class="language-card">
+
+                <h3>
+                    🇬🇧 {% translate "English" %}
+                </h3>
+
+                <p>
+                    {% translate "Upper Intermediate (B2)" %}
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+    
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="projects-cta">
+
+    <div class="container">
+
+        <h2>
+            {% trans "Interested in Working Together?" %}
+        </h2>
+
+
+        <p>
+            {% trans "I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software." %}
+        </p>
+
+
+        <div class="cta-buttons">
+
+            <a
+                href="{% url 'contact' %}"
+                class="btn btn-primary"
+            >
+                {% trans "Contact Me" %}
+            </a>
+
+
+            <a
+                href="{% url 'resume' %}"
+                class="btn btn-secondary"
+            >
+                {% trans "View Resume" %}
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 <!-- =========================
@@ -842,8 +831,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                 </h3>
 
                 <p>
-                    Full Stack Developer, Author, and Future AI Entrepreneur
-                    passionate about building impactful digital products.
+                    {% trans "Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products." %}
                 </p>
 
             </div>
@@ -853,56 +841,56 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
             <div class="footer-column">
 
                 <h3>
-                    Quick Links
+                    {% trans "Quick Links" %}
                 </h3>
 
                 <ul>
 
                     <li>
                         <a href="{% url 'home' %}">
-                            Home
+                            {% trans "Home" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'about' %}">
-                            About
+                            {% trans "About" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'projects' %}">
-                            Projects
+                            {% trans "Projects" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'books' %}">
-                            Books
+                            {% trans "Books" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'articles' %}">
-                            Articles
+                            {% trans "Articles" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'gallery' %}">
-                            Gallery
+                            {% trans "Gallery" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'resume' %}">
-                            Resume
+                            {% trans "Resume" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'contact' %}">
-                            Contact
+                            {% trans "Contact" %}
                         </a>
                     </li>
 
@@ -915,7 +903,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
             <div class="footer-column">
 
                 <h3>
-                    Resources
+                    {% trans "Resources" %}
                 </h3>
 
                 <ul>
@@ -945,7 +933,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                     <li>
                         <a href="mailto:rohullahsadat1997@gmail.com">
                             <i class="fas fa-envelope"></i>
-                            Email
+                            {% trans "Email" %}
                         </a>
                     </li>
 
@@ -955,7 +943,7 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
                             download
                         >
                             <i class="fas fa-file-pdf"></i>
-                            Download Resume
+                            {% trans "Download Resume" %}
                         </a>
                     </li>
 
@@ -968,21 +956,21 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
             <div class="footer-column">
 
                 <h3>
-                    Contact
+                    {% trans "Contact" %}
                 </h3>
 
                 <p>
                     <a href="mailto:rohullahsadat1997@gmail.com">
-                        Email Me
+                        {% trans "Email Me" %}
                     </a>
                 </p>
 
                 <p>
-                    Available for Freelance
+                    {% trans "Available for Freelance" %}
                 </p>
 
                 <p>
-                    Open to Collaboration
+                    {% trans "Open to Collaboration" %}
                 </p>
 
             </div>
@@ -994,11 +982,11 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
 
             <p>
                 © 2026 Rohullah Sadat.
-                All Rights Reserved.
+                {% trans "All Rights Reserved." %}
             </p>
 
             <p>
-                Built with ❤️ using HTML, CSS &amp; JavaScript.
+                {% trans "Built with ❤️ using HTML, CSS &amp; JavaScript." %}
             </p>
 
         </div>
@@ -1006,4 +994,17 @@ Explore Rohullah Sadat's professional resume, including education, technical ski
     </div>
 
 </footer>
+
+
+<!-- =========================
+     Back To Top
+========================= -->
+<button
+    class="back-to-top"
+    type="button"
+    aria-label="{% trans 'Back to top' %}"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 {% endblock %}

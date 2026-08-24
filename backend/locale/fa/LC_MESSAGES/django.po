@@ -1,0 +1,963 @@
+# Persian translations for Rohullah Sadat Website.
+# Copyright (C) 2026
+# This file is distributed under the same license as the project.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Rohullah Sadat Website 1.0\n"
+"PO-Revision-Date: 2026-08-23 00:00+0330\n"
+"Last-Translator: Rohullah Sadat\n"
+"Language-Team: Persian\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# =========================================================
+# NAVIGATION
+# =========================================================
+
+msgid "Home"
+msgstr "خانه"
+
+msgid "About"
+msgstr "درباره من"
+
+msgid "Projects"
+msgstr "پروژه‌ها"
+
+msgid "Books"
+msgstr "کتاب‌ها"
+
+msgid "Articles"
+msgstr "مقالات"
+
+msgid "Gallery"
+msgstr "گالری"
+
+msgid "Resume"
+msgstr "رزومه"
+
+msgid "Contact"
+msgstr "تماس"
+
+
+# =========================================================
+# HOME
+# =========================================================
+
+msgid "Hello, I'm"
+msgstr "سلام، من"
+
+msgid "Full Stack Developer"
+msgstr "توسعه‌دهنده فول‌استک"
+
+msgid "Building technology that creates opportunities through software development, education and innovation."
+msgstr "ساخت فناوری‌هایی که از طریق توسعه نرم‌افزار، آموزش و نوآوری فرصت ایجاد می‌کنند."
+
+msgid "View Projects"
+msgstr "مشاهده پروژه‌ها"
+
+msgid "Download CV"
+msgstr "دانلود رزومه"
+
+msgid "20+ Projects"
+msgstr "۲۰+ پروژه"
+
+msgid "Author"
+msgstr "نویسنده"
+
+msgid "AI Journey"
+msgstr "مسیر هوش مصنوعی"
+
+msgid "Technical Skills"
+msgstr "مهارت‌های فنی"
+
+msgid "Technologies and tools I use to build modern software."
+msgstr "فناوری‌ها و ابزارهایی که برای ساخت نرم‌افزارهای مدرن استفاده می‌کنم."
+
+msgid "Front-End"
+msgstr "فرانت‌اند"
+
+msgid "Responsive Design"
+msgstr "طراحی واکنش‌گرا"
+
+msgid "Back-End"
+msgstr "بک‌اند"
+
+msgid "Database"
+msgstr "پایگاه داده"
+
+msgid "Tools"
+msgstr "ابزارها"
+
+msgid "Featured Projects"
+msgstr "پروژه‌های منتخب"
+
+msgid "Explore my software development projects across multiple technologies and skill levels."
+msgstr "پروژه‌های توسعه نرم‌افزار من را در زمینه فناوری‌ها و سطوح مختلف مهارت بررسی کنید."
+
+msgid "All"
+msgstr "همه"
+
+msgid "Web"
+msgstr "وب"
+
+msgid "Python"
+msgstr "پایتون"
+
+msgid "Full Stack"
+msgstr "فول‌استک"
+
+msgid "AI"
+msgstr "هوش مصنوعی"
+
+msgid "Let's Build Something Great Together"
+msgstr "بیایید با هم چیز بزرگی بسازیم"
+
+msgid "I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software."
+msgstr "همیشه آماده گفت‌وگو درباره پروژه‌های جدید، ایده‌های خلاقانه و فرصت‌های ساخت نرم‌افزارهای ارزشمند هستم."
+
+msgid "View Resume"
+msgstr "مشاهده رزومه"
+
+
+# =========================================================
+# FOOTER
+# =========================================================
+
+msgid "Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products."
+msgstr "توسعه‌دهنده فول‌استک، نویسنده و کارآفرین آینده در حوزه هوش مصنوعی، علاقه‌مند به ساخت محصولات دیجیتال تأثیرگذار."
+
+msgid "Quick Links"
+msgstr "لینک‌های سریع"
+
+msgid "Resources"
+msgstr "منابع"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Download Resume"
+msgstr "دانلود رزومه"
+
+msgid "Email Me"
+msgstr "ارسال ایمیل"
+
+msgid "Available for Freelance"
+msgstr "آماده همکاری فریلنسری"
+
+msgid "Open to Collaboration"
+msgstr "آماده همکاری"
+
+msgid "All Rights Reserved."
+msgstr "تمامی حقوق محفوظ است."
+
+msgid "Built with ❤️ using HTML, CSS &amp; JavaScript."
+msgstr "ساخته‌شده با ❤️ با استفاده از HTML، CSS و JavaScript."
+
+msgid "Back to top"
+msgstr "بازگشت به بالا"
+
+
+# =========================================================
+# ABOUT
+# =========================================================
+
+msgid "About Me"
+msgstr "درباره من"
+
+msgid "Learn more about my journey, skills and future goals."
+msgstr "درباره مسیر، مهارت‌ها و اهداف آینده من بیشتر بدانید."
+
+msgid "My Mission"
+msgstr "ماموریت من"
+
+msgid "My Vision"
+msgstr "چشم‌انداز من"
+
+msgid "My Values"
+msgstr "ارزش‌های من"
+
+msgid "Location"
+msgstr "موقعیت"
+
+msgid "Afghanistan"
+msgstr "افغانستان"
+
+msgid "Focus"
+msgstr "تمرکز"
+
+msgid "Full Stack Development"
+msgstr "توسعه فول‌استک"
+
+msgid "Current Goal"
+msgstr "هدف فعلی"
+
+msgid "AI & Software Engineering"
+msgstr "هوش مصنوعی و مهندسی نرم‌افزار"
+
+msgid "Languages"
+msgstr "زبان‌ها"
+
+msgid "Persian • Pashto • English"
+msgstr "فارسی • پشتو • انگلیسی"
+
+msgid "My Journey"
+msgstr "مسیر من"
+
+msgid "The path that shaped my career and future vision."
+msgstr "مسیری که حرفه و چشم‌انداز آینده من را شکل داده است."
+
+msgid "Started Software Development Journey"
+msgstr "شروع مسیر توسعه نرم‌افزار"
+
+msgid "Began learning Python and explored the fundamentals of programming."
+msgstr "یادگیری Python را آغاز کردم و با مبانی برنامه‌نویسی آشنا شدم."
+
+msgid "Built Real Projects"
+msgstr "ساخت پروژه‌های واقعی"
+
+msgid "Developed practical Python projects and strengthened problem-solving skills."
+msgstr "پروژه‌های عملی Python را توسعه دادم و مهارت‌های حل مسئله خود را تقویت کردم."
+
+msgid "Web Development & Full Stack Path"
+msgstr "توسعه وب و مسیر فول‌استک"
+
+msgid "Learned HTML, CSS and JavaScript while creating responsive websites."
+msgstr "در کنار ساخت وب‌سایت‌های واکنش‌گرا، HTML، CSS و JavaScript را یاد گرفتم."
+
+msgid "Future"
+msgstr "آینده"
+
+msgid "AI Engineering & Technology Company"
+msgstr "مهندسی هوش مصنوعی و شرکت فناوری"
+
+msgid "Building innovative software solutions and AI-powered products that create meaningful impact."
+msgstr "ساخت راهکارهای نوآورانه نرم‌افزاری و محصولات مبتنی بر هوش مصنوعی که تأثیر معناداری ایجاد می‌کنند."
+
+msgid "Interested in Working Together?"
+msgstr "علاقه‌مند به همکاری هستید؟"
+
+
+# =========================================================
+# PROJECTS
+# =========================================================
+
+msgid "My Portfolio"
+msgstr "نمونه‌کارهای من"
+
+msgid "My Projects"
+msgstr "پروژه‌های من"
+
+msgid "Explore my journey through web development, Python, full-stack applications, and future AI projects. Every project represents a step toward becoming a better software engineer."
+msgstr "مسیر من را در زمینه توسعه وب، Python، برنامه‌های Full Stack و پروژه‌های آینده هوش مصنوعی ببینید. هر پروژه یک گام در مسیر تبدیل شدن به یک مهندس نرم‌افزار بهتر است."
+
+msgid "Projects Completed"
+msgstr "پروژه‌های تکمیل‌شده"
+
+msgid "Technologies Used"
+msgstr "فناوری‌های استفاده‌شده"
+
+msgid "Learning Years"
+msgstr "سال‌های یادگیری"
+
+msgid "Passion for Learning"
+msgstr "علاقه به یادگیری"
+
+msgid "Frontend"
+msgstr "فرانت‌اند"
+
+msgid "Frontend Development"
+msgstr "توسعه فرانت‌اند"
+
+msgid "Backend Development"
+msgstr "توسعه بک‌اند"
+
+msgid "Backend"
+msgstr "بک‌اند"
+
+msgid "Django"
+msgstr "جنگو"
+
+msgid "Artificial Intelligence"
+msgstr "هوش مصنوعی"
+
+msgid "Other"
+msgstr "سایر"
+
+msgid "All Levels"
+msgstr "همه سطوح"
+
+msgid "Beginner"
+msgstr "مقدماتی"
+
+msgid "Intermediate"
+msgstr "متوسط"
+
+msgid "Advanced"
+msgstr "پیشرفته"
+
+msgid "Featured"
+msgstr "منتخب"
+
+msgid "Live Demo"
+msgstr "مشاهده آنلاین"
+
+msgid "Details"
+msgstr "جزئیات"
+
+msgid "No projects available yet."
+msgstr "هنوز پروژه‌ای ثبت نشده است."
+
+
+# =========================================================
+# PROJECT CATEGORY / STATUS
+# =========================================================
+
+msgid "Completed"
+msgstr "تکمیل‌شده"
+
+msgid "In Progress"
+msgstr "در حال انجام"
+
+msgid "Planned"
+msgstr "برنامه‌ریزی‌شده"
+
+
+# =========================================================
+# PROJECT DETAIL
+# =========================================================
+
+msgid "Featured Project"
+msgstr "پروژه منتخب"
+
+msgid "Project Overview"
+msgstr "نمای کلی پروژه"
+
+msgid "This personal portfolio website was created to showcase my skills, projects, and learning journey as a future Full Stack Developer. It serves as my professional online presence where visitors can explore my work, read my articles, discover my books, and connect with me."
+msgstr "این وب‌سایت نمونه‌کار شخصی برای نمایش مهارت‌ها، پروژه‌ها و مسیر یادگیری من به‌عنوان یک توسعه‌دهنده فول‌استک آینده ایجاد شده است. این وب‌سایت حضور حرفه‌ای آنلاین من است که بازدیدکنندگان می‌توانند در آن پروژه‌هایم را ببینند، مقالاتم را بخوانند، کتاب‌هایم را مشاهده کنند و با من ارتباط بگیرند."
+
+msgid "The website is designed with a clean, responsive, and modern interface while following best practices in HTML, CSS, accessibility, and performance."
+msgstr "این وب‌سایت با یک رابط کاربری ساده، واکنش‌گرا و مدرن طراحی شده و هم‌زمان از بهترین روش‌ها در HTML، CSS، دسترس‌پذیری و عملکرد پیروی می‌کند."
+
+msgid "Project Type"
+msgstr "نوع پروژه"
+
+msgid "Personal Portfolio"
+msgstr "نمونه‌کار شخصی"
+
+msgid "Role"
+msgstr "نقش"
+
+msgid "Designer & Developer"
+msgstr "طراح و توسعه‌دهنده"
+
+msgid "Duration"
+msgstr "مدت زمان"
+
+msgid "2 Weeks"
+msgstr "۲ هفته"
+
+msgid "Status"
+msgstr "وضعیت"
+
+
+# =========================================================
+# PROJECT TECHNOLOGIES
+# =========================================================
+
+msgid "The core technologies and tools used to build this project."
+msgstr "فناوری‌ها و ابزارهای اصلی استفاده‌شده برای ساخت این پروژه."
+
+msgid "Semantic and accessible page structure."
+msgstr "ساختار معنایی و قابل‌دسترس صفحات."
+
+msgid "Modern styling with Flexbox, Grid and animations."
+msgstr "استایل‌دهی مدرن با استفاده از Flexbox، Grid و انیمیشن‌ها."
+
+msgid "Optimized for desktop, tablet and mobile devices."
+msgstr "بهینه‌سازی‌شده برای دستگاه‌های دسکتاپ، تبلت و موبایل."
+
+msgid "Developed using Visual Studio Code."
+msgstr "با استفاده از Visual Studio Code توسعه داده شده است."
+
+
+# =========================================================
+# PROJECT FEATURES
+# =========================================================
+
+msgid "Key Features"
+msgstr "ویژگی‌های کلیدی"
+
+msgid "Dark Mode"
+msgstr "حالت تاریک"
+
+msgid "Mobile Friendly"
+msgstr "مناسب برای موبایل"
+
+msgid "Fast Performance"
+msgstr "عملکرد سریع"
+
+msgid "Modern UI Design"
+msgstr "طراحی رابط کاربری مدرن"
+
+msgid "Project Showcase"
+msgstr "نمایش پروژه‌ها"
+
+msgid "Books & Articles Pages"
+msgstr "صفحات کتاب‌ها و مقالات"
+
+msgid "Contact Section"
+msgstr "بخش تماس"
+
+
+# =========================================================
+# PROJECT GALLERY
+# =========================================================
+
+msgid "Project Gallery"
+msgstr "گالری پروژه"
+
+msgid "Explore different screenshots of the project interface and design."
+msgstr "تصاویر مختلف از رابط کاربری و طراحی پروژه را مشاهده کنید."
+
+msgid "Portfolio"
+msgstr "نمونه‌کار"
+
+msgid "homepage"
+msgstr "صفحه اصلی"
+
+msgid "READMEPAGE"
+msgstr "صفحه README"
+
+
+# =========================================================
+# PROJECT VIDEO
+# =========================================================
+
+msgid "Project Demo"
+msgstr "دموی پروژه"
+
+msgid "Watch demonstrations of this project in action."
+msgstr "نمونه‌های اجرای این پروژه را مشاهده کنید."
+
+msgid "Your browser does not support the video element."
+msgstr "مرورگر شما از عنصر ویدیو پشتیبانی نمی‌کند."
+
+
+# =========================================================
+# CHALLENGES & SOLUTIONS
+# =========================================================
+
+msgid "Challenges & Solutions"
+msgstr "چالش‌ها و راه‌حل‌ها"
+
+msgid "Every project brings new challenges. Here are some of the key problems I faced and how I solved them."
+msgstr "هر پروژه چالش‌های جدیدی به همراه دارد. در اینجا برخی از مشکلات اصلی که با آن‌ها روبه‌رو شدم و راه‌حل‌هایی که برای آن‌ها پیدا کردم آورده شده است."
+
+msgid "Performance"
+msgstr "عملکرد"
+
+msgid "Optimized images, reused CSS components, and followed semantic HTML practices to improve loading speed and maintainability."
+msgstr "تصاویر را بهینه کردم، از کامپوننت‌های CSS دوباره استفاده کردم و از اصول HTML معنایی پیروی کردم تا سرعت بارگذاری و قابلیت نگهداری پروژه را بهبود دهم."
+
+
+# =========================================================
+# WHAT I LEARNED
+# =========================================================
+
+msgid "What I Learned"
+msgstr "آنچه یاد گرفتم"
+
+msgid "Every project is an opportunity to improve my technical skills and gain valuable experience."
+msgstr "هر پروژه فرصتی برای بهبود مهارت‌های فنی و کسب تجربه ارزشمند است."
+
+msgid "Semantic HTML"
+msgstr "HTML معنایی"
+
+msgid "Learned how to build accessible and well-structured web pages using semantic HTML elements."
+msgstr "یاد گرفتم چگونه با استفاده از عناصر معنایی HTML صفحات وب قابل‌دسترس و دارای ساختار مناسب ایجاد کنم."
+
+msgid "CSS Architecture"
+msgstr "معماری CSS"
+
+msgid "Organized styles into reusable components, variables, utilities, layouts, and responsive files."
+msgstr "استایل‌ها را در قالب کامپوننت‌های قابل‌استفاده مجدد، متغیرها، ابزارهای کمکی، چیدمان‌ها و فایل‌های واکنش‌گرا سازمان‌دهی کردم."
+
+msgid "Improved my ability to create layouts that work seamlessly across all screen sizes."
+msgstr "توانایی خود را در ایجاد چیدمان‌هایی که در تمام اندازه‌های صفحه‌نمایش به‌صورت یکپارچه کار می‌کنند، بهبود دادم."
+
+msgid "Project Organization"
+msgstr "سازمان‌دهی پروژه"
+
+msgid "Built a scalable folder structure for HTML, CSS, JavaScript, images, fonts, videos, and future development."
+msgstr "یک ساختار پوشه‌ای قابل توسعه برای HTML، CSS، JavaScript، تصاویر، فونت‌ها، ویدیوها و توسعه آینده ایجاد کردم."
+
+msgid "Git & GitHub"
+msgstr "Git و GitHub"
+
+msgid "Practiced version control, repository management, and publishing projects with GitHub Pages."
+msgstr "کنترل نسخه، مدیریت مخزن و انتشار پروژه‌ها با GitHub Pages را تمرین کردم."
+
+msgid "UI Design"
+msgstr "طراحی رابط کاربری"
+
+msgid "Learned how to design clean, modern, and reusable user interface components."
+msgstr "یاد گرفتم چگونه کامپوننت‌های رابط کاربری ساده، مدرن و قابل‌استفاده مجدد طراحی کنم."
+
+
+# =========================================================
+# FUTURE IMPROVEMENTS
+# =========================================================
+
+msgid "Future Improvements"
+msgstr "بهبودهای آینده"
+
+msgid "This project will continue to evolve as I improve my skills and explore new technologies."
+msgstr "این پروژه با بهبود مهارت‌هایم و آشنایی با فناوری‌های جدید، همچنان توسعه خواهد یافت."
+
+msgid "Add JavaScript Interactivity"
+msgstr "افزودن تعاملات JavaScript"
+
+msgid "Convert to Django"
+msgstr "تبدیل به Django"
+
+msgid "Connect to Database"
+msgstr "اتصال به پایگاه داده"
+
+msgid "Multi-language Support"
+msgstr "پشتیبانی چندزبانه"
+
+msgid "AI Assistant Integration"
+msgstr "ادغام دستیار هوش مصنوعی"
+
+msgid "Admin Dashboard"
+msgstr "داشبورد مدیریت"
+
+msgid "User Authentication"
+msgstr "احراز هویت کاربران"
+
+msgid "Cloud Deployment"
+msgstr "استقرار روی فضای ابری"
+
+
+# =========================================================
+# PROJECT RESOURCES
+# =========================================================
+
+msgid "Project Resources"
+msgstr "منابع پروژه"
+
+msgid "Explore the project source code, live website, and documentation."
+msgstr "کد منبع پروژه، وب‌سایت آنلاین و مستندات را مشاهده کنید."
+
+msgid "GitHub Repository"
+msgstr "مخزن GitHub"
+
+msgid "Documentation"
+msgstr "مستندات"
+
+
+# =========================================================
+# CTA
+# =========================================================
+
+msgid "Contact Me"
+msgstr "تماس با من"
+
+
+# =========================================================
+# BOOKS - PUBLISHED BOOKS
+# =========================================================
+
+msgid "Books &amp; Publications"
+msgstr "کتاب‌ها و انتشارات"
+
+msgid "Explore my published books, ongoing writing projects, favorite programming books, and resources that have shaped my learning journey."
+msgstr "کتاب‌های منتشرشده، پروژه‌های نوشتاری در حال انجام، کتاب‌های برنامه‌نویسی موردعلاقه و منابعی را که مسیر یادگیری من را شکل داده‌اند، بررسی کنید."
+
+msgid "Published Books"
+msgstr "کتاب‌های منتشرشده"
+
+msgid "Books I have written and published."
+msgstr "کتاب‌هایی که نوشته و منتشر کرده‌ام."
+
+msgid "By"
+msgstr "نویسنده:"
+
+msgid "Free"
+msgstr "رایگان"
+
+msgid "Read Online"
+msgstr "مطالعه آنلاین"
+
+msgid "Download PDF"
+msgstr "دانلود PDF"
+
+msgid "No published books available yet."
+msgstr "هنوز کتاب منتشرشده‌ای در دسترس نیست."
+
+# =========================================================
+# BOOKS - READING / FAVORITE / PLANNED / COMING SOON
+# =========================================================
+
+msgid "Reading List"
+msgstr "فهرست مطالعه"
+
+msgid "Books that inspire my programming journey."
+msgstr "کتاب‌هایی که الهام‌بخش مسیر برنامه‌نویسی من هستند."
+
+msgid "No books in the reading list yet."
+msgstr "هنوز کتابی در فهرست مطالعه وجود ندارد."
+
+msgid "Favorite Books"
+msgstr "کتاب‌های موردعلاقه"
+
+msgid "Books that inspire my thinking, creativity, and personal growth."
+msgstr "کتاب‌هایی که الهام‌بخش تفکر، خلاقیت و رشد شخصی من هستند."
+
+msgid "Favorite"
+msgstr "موردعلاقه"
+
+msgid "No favorite books added yet."
+msgstr "هنوز کتاب موردعلاقه‌ای اضافه نشده است."
+
+msgid "Planned Books"
+msgstr "کتاب‌های برنامه‌ریزی‌شده"
+
+msgid "Books I plan to write in the future."
+msgstr "کتاب‌هایی که قصد دارم در آینده بنویسم."
+
+msgid "No planned books yet."
+msgstr "هنوز کتابی برای آینده برنامه‌ریزی نشده است."
+
+msgid "Coming Soon"
+msgstr "به‌زودی"
+
+msgid "Upcoming books and publications."
+msgstr "کتاب‌ها و انتشاراتی که به‌زودی منتشر خواهند شد."
+
+msgid "No upcoming books yet."
+msgstr "هنوز کتابی برای انتشار در آینده وجود ندارد."
+
+msgid "Books in Progress"
+msgstr "کتاب‌های در حال مطالعه"
+
+msgid "Books Planned"
+msgstr "کتاب‌های برنامه‌ریزی‌شده"
+
+# =========================================================
+# ARTICLES
+# =========================================================
+
+msgid "Knowledge Hub"
+msgstr "مرکز دانش"
+
+msgid "Sharing knowledge, programming tutorials, AI insights, software engineering experiences, and technology articles."
+msgstr "اشتراک‌گذاری دانش، آموزش‌های برنامه‌نویسی، دیدگاه‌های هوش مصنوعی، تجربه‌های مهندسی نرم‌افزار و مقالات فناوری."
+
+msgid "Featured Articles"
+msgstr "مقالات منتخب"
+
+msgid "Some of my most valuable articles and tutorials."
+msgstr "برخی از ارزشمندترین مقالات و آموزش‌های من."
+
+msgid "Read Article"
+msgstr "مطالعه مقاله"
+
+msgid "No articles available yet."
+msgstr "هنوز مقاله‌ای در دسترس نیست."
+
+msgid "Categories"
+msgstr "دسته‌بندی‌ها"
+
+msgid "Browse articles by topic."
+msgstr "مقالات را بر اساس موضوع بررسی کنید."
+
+msgid "Popular Topics"
+msgstr "موضوعات محبوب"
+
+msgid "Stay Updated"
+msgstr "باخبر بمانید"
+
+msgid "Subscribe to receive my latest articles and tutorials."
+msgstr "برای دریافت جدیدترین مقالات و آموزش‌های من مشترک شوید."
+
+msgid "Your Email"
+msgstr "ایمیل شما"
+
+msgid "Subscribe"
+msgstr "عضویت"
+
+# =========================================================
+# GALLERY
+# =========================================================
+
+msgid "My Journey in Pictures"
+msgstr "مسیر من در تصاویر"
+
+msgid "A visual collection of my projects, certificates, coding journey, events, achievements, and future milestones."
+msgstr "مجموعه‌ای تصویری از پروژه‌ها، گواهی‌نامه‌ها، مسیر برنامه‌نویسی، رویدادها، دستاوردها و اهداف آینده من."
+
+msgid "Education"
+msgstr "آموزش"
+
+msgid "A collection of moments from my projects, learning journey, events, and technology work."
+msgstr "مجموعه‌ای از لحظات پروژه‌ها، مسیر یادگیری، رویدادها و فعالیت‌های فناوری من."
+
+msgid "No gallery images available yet."
+msgstr "هنوز تصویری در گالری موجود نیست."
+
+msgid "A collection of development and portfolio videos."
+msgstr "مجموعه‌ای از ویدیوهای توسعه و نمونه‌کار."
+
+msgid "No videos available yet."
+msgstr "هنوز ویدیویی موجود نیست."
+
+msgid "Certificates and achievements from my learning journey."
+msgstr "گواهی‌نامه‌ها و دستاوردهای مسیر یادگیری من."
+
+msgid "Frontend Certificate"
+msgstr "گواهی‌نامه فرانت‌اند"
+
+msgid "Behind the Scenes"
+msgstr "پشت صحنه"
+
+msgid "Photos from coding sessions, workspaces, learning, books, and my development process."
+msgstr "تصاویر جلسات برنامه‌نویسی، محیط‌های کاری، یادگیری، کتاب‌ها و روند توسعه من."
+
+msgid "Coding Workspace"
+msgstr "محیط برنامه‌نویسی"
+
+msgid "Behind the scenes"
+msgstr "پشت صحنه"
+
+
+
+
+
+
+msgid "Programming"
+msgstr "برنامه‌نویسی"
+
+msgid "Technology"
+msgstr "فناوری"
+
+msgid "Events"
+msgstr "رویدادها"
+
+msgid "Videos"
+msgstr "ویدیوها"
+
+msgid "Certificates"
+msgstr "گواهی‌نامه‌ها"
+
+msgid "Gallery image"
+msgstr "تصویر گالری"
+
+msgid "Professional Resume"
+msgstr "رزومه حرفه‌ای"
+
+msgid "Explore my education, professional experience, technical skills, certifications, and career journey as a future Full Stack Developer and AI Engineer."
+msgstr "تحصیلات، تجربه حرفه‌ای، مهارت‌های فنی، گواهینامه‌ها و مسیر شغلی من را به‌عنوان یک توسعه‌دهنده فول‌استک و مهندس هوش مصنوعی آینده بررسی کنید."
+
+msgid "Professional Summary"
+msgstr "خلاصه حرفه‌ای"
+
+msgid "Passionate Full Stack Developer with a strong interest in Python, Web Development, Artificial Intelligence, and building real-world software solutions. Dedicated to continuous learning, solving complex problems, and creating technology that makes a positive impact."
+msgstr "توسعه‌دهنده فول‌استک با علاقه جدی به Python، توسعه وب، هوش مصنوعی و ساخت راهکارهای نرم‌افزاری واقعی. متعهد به یادگیری مداوم، حل مسائل پیچیده و ایجاد فناوری‌هایی که تأثیر مثبتی دارند."
+
+msgid "REST API"
+msgstr "REST API"
+
+
+
+msgid "Bachelor of Logistics"
+msgstr "لیسانس لجستیک"
+
+msgid "University of Kabul"
+msgstr "دانشگاه کابل"
+
+msgid "Experience"
+msgstr "تجربه کاری"
+
+msgid "Communication & Computer Officer"
+msgstr "مسئول ارتباطات و کامپیوتر"
+
+msgid "Managed communication systems, computer maintenance, technical support, and IT operations."
+msgstr "مدیریت سیستم‌های ارتباطی، نگهداری کامپیوترها، پشتیبانی فنی و عملیات فناوری اطلاعات."
+
+msgid "Favorite Programming Books"
+msgstr "کتاب‌های برنامه‌نویسی مورد علاقه"
+
+msgid "Books that helped shape my programming journey and the books I plan to study next."
+msgstr "کتاب‌هایی که در شکل‌گیری مسیر برنامه‌نویسی من نقش داشته‌اند و کتاب‌هایی که قصد دارم در ادامه مطالعه کنم."
+
+msgid "Learning"
+msgstr "در حال یادگیری"
+
+msgid "Professional Certifications"
+msgstr "گواهینامه‌های حرفه‌ای"
+
+msgid "Professional certifications earned through internationally recognized universities, technology companies, and online learning platforms, demonstrating continuous learning and technical growth."
+msgstr "گواهینامه‌های حرفه‌ای کسب‌شده از دانشگاه‌های معتبر بین‌المللی، شرکت‌های فناوری و پلتفرم‌های آموزش آنلاین که نشان‌دهنده یادگیری مداوم و رشد فنی من هستند."
+
+msgid "Organization:"
+msgstr "سازمان:"
+
+msgid "Platform:"
+msgstr "پلتفرم:"
+
+msgid "Issued:"
+msgstr "تاریخ صدور:"
+
+msgid "View PDF"
+msgstr "مشاهده PDF"
+
+msgid "Verify Credential"
+msgstr "تأیید گواهینامه"
+
+msgid "No certifications available at the moment."
+msgstr "در حال حاضر گواهینامه‌ای موجود نیست."
+
+msgid "Achievements & Highlights"
+msgstr "دستاوردها و نکات برجسته"
+
+msgid "Important milestones throughout my software development journey."
+msgstr "مهم‌ترین دستاوردها و مراحل مسیر توسعه نرم‌افزار من."
+
+msgid "Front-End Projects Completed"
+msgstr "پروژه‌های فرانت‌اند تکمیل‌شده"
+
+msgid "Completed Professional Training"
+msgstr "دوره آموزشی حرفه‌ای تکمیل‌شده"
+
+msgid "Book"
+msgstr "کتاب"
+
+msgid "Programming Book In Progress"
+msgstr "کتاب برنامه‌نویسی در حال تکمیل"
+
+msgid "Personal Website Published"
+msgstr "وب‌سایت شخصی منتشرشده"
+
+msgid "Future Goal"
+msgstr "هدف آینده"
+
+msgid "AI & Software Company"
+msgstr "شرکت هوش مصنوعی و نرم‌افزار"
+
+msgid "Active Project Portfolio"
+msgstr "نمونه‌کار فعال پروژه‌ها"
+
+msgid "Languages I use for communication and professional work."
+msgstr "زبان‌هایی که برای ارتباط و کار حرفه‌ای استفاده می‌کنم."
+
+msgid "Persian (Dari)"
+msgstr "فارسی (دری)"
+
+msgid "Native Proficiency"
+msgstr "تسلط در حد زبان مادری"
+
+msgid "Pashto"
+msgstr "پشتو"
+
+msgid "English"
+msgstr "انگلیسی"
+
+msgid "Upper Intermediate (B2)"
+msgstr "متوسط رو به بالا (B2)"
+
+msgid "Let's Work Together"
+msgstr "بیایید با هم همکاری کنیم."
+
+msgid "I'm always open to discussing new ideas, software projects, freelance opportunities, or simply connecting with other developers."
+msgstr "همیشه آماده گفت‌وگو درباره ایده‌های جدید، پروژه‌های نرم‌افزاری، فرصت‌های فریلنسری یا صرفاً ارتباط با دیگر توسعه‌دهندگان هستم."
+
+msgid "GitHub"
+msgstr "گیت‌هاب"
+
+msgid "View Profile"
+msgstr "مشاهده پروفایل"
+
+msgid "LinkedIn"
+msgstr "لینکدین"
+
+msgid "Facebook"
+msgstr "فیسبوک"
+
+msgid "YouTube"
+msgstr "یوتیوب"
+
+msgid "View Channel"
+msgstr "مشاهده کانال"
+
+msgid "twitter"
+msgstr "توییتر"
+
+msgid "instagram"
+msgstr "اینستاگرام"
+
+msgid "Send Me a Message"
+msgstr "برای من پیام بفرستید"
+
+msgid "Fill out the form below and I'll get back to you as soon as possible."
+msgstr "فرم زیر را تکمیل کنید و در اولین فرصت با شما تماس خواهم گرفت."
+
+msgid "Your Name"
+msgstr "نام شما"
+
+msgid "Enter your name"
+msgstr "نام خود را وارد کنید"
+
+
+
+msgid "Enter your email"
+msgstr "ایمیل خود را وارد کنید"
+
+msgid "Subject"
+msgstr "موضوع"
+
+msgid "Enter message subject"
+msgstr "موضوع پیام را وارد کنید"
+
+msgid "Your Message"
+msgstr "پیام شما"
+
+msgid "Write your message here..."
+msgstr "پیام خود را اینجا بنویسید..."
+
+msgid "Attachment"
+msgstr "پیوست"
+
+msgid "Optional"
+msgstr "اختیاری"
+
+msgid "PDF, JPG, JPEG or PNG — Maximum 5MB"
+msgstr "PDF، JPG، JPEG یا PNG — حداکثر ۵ مگابایت"
+
+msgid "Send Message"
+msgstr "ارسال پیام"
+
+msgid "Current Availability"
+msgstr "وضعیت همکاری فعلی"
+
+msgid "Open Source Contributions"
+msgstr "مشارکت در پروژه‌های متن‌باز"
+
+msgid "Frequently Asked Questions"
+msgstr "سؤالات متداول"
+
+msgid "What technologies do you work with?"
+msgstr "با چه فناوری‌هایی کار می‌کنید؟"
+
+msgid "Python, HTML, CSS, JavaScript, Django, and Full Stack Development."
+msgstr "Python، HTML، CSS، JavaScript، Django و توسعه فول‌استک."
+
+msgid "Are you available for freelance work?"
+msgstr "آیا برای کار فریلنسری در دسترس هستید؟"
+
+msgid "Yes, I'm available for freelance and collaborative projects."
+msgstr "بله، برای پروژه‌های فریلنسری و همکاری مشترک در دسترس هستم."

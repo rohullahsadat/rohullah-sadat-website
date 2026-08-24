@@ -1,6 +1,7 @@
 
 {% extends "site/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Articles | Rohullah Sadat{% endblock %}
 {% block meta_description %}
@@ -40,56 +41,55 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
             <ul class="nav-list">
 
                 <li>
-                    <a href="{% url 'home' %}">
-                        Home
-                    </a>
-                </li>
+                   <a href="{% url 'home' %}">
+        {% trans "Home" %}
+    </a>
+</li>
 
-                <li>
-                    <a href="{% url 'about' %}">
-                        About
-                    </a>
-                </li>
+<li>
+    <a href="{% url 'about' %}">
+        {% trans "About" %}
+    </a>
+</li>
 
-                <li>
-                    <a href="{% url 'projects' %}">
-                        Projects
-                    </a>
-                </li>
+<li>
+    <a href="{% url 'projects' %}">
+        {% trans "Projects" %}
+    </a>
+</li>
 
-                <li>
-                    <a href="{% url 'books' %}">
-                        Books
-                    </a>
-                </li>
+<li>
+    <a href="{% url 'books' %}">
+        {% trans "Books" %}
+    </a>
+</li>
 
-                <li>
-                    <a href="{% url 'articles' %}">
-                        Articles
-                    </a>
-                </li>
+<li>
+    <a href="{% url 'articles' %}">
+        {% trans "Articles" %}
+    </a>
+</li>
 
-                <li>
-                    <a href="{% url 'gallery' %}">
-                        Gallery
-                    </a>
-                </li>
+<li>
+    <a href="{% url 'gallery' %}">
+        {% trans "Gallery" %}
+    </a>
+</li>
 
-                <li>
-                    <a href="{% url 'resume' %}">
-                        Resume
-                    </a>
-                </li>
+<li>
+    <a href="{% url 'resume' %}">
+        {% trans "Resume" %}
+    </a>
+</li>
 
-                <li>
-                    <a href="{% url 'contact' %}">
-                        Contact
-                    </a>
-                </li>
+<li>
+    <a href="{% url 'contact' %}">
+        {% trans "Contact" %}
+    </a>
 
             </ul>
         </nav>
-
+{% include "site/partials/language_switcher.html" %}
         <button
             class="menu-toggle"
             aria-label="Open Menu"
@@ -112,17 +112,18 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
 
 <main>
 
+
+
 <section class="articles-hero">
     <div class="container">
         <p class="section-tag">
-            Knowledge Hub
+            {% trans "Knowledge Hub" %}
         </p>
 
-        <h1>Articles</h1>
+        <h1>{% trans "Articles" %}</h1>
 
         <p class="articles-hero-text">
-            Sharing knowledge, programming tutorials, AI insights,
-            software engineering experiences, and technology articles.
+            {% trans "Sharing knowledge, programming tutorials, AI insights, software engineering experiences, and technology articles." %}
         </p>
     </div>
 </section>
@@ -132,10 +133,10 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
     <div class="container">
 
         <div class="section-header">
-            <h2>Featured Articles</h2>
+            <h2>{% trans "Featured Articles" %}</h2>
 
             <p>
-                Some of my most valuable articles and tutorials.
+                {% trans "Some of my most valuable articles and tutorials." %}
             </p>
         </div>
 
@@ -211,7 +212,7 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
                     href="{% url 'article_details' article.slug %}"
                     class="article-action"
                 >
-                    Read Article →
+                    {% trans "Read Article" %} →
                 </a>
 
             </div>
@@ -221,7 +222,7 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
     {% empty %}
 
         <p class="no-articles">
-            No articles available yet.
+            {% trans "No articles available yet." %}
         </p>
 
     {% endfor %}
@@ -237,10 +238,10 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
     <div class="container">
 
         <div class="section-header">
-            <h2>Categories</h2>
+            <h2>{% trans "Categories" %}</h2>
 
             <p>
-                Browse articles by topic.
+                {% trans "Browse articles by topic." %}
             </p>
         </div>
 
@@ -269,7 +270,7 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
     <div class="container">
 
         <div class="section-header">
-            <h2>Popular Topics</h2>
+            <h2>{% trans "Popular Topics" %}</h2>
         </div>
 
         <div class="topics">
@@ -295,21 +296,23 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
 
     <div class="container">
 
-        <h2>Stay Updated</h2>
+        <h2>{% trans "Stay Updated" %}</h2>
 
         <p>
-            Subscribe to receive my latest articles and tutorials.
+            {% trans "Subscribe to receive my latest articles and tutorials." %}
         </p>
 
         <form>
+
             <input
                 type="email"
-                placeholder="Your Email"
+                placeholder="{% trans 'Your Email' %}"
             >
 
             <button class="btn btn-primary" type="submit">
-                Subscribe
+                {% trans "Subscribe" %}
             </button>
+
         </form>
 
     </div>
@@ -322,13 +325,11 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
     <div class="container">
 
         <h2>
-            Interested in Working Together?
+            {% trans "Interested in Working Together?" %}
         </h2>
 
         <p>
-            I'm always open to discussing new projects,
-            creative ideas, and opportunities to build
-            meaningful software.
+            {% trans "I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software." %}
         </p>
 
         <div class="cta-buttons">
@@ -337,14 +338,14 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
                 href="{% url 'contact' %}"
                 class="btn btn-primary"
             >
-                Contact Me
+                {% trans "Contact Me" %}
             </a>
 
             <a
                 href="{% url 'resume' %}"
                 class="btn btn-secondary"
             >
-                View Resume
+                {% trans "View Resume" %}
             </a>
 
         </div>
@@ -352,7 +353,6 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
     </div>
 
 </section>
-
 </main>
 <!-- =========================
      Footer
@@ -372,8 +372,7 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
                 </h3>
 
                 <p>
-                    Full Stack Developer, Author, and Future AI Entrepreneur
-                    passionate about building impactful digital products.
+                    {% trans "Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products." %}
                 </p>
 
             </div>
@@ -383,56 +382,56 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
             <div class="footer-column">
 
                 <h3>
-                    Quick Links
+                    {% trans "Quick Links" %}
                 </h3>
 
                 <ul>
 
                     <li>
                         <a href="{% url 'home' %}">
-                            Home
+                            {% trans "Home" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'about' %}">
-                            About
+                            {% trans "About" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'projects' %}">
-                            Projects
+                            {% trans "Projects" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'books' %}">
-                            Books
+                            {% trans "Books" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'articles' %}">
-                            Articles
+                            {% trans "Articles" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'gallery' %}">
-                            Gallery
+                            {% trans "Gallery" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'resume' %}">
-                            Resume
+                            {% trans "Resume" %}
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'contact' %}">
-                            Contact
+                            {% trans "Contact" %}
                         </a>
                     </li>
 
@@ -445,7 +444,7 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
             <div class="footer-column">
 
                 <h3>
-                    Resources
+                    {% trans "Resources" %}
                 </h3>
 
                 <ul>
@@ -475,7 +474,7 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
                     <li>
                         <a href="mailto:rohullahsadat1997@gmail.com">
                             <i class="fas fa-envelope"></i>
-                            Email
+                            {% trans "Email" %}
                         </a>
                     </li>
 
@@ -485,7 +484,7 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
                             download
                         >
                             <i class="fas fa-file-pdf"></i>
-                            Download Resume
+                            {% trans "Download Resume" %}
                         </a>
                     </li>
 
@@ -498,21 +497,21 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
             <div class="footer-column">
 
                 <h3>
-                    Contact
+                    {% trans "Contact" %}
                 </h3>
 
                 <p>
                     <a href="mailto:rohullahsadat1997@gmail.com">
-                        Email Me
+                        {% trans "Email Me" %}
                     </a>
                 </p>
 
                 <p>
-                    Available for Freelance
+                    {% trans "Available for Freelance" %}
                 </p>
 
                 <p>
-                    Open to Collaboration
+                    {% trans "Open to Collaboration" %}
                 </p>
 
             </div>
@@ -524,11 +523,11 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
 
             <p>
                 © 2026 Rohullah Sadat.
-                All Rights Reserved.
+                {% trans "All Rights Reserved." %}
             </p>
 
             <p>
-                Built with ❤️ using HTML, CSS &amp; JavaScript.
+                {% trans "Built with ❤️ using HTML, CSS &amp; JavaScript." %}
             </p>
 
         </div>
@@ -537,4 +536,17 @@ Read Rohullah Sadat's articles about programming, technology, web development, l
 
 </footer>
 
+
+<!-- =========================
+     Back To Top
+========================= -->
+<button
+    class="back-to-top"
+    type="button"
+    aria-label="{% trans 'Back to top' %}"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 {% endblock %}
+

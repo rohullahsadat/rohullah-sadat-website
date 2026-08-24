@@ -342,15 +342,31 @@ def projects(request):
     return render(
         request,
         "site/projects.html",
-        {"projects": projects}
+        {
+            "projects": projects,
+        }
     )
 
+
 def project_details(request, project_id):
-    project = get_object_or_404(Project, id=project_id)
+
+    project = get_object_or_404(
+        Project,
+        id=project_id,
+        is_published=True
+    )
+
+    if request.LANGUAGE_CODE == "fa":
+        challenges_text = (
+            project.detail.challenges_fa
+            or project.detail.challenges
+        )
+    else:
+        challenges_text = project.detail.challenges
 
     challenges = [
         challenge.strip()
-        for challenge in project.detail.challenges.splitlines()
+        for challenge in challenges_text.splitlines()
         if challenge.strip()
     ]
 

@@ -1,7 +1,7 @@
 
 {% extends "site/base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block title %}contact | Rohullah Sadat{% endblock %}
 {% block meta_description %}
 Contact Rohullah Sadat for web development projects, collaborations, professional opportunities, and other inquiries.
@@ -40,25 +40,54 @@ Get in touch with Rohullah Sadat for web development projects, collaborations, p
             <nav class="navbar">
                 <ul class="nav-list">
 
-                       <li><a href="{% url 'home' %}">Home</a></li>
+                     <a href="{% url 'home' %}">
+        {% trans "Home" %}
+    </a>
+</li>
 
-            <li><a href="{% url 'about' %}">About</a></li>
+<li>
+    <a href="{% url 'about' %}">
+        {% trans "About" %}
+    </a>
+</li>
 
-            <li><a href="{% url 'projects' %}">Projects</a></li>
+<li>
+    <a href="{% url 'projects' %}">
+        {% trans "Projects" %}
+    </a>
+</li>
 
-            <li><a href="{% url 'books' %}">Books</a></li>
+<li>
+    <a href="{% url 'books' %}">
+        {% trans "Books" %}
+    </a>
+</li>
 
-            <li><a href="{% url 'articles' %}">Articles</a></li>
+<li>
+    <a href="{% url 'articles' %}">
+        {% trans "Articles" %}
+    </a>
+</li>
 
-            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+<li>
+    <a href="{% url 'gallery' %}">
+        {% trans "Gallery" %}
+    </a>
+</li>
 
-            <li><a href="{% url 'resume' %}">Resume</a></li>
+<li>
+    <a href="{% url 'resume' %}">
+        {% trans "Resume" %}
+    </a>
+</li>
 
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-
+<li>
+    <a href="{% url 'contact' %}">
+        {% trans "Contact" %}
+    </a>
                 </ul>
             </nav>
-
+            {% include "site/partials/language_switcher.html" %}
             <button
                 class="menu-toggle"
                 aria-label="Open Menu"
@@ -81,641 +110,672 @@ Get in touch with Rohullah Sadat for web development projects, collaborations, p
     <!-- Main -->
     <main>
 
-        <!-- Contact Hero -->
-        <section class="contact-hero ">
+       <!-- Contact Hero -->
+<section class="contact-hero ">
 
-            <div class="container">
+    <div class="container">
 
-                <p class="section-tag">
-                    Contact
-                </p>
+        <p class="section-tag">
+            {% translate "Contact" %}
+        </p>
 
-                <h1>
-                    Let's Work Together
-                </h1>
+        <h1>
+            {% translate "Let's Work Together" %}
+        </h1>
 
-                <p class="contact-hero-text">
-                    I'm always open to discussing new ideas,
-                    software projects, freelance opportunities,
-                    or simply connecting with other developers.
+        <p class="contact-hero-text">
+            {% translate "I'm always open to discussing new ideas, software projects, freelance opportunities, or simply connecting with other developers." %}
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Information -->
+<section class="contact-info ">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <!-- Email -->
+            <div class="contact-card">
+
+                <i class="fas fa-envelope"></i>
+
+                <h3>
+                    {% translate "Email" %}
+                </h3>
+
+                <p>
+                    <a href="mailto:rohullahsadat1997@gmail.com">
+                        rohullahsadat1997@gmail.com
+                    </a>
                 </p>
 
             </div>
 
-        </section>
+
+            <!-- GitHub -->
+            <div class="contact-card">
+
+                <i class="fab fa-github"></i>
+
+                <h3>
+                    {% translate "GitHub" %}
+                </h3>
+
+                <a
+                    href="https://github.com/rohullahsadat1997"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {% translate "View Profile" %}
+                </a>
+
+            </div>
 
 
-        <!-- Contact Information -->
-        <section class="contact-info ">
+            <!-- LinkedIn -->
+            <div class="contact-card">
 
-            <div class="container">
+                <i class="fab fa-linkedin"></i>
 
-                <div class="contact-grid">
+                <h3>
+                    {% translate "LinkedIn" %}
+                </h3>
 
-                    <!-- Email -->
-                    <div class="contact-card">
+                <a
+                    href="https://www.linkedin.com/in/rohullah-sadat-524424236"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {% translate "View Profile" %}
+                </a>
 
-                        <i class="fas fa-envelope"></i>
-
-                        <h3>
-                            Email
-                        </h3>
-
-                        <p>
-                            <a href="mailto:rohullahsadat1997@gmail.com">
-                                rohullahsadat1997@gmail.com
-                            </a>
-                        </p>
-
-                    </div>
+            </div>
 
 
-                    <!-- GitHub -->
-                    <div class="contact-card">
+            <!-- Facebook -->
+            <div class="contact-card">
 
-                        <i class="fab fa-github"></i>
+                <i class="fab fa-facebook"></i>
 
-                        <h3>
-                            GitHub
-                        </h3>
+                <h3>
+                    {% translate "Facebook" %}
+                </h3>
 
+                <a
+                    href="https://www.facebook.com/rohullahsadat26"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {% translate "View Profile" %}
+                </a>
+
+            </div>
+
+
+            <!-- YouTube -->
+            <div class="contact-card">
+
+                <i class="fab fa-youtube"></i>
+
+                <h3>
+                    {% translate "YouTube" %}
+                </h3>
+
+                <a
+                    href="https://www.youtube.com/@RohullahSadat24"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {% translate "View Channel" %}
+                </a>
+
+            </div>
+
+
+            <!-- X -->
+            <div class="contact-card">
+
+                <i class="fab fa-twitter"></i>
+
+                <h3>
+                    {% translate "twitter" %}
+                </h3>
+
+                <a
+                    href="https://x.com/rohullah_dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {% translate "View Channel" %}
+                </a>
+
+            </div>
+
+
+            <!-- Instagram -->
+            <div class="contact-card">
+
+                <i class="fab fa-instagram"></i>
+
+                <h3>
+                    {% translate "instagram" %}
+                </h3>
+
+                <a
+                    href="https://B2n.ir/sadat_insta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {% translate "View Channel" %}
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Form -->
+
+{% if messages %}
+<div class="contact-messages" aria-live="polite">
+
+    {% for message in messages %}
+
+        <div
+            class="contact-alert
+            {% if message.tags == 'success' %}
+                contact-alert-success
+            {% else %}
+                contact-alert-error
+            {% endif %}"
+            role="alert"
+        >
+
+            <i
+                class="
+                {% if message.tags == 'success' %}
+                    fas fa-check-circle
+                {% else %}
+                    fas fa-circle-exclamation
+                {% endif %}
+                "
+            ></i>
+
+            <span>{{ message }}</span>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+{% endif %}
+
+
+<section class="contact-form-section ">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                {% translate "Send Me a Message" %}
+            </h2>
+
+            <p>
+                {% translate "Fill out the form below and I'll get back to you as soon as possible." %}
+            </p>
+
+        </div>
+
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="contact-message {{ message.tags }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+        <form
+            id="contact-form"
+            class="contact-form"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+            {% csrf_token %}
+
+            <div class="form-group">
+
+                <label for="name">
+                    {% translate "Your Name" %}
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="{% translate 'Enter your name' %}"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    {% translate "Your Email" %}
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="{% translate 'Enter your email' %}"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="subject">
+                    {% translate "Subject" %}
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="{% translate 'Enter message subject' %}"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    {% translate "Your Message" %}
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="7"
+                    placeholder="{% translate 'Write your message here...' %}"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="attachment">
+                    {% translate "Attachment" %}
+                    <span>({% translate "Optional" %})</span>
+                </label>
+
+                <input
+                    type="file"
+                    id="attachment"
+                    name="attachment"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                >
+
+                <small>
+                    {% translate "PDF, JPG, JPEG or PNG — Maximum 5MB" %}
+                </small>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                <i class="fas fa-paper-plane"></i>
+                {% translate "Send Message" %}
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- Availability -->
+<section class="availability ">
+
+    <div class="container">
+
+        <h2>
+            {% translate "Current Availability" %}
+        </h2>
+
+        <div class="availability-list">
+
+            <p>
+                <i class="fas fa-check-circle"></i>
+                {% translate "Available for Freelance" %}
+            </p>
+
+            <p>
+                <i class="fas fa-check-circle"></i>
+                {% translate "Open for Collaboration" %}
+            </p>
+
+            <p>
+                <i class="fas fa-check-circle"></i>
+                {% translate "Open Source Contributions" %}
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+<section class="faq ">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+                {% translate "Frequently Asked Questions" %}
+            </h2>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                {% translate "What technologies do you work with?" %}
+            </h3>
+
+            <p>
+                {% translate "Python, HTML, CSS, JavaScript, Django, and Full Stack Development." %}
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                {% translate "Are you available for freelance work?" %}
+            </h3>
+
+            <p>
+                {% translate "Yes, I'm available for freelance and collaborative projects." %}
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        
+<!-- =========================
+     Projects CTA
+========================= -->
+<section class="projects-cta">
+
+    <div class="container">
+
+        <h2>
+            {% trans "Let's Build Something Great Together" %}
+        </h2>
+
+        <p>
+            {% trans "I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software." %}
+        </p>
+
+
+        <div class="cta-buttons">
+
+            <a
+                href="{% url 'contact' %}"
+                class="btn btn-primary"
+            >
+                {% trans "Contact Me" %}
+            </a>
+
+            <a
+                href="{% url 'resume' %}"
+                class="btn btn-secondary"
+            >
+                {% trans "View Resume" %}
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+    </main>
+
+
+   
+<!-- =========================
+     Footer
+========================= -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <!-- About -->
+            <div class="footer-column">
+
+                <h3>
+                    Rohullah Sadat
+                </h3>
+
+                <p>
+                    {% trans "Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products." %}
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Quick Links" %}
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="{% url 'home' %}">
+                            {% trans "Home" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            {% trans "About" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            {% trans "Projects" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'books' %}">
+                            {% trans "Books" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'articles' %}">
+                            {% trans "Articles" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gallery' %}">
+                            {% trans "Gallery" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resume' %}">
+                            {% trans "Resume" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            {% trans "Contact" %}
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Resources" %}
+                </h3>
+
+                <ul>
+
+                    <li>
                         <a
                             href="https://github.com/rohullahsadat1997"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            View Profile
+                            <i class="fab fa-github"></i>
+                            GitHub
                         </a>
+                    </li>
 
-                    </div>
-
-
-                    <!-- LinkedIn -->
-                    <div class="contact-card">
-
-                        <i class="fab fa-linkedin"></i>
-
-                        <h3>
-                            LinkedIn
-                        </h3>
-
+                    <li>
                         <a
                             href="https://www.linkedin.com/in/rohullah-sadat-524424236"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            View Profile
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
                         </a>
+                    </li>
 
-                    </div>
-
-
-                    <!-- Facebook -->
-                    <div class="contact-card">
-
-                        <i class="fab fa-facebook"></i>
-
-                        <h3>
-                            Facebook
-                        </h3>
-
-                        <a
-                            href="https://www.facebook.com/rohullahsadat26"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View Profile
-                        </a>
-
-                    </div>
-
-
-                    <!-- YouTube -->
-                    <div class="contact-card">
-
-                        <i class="fab fa-youtube"></i>
-
-                        <h3>
-                            YouTube
-                        </h3>
-
-                        <a
-                            href="https://www.youtube.com/@RohullahSadat24"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View Channel
-                        </a>
-
-                    </div>
-                    <!-- X-->
-                    <div class="contact-card">
-
-                        <i class="fab fa-twitter"></i>
-
-                        <h3>
-                            twitter
-                        </h3>
-
-                        <a
-                            href="https://x.com/rohullah_dev"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View Channel
-                        </a>
-
-                    </div>
-                    <!--instagram-->
-                    <div class="contact-card">
-
-                        <i class="fab fa-instagram"></i>
-
-                        <h3>
-                            instagram
-                        </h3>
-
-                        <a
-                            href="https://B2n.ir/sadat_insta"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View Channel
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Contact Form -->
-
-        {% if messages %}
-    <div class="contact-messages" aria-live="polite">
-
-        {% for message in messages %}
-
-            <div
-                class="contact-alert
-                {% if message.tags == 'success' %}
-                    contact-alert-success
-                {% else %}
-                    contact-alert-error
-                {% endif %}"
-                role="alert"
-            >
-
-                <i
-                    class="
-                    {% if message.tags == 'success' %}
-                        fas fa-check-circle
-                    {% else %}
-                        fas fa-circle-exclamation
-                    {% endif %}
-                    "
-                ></i>
-
-                <span>{{ message }}</span>
-
-            </div>
-
-        {% endfor %}
-
-    </div>
-{% endif %}
-        <section class="contact-form-section ">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <h2>
-                        Send Me a Message
-                    </h2>
-
-                    <p>
-                        Fill out the form below and I'll get back to you
-                        as soon as possible.
-                    </p>
-
-                </div>
-                {% if messages %}
-
-    {% for message in messages %}
-
-        <div class="contact-message {{ message.tags }}">
-            {{ message }}
-        </div>
-
-    {% endfor %}
-
-{% endif %}
-
-                <form
-    id="contact-form"
-    class="contact-form"
-    method="POST"
-    enctype="multipart/form-data"
->
-    {% csrf_token %}
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Your Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your name"
-                            autocomplete="name"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Your Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            autocomplete="email"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="subject">
-                            Subject
-                        </label>
-
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            placeholder="Enter message subject"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="message">
-                            Your Message
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="7"
-                            placeholder="Write your message here..."
-                            required
-                        ></textarea>
-
-                    </div>
-                    <div class="form-group">
-
-    <label for="attachment">
-        Attachment
-        <span>(Optional)</span>
-    </label>
-
-    <input
-        type="file"
-        id="attachment"
-        name="attachment"
-        accept=".pdf,.jpg,.jpeg,.png"
-    >
-
-    <small>
-        PDF, JPG, JPEG or PNG — Maximum 5MB
-    </small>
-
-</div>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                    >
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- Availability -->
-        <section class="availability ">
-
-            <div class="container">
-
-                <h2>
-                    Current Availability
-                </h2>
-
-                <div class="availability-list">
-
-                    <p>
-                        <i class="fas fa-check-circle"></i>
-                        Available for Freelance
-                    </p>
-
-                    <p>
-                        <i class="fas fa-check-circle"></i>
-                        Open for Collaboration
-                    </p>
-
-                    <p>
-                        <i class="fas fa-check-circle"></i>
-                        Open Source Contributions
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FAQ -->
-        <section class="faq ">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <h2>
-                        Frequently Asked Questions
-                    </h2>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <h3>
-                        What technologies do you work with?
-                    </h3>
-
-                    <p>
-                        Python, HTML, CSS, JavaScript, Django,
-                        and Full Stack Development.
-                    </p>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <h3>
-                        Are you available for freelance work?
-                    </h3>
-
-                    <p>
-                        Yes, I'm available for freelance and
-                        collaborative projects.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="projects-cta ">
-
-            <div class="container">
-
-                <h2>
-                    Interested in Working Together?
-                </h2>
-
-                <p>
-                    I'm always open to discussing new projects,
-                    creative ideas, and opportunities to build
-                    meaningful software.
-                </p>
-
-                <div class="cta-buttons">
-
-                  <a
-    href="{% url 'contact' %}"
-    class="btn btn-primary"
->
-    Contact Me
-</a>
-
-                    <a
-                        href="assets/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf"
-                        class="btn btn-secondary"
-                    >
-                        View Resume
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="footer-grid">
-
-                <!-- About -->
-                <div class="footer-column">
-
-                    <h3>
-                        Rohullah Sadat
-                    </h3>
-
-                    <p>
-                        Full Stack Developer, Author, and Future AI
-                        Entrepreneur passionate about building
-                        impactful digital products.
-                    </p>
-
-                </div>
-
-
-                <!-- Quick Links -->
-                <div class="footer-column">
-
-                    <h3>
-                        Quick Links
-                    </h3>
-
-                    <ul>
-
-                         <li><a href="{% url 'home' %}">Home</a></li>
-
-            <li><a href="{% url 'about' %}">About</a></li>
-
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-
-            <li><a href="{% url 'books' %}">Books</a></li>
-
-            <li><a href="{% url 'articles' %}">Articles</a></li>
-
-            <li><a href="{% url 'gallery' %}">Gallery</a></li>
-
-            <li><a href="{% url 'resume' %}">Resume</a></li>
-
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-                    </ul>
-
-                </div>
-
-
-                <!-- Resources -->
-                <div class="footer-column">
-
-                    <h3>
-                        Resources
-                    </h3>
-
-                    <ul>
-
-                        <li>
-                            <a
-                                href="https://github.com/rohullahsadat1997"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <i class="fab fa-github"></i>
-                                GitHub
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="https://www.linkedin.com/in/rohullah-sadat-524424236"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <i class="fab fa-linkedin"></i>
-                                LinkedIn
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="mailto:rohullahsadat1997@gmail.com">
-                                <i class="fas fa-envelope"></i>
-                                Email
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="resume.html">
-                                <i class="fas fa-file-pdf"></i>
-                                Download Resume
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- Contact -->
-                <div class="footer-column">
-
-                    <h3>
-                        Contact
-                    </h3>
-
-                    <p>
+                    <li>
                         <a href="mailto:rohullahsadat1997@gmail.com">
                             <i class="fas fa-envelope"></i>
-                            rohullahsadat1997@gmail.com
+                            {% trans "Email" %}
                         </a>
-                    </p>
+                    </li>
 
-                    <p>
-                        Available for Freelance
-                    </p>
+                    <li>
+                        <a
+                            href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                            download
+                        >
+                            <i class="fas fa-file-pdf"></i>
+                            {% trans "Download Resume" %}
+                        </a>
+                    </li>
 
-                    <p>
-                        Open to Collaboration
-                    </p>
-
-                    <p>
-                        Remote Work Available
-                    </p>
-
-                </div>
+                </ul>
 
             </div>
 
 
-            <div class="footer-bottom">
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Contact" %}
+                </h3>
 
                 <p>
-                    © 2026 Rohullah Sadat.
-                    All Rights Reserved.
+                    <a href="mailto:rohullahsadat1997@gmail.com">
+                        {% trans "Email Me" %}
+                    </a>
                 </p>
 
                 <p>
-                    Built with ❤️ using HTML, CSS & JavaScript.
+                    {% trans "Available for Freelance" %}
+                </p>
+
+                <p>
+                    {% trans "Open to Collaboration" %}
                 </p>
 
             </div>
 
         </div>
 
-    </footer>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Rohullah Sadat.
+                {% trans "All Rights Reserved." %}
+            </p>
+
+            <p>
+                {% trans "Built with ❤️ using HTML, CSS &amp; JavaScript." %}
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
-    <!-- Back To Top -->
-    <button
-        id="backToTop"
-        class="back-to-top"
-        type="button"
-        aria-label="Back to top"
-    >
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-
-    <!-- EmailJS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-
-    <!-- JavaScript -->
-   
-
+<!-- =========================
+     Back To Top
+========================= -->
+<button
+    class="back-to-top"
+    type="button"
+    aria-label="{% trans 'Back to top' %}"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
 
 {% endblock %}

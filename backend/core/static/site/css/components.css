@@ -2,6 +2,7 @@
    Header
 ========================================== */
 
+
 .header{
     position:sticky;
     top:0;
@@ -4927,4 +4928,172 @@ body.dark-mode .contact-form input[type="file"] {
         padding: 60px 0;
     }
 
+}
+
+
+/* =========================
+   Language Switcher
+========================= */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.language-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.language-link:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+
+/* ==========================================
+   RTL / LTR SUPPORT
+========================================== */
+
+/* RTL */
+html[dir="rtl"] .header .container {
+    direction: rtl;
+}
+
+html[dir="rtl"] .nav-list {
+    direction: rtl;
+}
+
+html[dir="rtl"] .nav-list a::after {
+    left: auto;
+    right: 0;
+}
+
+/* LTR */
+html[dir="ltr"] .header .container {
+    direction: ltr;
+}
+
+html[dir="ltr"] .nav-list {
+    direction: ltr;
+}
+
+html[dir="ltr"] .nav-list a::after {
+    left: 0;
+    right: auto;
+}
+/* ==========================================
+   RTL HEADER & NAVBAR
+========================================== */
+
+html[dir="rtl"] .header .container {
+    direction: rtl;
+}
+
+html[dir="rtl"] .navbar {
+    direction: rtl;
+}
+
+html[dir="rtl"] .nav-list {
+    direction: rtl;
+}
+
+html[dir="rtl"] .nav-list a::after {
+    left: auto;
+    right: 0;
+}
+
+
+/* ==========================================
+   LTR HEADER & NAVBAR
+========================================== */
+
+html[dir="ltr"] .header .container {
+    direction: ltr;
+}
+
+html[dir="ltr"] .navbar {
+    direction: ltr;
+}
+
+html[dir="ltr"] .nav-list {
+    direction: ltr;
+}
+
+html[dir="ltr"] .nav-list a::after {
+    left: 0;
+    right: auto;
+}
+
+/* //////////////////////////////
+/* ==========================================
+   ABOUT — RTL SUPPORT
+========================================== */
+
+html[dir="rtl"] .about {
+    direction: rtl;
+}
+
+html[dir="rtl"] .about-wrapper {
+    direction: rtl;
+}
+
+html[dir="rtl"] .about-content {
+    text-align: right;
+}
+
+html[dir="rtl"] .about-cards {
+    direction: rtl;
+}
+
+html[dir="rtl"] .quick-facts {
+    direction: rtl;
+}
+
+html[dir="rtl"] .journey {
+    direction: rtl;
+}
+
+
+/* ==========================================
+   ABOUT TIMELINE — RTL
+========================================== */
+
+html[dir="rtl"] .timeline {
+    border-left: none;
+    border-right: 3px solid var(--color-primary);
+    padding-left: 0;
+    padding-right: 2rem;
+}
+
+html[dir="rtl"] .timeline-item::before {
+    left: auto;
+    right: -2.6rem;
+}
+
+
+/* ==========================================
+   ABOUT TIMELINE — LTR
+========================================== */
+
+html[dir="ltr"] .timeline {
+    border-left: 3px solid var(--color-primary);
+    border-right: none;
+    padding-left: 2rem;
+    padding-right: 0;
+}
+
+html[dir="ltr"] .timeline-item::before {
+    left: -2.6rem;
+    right: auto;
 }

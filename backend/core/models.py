@@ -2,33 +2,59 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
+
+
+# =========================================================
+# PROJECT
+# =========================================================
+
 class Project(models.Model):
 
     CATEGORY_CHOICES = [
-        ("frontend", "Frontend Development"),
-        ("backend", "Backend Development"),
-        ("fullstack", "Full Stack Development"),
-        ("python", "Python"),
-        ("django", "Django"),
-        ("ai", "Artificial Intelligence"),
-        ("other", "Other"),
+        ("frontend", _("Frontend Development")),
+        ("backend", _("Backend Development")),
+        ("fullstack", _("Full Stack Development")),
+        ("python", _("Python")),
+        ("django", _("Django")),
+        ("ai", _("Artificial Intelligence")),
+        ("other", _("Other")),
     ]
 
     LEVEL_CHOICES = [
-        ("beginner", "Beginner"),
-        ("intermediate", "Intermediate"),
-        ("advanced", "Advanced"),
+        ("beginner", _("Beginner")),
+        ("intermediate", _("Intermediate")),
+        ("advanced", _("Advanced")),
     ]
 
     STATUS_CHOICES = [
-        ("completed", "Completed"),
-        ("in_progress", "In Progress"),
-        ("planned", "Planned"),
+        ("completed", _("Completed")),
+        ("in_progress", _("In Progress")),
+        ("planned", _("Planned")),
     ]
 
-    title = models.CharField(max_length=200)
+    # -----------------------------------------------------
+    # Basic Information
+    # -----------------------------------------------------
+
+    title = models.CharField(
+        max_length=200
+    )
+
+    title_fa = models.CharField(
+        max_length=200,
+        blank=True
+    )
 
     description = models.TextField()
+
+    description_fa = models.TextField(
+        blank=True
+    )
+
+    # -----------------------------------------------------
+    # Image
+    # -----------------------------------------------------
 
     image = models.ImageField(
         upload_to="projects/",
@@ -36,11 +62,19 @@ class Project(models.Model):
         null=True
     )
 
+    # -----------------------------------------------------
+    # Category
+    # -----------------------------------------------------
+
     category = models.CharField(
         max_length=30,
         choices=CATEGORY_CHOICES,
         default="other"
     )
+
+    # -----------------------------------------------------
+    # Level
+    # -----------------------------------------------------
 
     level = models.CharField(
         max_length=20,
@@ -48,10 +82,20 @@ class Project(models.Model):
         default="beginner"
     )
 
+    # -----------------------------------------------------
+    # Technologies
+    # -----------------------------------------------------
+
     technologies = models.CharField(
         max_length=500,
-        help_text="Separate technologies with commas."
+        help_text=_(
+            "Separate technologies with commas."
+        )
     )
+
+    # -----------------------------------------------------
+    # Project Information
+    # -----------------------------------------------------
 
     year = models.PositiveIntegerField(
         default=2026
@@ -68,6 +112,10 @@ class Project(models.Model):
         default="completed"
     )
 
+    # -----------------------------------------------------
+    # Links
+    # -----------------------------------------------------
+
     github_url = models.URLField(
         blank=True
     )
@@ -75,6 +123,10 @@ class Project(models.Model):
     live_url = models.URLField(
         blank=True
     )
+
+    # -----------------------------------------------------
+    # Publishing
+    # -----------------------------------------------------
 
     is_featured = models.BooleanField(
         default=False
@@ -84,6 +136,10 @@ class Project(models.Model):
         default=True
     )
 
+    # -----------------------------------------------------
+    # Timestamps
+    # -----------------------------------------------------
+
     created_at = models.DateTimeField(
         auto_now_add=True
     )
@@ -91,6 +147,10 @@ class Project(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
+
+    # -----------------------------------------------------
+    # Technology List
+    # -----------------------------------------------------
 
     @property
     def technology_list(self):
@@ -100,9 +160,17 @@ class Project(models.Model):
             if tech.strip()
         ]
 
+    # -----------------------------------------------------
+    # String
+    # -----------------------------------------------------
+
     def __str__(self):
         return self.title
 
+
+# =========================================================
+# PROJECT DETAIL
+# =========================================================
 
 class ProjectDetail(models.Model):
 
@@ -112,29 +180,89 @@ class ProjectDetail(models.Model):
         related_name="detail"
     )
 
-    overview = models.TextField(blank=True)
+    # -----------------------------------------------------
+    # Overview
+    # -----------------------------------------------------
+
+    overview = models.TextField(
+        blank=True
+    )
+
+    overview_fa = models.TextField(
+        blank=True
+    )
+
+    # -----------------------------------------------------
+    # Role
+    # -----------------------------------------------------
 
     role = models.CharField(
         max_length=200,
         blank=True
     )
 
+    role_fa = models.CharField(
+        max_length=200,
+        blank=True
+    )
+
+    # -----------------------------------------------------
+    # Features
+    # -----------------------------------------------------
+
     features = models.TextField(
         blank=True,
-        help_text="Write each feature on a new line."
+        help_text=_(
+            "Write each feature on a new line."
+        )
     )
+
+    features_fa = models.TextField(
+        blank=True,
+        help_text=_(
+            "Write each feature in Persian, one per line."
+        )
+    )
+
+    # -----------------------------------------------------
+    # Challenges
+    # -----------------------------------------------------
 
     challenges = models.TextField(
         blank=True
     )
 
+    challenges_fa = models.TextField(
+        blank=True
+    )
+
+    # -----------------------------------------------------
+    # What I Learned
+    # -----------------------------------------------------
+
     what_i_learned = models.TextField(
         blank=True
     )
 
+    what_i_learned_fa = models.TextField(
+        blank=True
+    )
+
+    # -----------------------------------------------------
+    # Future Improvements
+    # -----------------------------------------------------
+
     future_improvements = models.TextField(
         blank=True
     )
+
+    future_improvements_fa = models.TextField(
+        blank=True
+    )
+
+    # -----------------------------------------------------
+    # Timestamps
+    # -----------------------------------------------------
 
     created_at = models.DateTimeField(
         auto_now_add=True
@@ -144,18 +272,35 @@ class ProjectDetail(models.Model):
         auto_now=True
     )
 
+    # -----------------------------------------------------
+    # String
+    # -----------------------------------------------------
+
     def __str__(self):
         return f"Details - {self.project.title}"
-    
 
 
+# =========================================================
+# CREATE PROJECT DETAIL AUTOMATICALLY
+# =========================================================
 
-    @receiver(post_save, sender=Project)
-    def create_project_detail(sender, instance, created, **kwargs):
-     if created:
-        ProjectDetail.objects.create(project=instance)
-        
-# About Section 
+@receiver(post_save, sender=Project)
+def create_project_detail(
+    sender,
+    instance,
+    created,
+    **kwargs
+):
+
+    if created:
+        ProjectDetail.objects.create(
+            project=instance
+        )
+
+
+# =========================================================
+# ABOUT SECTION
+# =========================================================
 
 class AboutProfile(models.Model):
 
@@ -183,30 +328,36 @@ class AboutProfile(models.Model):
 
     def __str__(self):
         return self.name
-    
-# Book Section
+
+
+# =========================================================
+# BOOK SECTION
+# =========================================================
 
 class Book(models.Model):
 
     CATEGORY_CHOICES = [
-        ("programming", "Programming"),
-        ("technology", "Technology"),
-        ("business", "Business"),
-        ("personal_development", "Personal Development"),
-        ("fiction", "Fiction"),
-        ("other", "Other"),
+        ("programming", _("Programming")),
+        ("technology", _("Technology")),
+        ("business", _("Business")),
+        (
+            "personal_development",
+            _("Personal Development")
+        ),
+        ("fiction", _("Fiction")),
+        ("other", _("Other")),
     ]
 
     STATUS_CHOICES = [
-        ("published", "Published"),
-        ("reading", "Currently Reading"),
-        ("planned", "Planned"),
-        ("coming_soon", "Coming Soon"),
+        ("published", _("Published")),
+        ("reading", _("Currently Reading")),
+        ("planned", _("Planned")),
+        ("coming_soon", _("Coming Soon")),
     ]
 
     ACCESS_CHOICES = [
-        ("free", "Free"),
-        ("paid", "Paid"),
+        ("free", _("Free")),
+        ("paid", _("Paid")),
     ]
 
     title = models.CharField(
@@ -270,9 +421,11 @@ class Book(models.Model):
     is_published = models.BooleanField(
         default=True
     )
+
     is_favorite = models.BooleanField(
-    default=False
+        default=False
     )
+
     display_order = models.PositiveIntegerField(
         default=0
     )
@@ -287,20 +440,24 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
-    
-# article section
+
+
+# =========================================================
+# ARTICLE SECTION
+# =========================================================
+
 class Article(models.Model):
 
     CATEGORY_CHOICES = [
-        ("programming", "Programming"),
-        ("web_development", "Web Development"),
-        ("python", "Python"),
-        ("django", "Django"),
-        ("javascript", "JavaScript"),
-        ("ai", "Artificial Intelligence"),
-        ("technology", "Technology"),
-        ("career", "Career"),
-        ("other", "Other"),
+        ("programming", _("Programming")),
+        ("web_development", _("Web Development")),
+        ("python", _("Python")),
+        ("django", _("Django")),
+        ("javascript", _("JavaScript")),
+        ("ai", _("Artificial Intelligence")),
+        ("technology", _("Technology")),
+        ("career", _("Career")),
+        ("other", _("Other")),
     ]
 
     title = models.CharField(
@@ -367,6 +524,7 @@ class Article(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
+
         if not self.slug:
             self.slug = slugify(
                 self.title,
@@ -374,22 +532,23 @@ class Article(models.Model):
             )
 
         super().save(*args, **kwargs)
-        
-        # =========================
-# Gallery Section
-# =========================
+
+
+# =========================================================
+# GALLERY IMAGE
+# =========================================================
 
 class GalleryImage(models.Model):
 
     CATEGORY_CHOICES = [
-        ("personal", "Personal"),
-        ("projects", "Projects"),
-        ("events", "Events"),
-        ("programming", "Programming"),
-        ("education", "Education"),
-        ("technology", "Technology"),
-        ("other", "Other"),
-        ("certificates", "Certificates"),
+        ("personal", _("Personal")),
+        ("projects", _("Projects")),
+        ("events", _("Events")),
+        ("programming", _("Programming")),
+        ("education", _("Education")),
+        ("technology", _("Technology")),
+        ("other", _("Other")),
+        ("certificates", _("Certificates")),
     ]
 
     title = models.CharField(
@@ -433,17 +592,21 @@ class GalleryImage(models.Model):
 
     def __str__(self):
         return self.title or f"Gallery Image {self.id}"
-    
-    # video
+
+
+# =========================================================
+# GALLERY VIDEO
+# =========================================================
+
 class GalleryVideo(models.Model):
 
     CATEGORY_CHOICES = [
-        ("programming", "Programming"),
-        ("projects", "Projects"),
-        ("education", "Education"),
-        ("technology", "Technology"),
-        ("events", "Events"),
-        ("other", "Other"),
+        ("programming", _("Programming")),
+        ("projects", _("Projects")),
+        ("education", _("Education")),
+        ("technology", _("Technology")),
+        ("events", _("Events")),
+        ("other", _("Other")),
     ]
 
     title = models.CharField(
@@ -454,13 +617,14 @@ class GalleryVideo(models.Model):
     video = models.FileField(
         upload_to="gallery/videos/"
     )
+
     project = models.ForeignKey(
-    Project,
-    on_delete=models.SET_NULL,
-    null=True,
-    blank=True,
-    related_name="gallery_videos"
-)
+        Project,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="gallery_videos"
+    )
 
     description = models.TextField(
         blank=True
@@ -494,8 +658,12 @@ class GalleryVideo(models.Model):
 
     def __str__(self):
         return self.title or f"Gallery Video {self.id}"
-    
-    #resuem section
+
+
+# =========================================================
+# CERTIFICATION
+# =========================================================
+
 class Certification(models.Model):
 
     title = models.CharField(

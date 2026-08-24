@@ -1,423 +1,763 @@
+
 {% extends "site/base.html" %}
 {% load static %}
+{% load i18n %}
+
 {% block title %}
- Rohullah Sadat | Project
+{% if LANGUAGE_CODE == "fa" %}
+    روح‌الله سادات | پروژه‌ها
+{% else %}
+    Rohullah Sadat | Projects
+{% endif %}
 {% endblock %}
+
 {% block meta_description %}
-Explore Rohullah Sadat's software development projects, including web development, Django, Python, frontend, and future AI-focused projects.
+{% if LANGUAGE_CODE == "fa" %}
+    پروژه‌های نرم‌افزاری روح‌الله سادات شامل طراحی وب، Django، Python، توسعه Frontend و پروژه‌های آینده هوش مصنوعی.
+{% else %}
+    Explore Rohullah Sadat's software development projects, including web development, Django, Python, frontend, and future AI-focused projects.
+{% endif %}
 {% endblock %}
 
 {% block og_title %}
-Projects | Rohullah Sadat — Full Stack Developer
+{% if LANGUAGE_CODE == "fa" %}
+    پروژه‌ها | روح‌الله سادات — Full Stack Developer
+{% else %}
+    Projects | Rohullah Sadat — Full Stack Developer
+{% endif %}
 {% endblock %}
 
 {% block og_description %}
-Explore projects built by Rohullah Sadat across frontend development, Django, Python, web applications, and emerging AI technologies.
+{% if LANGUAGE_CODE == "fa" %}
+    مجموعه‌ای از پروژه‌های روح‌الله سادات در زمینه Frontend، Django، Python، وب‌اپلیکیشن‌ها و فناوری‌های هوش مصنوعی.
+{% else %}
+    Explore projects built by Rohullah Sadat across frontend development, Django, Python, web applications, and emerging AI technologies.
+{% endif %}
 {% endblock %}
 
 {% block twitter_title %}
-Projects | Rohullah Sadat — Full Stack Developer
+{% if LANGUAGE_CODE == "fa" %}
+    پروژه‌ها | روح‌الله سادات — Full Stack Developer
+{% else %}
+    Projects | Rohullah Sadat — Full Stack Developer
+{% endif %}
 {% endblock %}
 
 {% block twitter_description %}
-Explore Rohullah Sadat's software projects, web applications, Django and Python work, and future AI-focused projects.
+{% if LANGUAGE_CODE == "fa" %}
+    پروژه‌های نرم‌افزاری، وب‌اپلیکیشن‌ها، پروژه‌های Django و Python و مسیر آینده در حوزه هوش مصنوعی.
+{% else %}
+    Explore Rohullah Sadat's software projects, web applications, Django and Python work, and future AI-focused projects.
+{% endif %}
 {% endblock %}
+
 
 {% block content %}
 
 <div id="scroll-progress"></div>
 
 
-     <header class="header">
-<div class="container">
-    <a href="{% url' home' % }" class="logo">
-        Rohullah Sadat
-    </a>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="{% url 'home' %}">Home</a></li>
+<!-- =========================
+     HEADER
+========================= -->
 
-            <li><a href="{% url 'about' %}">About</a></li>
+<header class="header">
 
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-
-            <li><a href="{% url 'books' %}">Books</a></li>
-
-            <li><a href="{% url 'articles' %}">Articles</a></li>
-
-            <li><a href="{% url 'gallery' %}">Gallery</a></li>
-
-            <li><a href="{% url 'resume' %}">Resume</a></li>
-
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
-    <button class="menu-toggle" aria-label="Open Menu">
-<i class="fas fa-bars"></i>
-</button>
-    <button class="theme-toggle">
-        🌙
-    </button>
-</div>
-</header>
-    <main>
-    <!-- Hero -->
-    <!-- Statistics -->
-    <!-- Filter -->
-    <!-- Projects -->
-    <!-- CTA -->
-     <section class="projects-hero">
-    <div class="container">
-        <p class="section-tag">
-            My Portfolio
-        </p>
-        <h1>
-            My Projects
-        </h1>
-        <p class="projects-hero-text">
-            Explore my journey through web development, Python, full-stack applications, and future AI projects. Every project represents a step toward becoming a better software engineer.
-        </p>
-    </div>
-</section>
-<section class="project-stats">
-    <div class="container">
-        
-        <div class="stats-grid">
-            <div class="stat-box">
-                <h3 class="counter" data-target="20" data-suffix="+">0</h3>
-                <p>Projects Completed</p>
-            </div>
-            <div class="stat-box">
-               <h3 class="counter" data-target="5" data-suffix="+">0</h3>
-                <p>Technologies Used</p>
-            </div>
-            <div class="stat-box">
-               <h3 class="counter" data-target="3" data-suffix="+">0</h3>
-                <p>Learning Years</p>
-            </div>
-
-            <div class="stat-box">
-                <h3>∞</h3>
-                <p>Passion for Learning</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="project-filter-section">
-
-<div class="container">
-
-<div class="project-filter">
-
-
-<button class="filter-btn active" data-filter="all">
-    All
-</button>
-
-<button class="filter-btn" data-filter="frontend">
-    Frontend
-</button>
-
-<button class="filter-btn" data-filter="python">
-    Python
-</button>
-
-<button class="filter-btn" data-filter="fullstack">
-    Full Stack
-</button>
-
-<button class="filter-btn" data-filter="ai">
-    AI
-</button>
-</div>
-</div>
-<div class="project-filter level-filter">
-
-    <button class="filter-btn level-btn" data-level="all">
-        All Levels
-    </button>
-
-    <button class="filter-btn level-btn" data-level="beginner">
-        Beginner
-    </button>
-
-    <button class="filter-btn level-btn" data-level="intermediate">
-        Intermediate
-    </button>
-
-    <button class="filter-btn level-btn" data-level="advanced">
-        Advanced
-    </button>
-
-</div>
-</section>
-<section class="projects-grid-section">
     <div class="container">
 
-      <div class="projects-grid">
-
-    {% for project in projects %}
-
-        <article
-            class="project-card"
-            data-project="{{ project.id }}"
-            data-category="{{ project.category }}"
-            data-level="{{ project.level }}"
-        >
-
-            {% if project.is_featured %}
-                <div class="project-badge">
-                    ⭐ Featured
-                </div>
+        <a href="{% url 'home' %}" class="logo">
+            {% if LANGUAGE_CODE == "fa" %}
+                روح‌الله سادات
+            {% else %}
+                Rohullah Sadat
             {% endif %}
+        </a>
 
-            <div class="project-image">
+        <nav class="navbar">
 
-                {% if project.image %}
-                    <img
-                        src="{{ project.image.url }}"
-                        alt="{{ project.title }}"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                {% endif %}
+            <ul class="nav-list">
 
-            </div>
+                <li>
+    <a href="{% url 'home' %}">
+        {% trans "Home" %}
+    </a>
+</li>
 
-            <div class="project-content">
+<li>
+    <a href="{% url 'about' %}">
+        {% trans "About" %}
+    </a>
+</li>
 
-                <div class="project-labels">
+<li>
+    <a href="{% url 'projects' %}">
+        {% trans "Projects" %}
+    </a>
+</li>
 
-                    <span class="project-category">
-                        {{ project.get_category_display }}
-                    </span>
+<li>
+    <a href="{% url 'books' %}">
+        {% trans "Books" %}
+    </a>
+</li>
 
-                    <span class="project-level">
-                        {{ project.get_level_display }}
-                    </span>
+<li>
+    <a href="{% url 'articles' %}">
+        {% trans "Articles" %}
+    </a>
+</li>
 
-                </div>
+<li>
+    <a href="{% url 'gallery' %}">
+        {% trans "Gallery" %}
+    </a>
+</li>
 
-                <h3>
-                    {{ project.title }}
+<li>
+    <a href="{% url 'resume' %}">
+        {% trans "Resume" %}
+    </a>
+</li>
+
+<li>
+    <a href="{% url 'contact' %}">
+        {% trans "Contact" %}
+    </a>
+            </ul>
+
+        </nav>
+
+        {% include "site/partials/language_switcher.html" %}
+
+        <button class="menu-toggle" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <button class="theme-toggle">
+            🌙
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="projects-hero">
+
+    <div class="container">
+
+        <p class="section-tag">
+            {% trans "My Portfolio" %}
+        </p>
+
+        <h1>
+            {% trans "My Projects" %}
+        </h1>
+
+        <p class="projects-hero-text">
+            {% trans "Explore my journey through web development, Python, full-stack applications, and future AI projects. Every project represents a step toward becoming a better software engineer." %}
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     STATISTICS
+========================= -->
+
+<section class="project-stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+
+                <h3
+                    class="counter"
+                    data-target="20"
+                    data-suffix="+"
+                >
+                    0
                 </h3>
 
                 <p>
-                    {{ project.description }}
+                    {% trans "Projects Completed" %}
                 </p>
-
-                <div class="project-tech">
-
-                    {% for tech in project.technology_list %}
-                        <span>{{ tech }}</span>
-                    {% endfor %}
-
-                </div>
-
-                <div class="project-meta">
-
-                    <span>
-                        📅 {{ project.year }}
-                    </span>
-
-                    {% if project.duration %}
-                        <span>
-                            ⏱ {{ project.duration }}
-                        </span>
-                    {% endif %}
-
-                    <span class="project-status {{ project.status }}">
-                        {{ project.get_status_display }}
-                    </span>
-
-                </div>
-
-                <div class="project-buttons">
-
-                    {% if project.live_url %}
-                        <a
-                            href="{{ project.live_url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn-demo"
-                        >
-                            🌐 Live Demo
-                        </a>
-                    {% endif %}
-
-                    {% if project.github_url %}
-                        <a
-                            href="{{ project.github_url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn-github"
-                        >
-                            💻 GitHub
-                        </a>
-                    {% endif %}
-
-                    <a
-                        href="{% url 'project_details' project.id %}"
-                        class="btn-details"
-                    >
-                        📄 Details
-                    </a>
-
-                </div>
 
             </div>
 
-        </article>
 
-    {% empty %}
+            <div class="stat-box">
 
-        <p>No projects available yet.</p>
+                <h3
+                    class="counter"
+                    data-target="5"
+                    data-suffix="+"
+                >
+                    0
+                </h3>
 
-    {% endfor %}
+                <p>
+                    {% trans "Technologies Used" %}
+                </p>
 
-</div>
+            </div>
 
-    </div>
-</section>
-<section class="projects-cta">
-    <div class="container">
-        <h2>
-            Interested in Working Together?
-        </h2>
-        <p>
-            I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software.
-        </p>
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn btn-primary">
-                Contact Me
-            </a>
-            <a href="{% url 'resume' %}" class="btn btn-secondary">
-                View Resume
-            </a>
+
+            <div class="stat-box">
+
+                <h3
+                    class="counter"
+                    data-target="3"
+                    data-suffix="+"
+                >
+                    0
+                </h3>
+
+                <p>
+                    {% trans "Learning Years" %}
+                </p>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <h3>
+                    ∞
+                </h3>
+
+                <p>
+                    {% trans "Passion for Learning" %}
+                </p>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
+
+
+<!-- =========================
+     FILTER
+========================= -->
+
+<section class="project-filter-section">
+
+    <div class="container">
+
+        <div class="project-filter">
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+            >
+                {% trans "All" %}
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="frontend"
+            >
+                {% trans "Frontend" %}
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="python"
+            >
+                {% trans "Python" %}
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="fullstack"
+            >
+                {% trans "Full Stack" %}
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="ai"
+            >
+                {% trans "AI" %}
+            </button>
+
+        </div>
+
+
+        <div class="project-filter level-filter">
+
+            <button
+                class="filter-btn level-btn"
+                data-level="all"
+            >
+                {% trans "All Levels" %}
+            </button>
+
+
+            <button
+                class="filter-btn level-btn"
+                data-level="beginner"
+            >
+                {% trans "Beginner" %}
+            </button>
+
+
+            <button
+                class="filter-btn level-btn"
+                data-level="intermediate"
+            >
+                {% trans "Intermediate" %}
+            </button>
+
+
+            <button
+                class="filter-btn level-btn"
+                data-level="advanced"
+            >
+                {% trans "Advanced" %}
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects-grid-section">
+
+    <div class="container">
+
+        <div class="projects-grid">
+
+            {% for project in projects %}
+
+                <article
+                    class="project-card"
+                    data-project="{{ project.id }}"
+                    data-category="{{ project.category }}"
+                    data-level="{{ project.level }}"
+                >
+
+                    {% if project.is_featured %}
+
+                        <div class="project-badge">
+                            ⭐ {% trans "Featured" %}
+                        </div>
+
+                    {% endif %}
+
+
+                    <div class="project-image">
+
+                        {% if project.image %}
+
+                            <img
+                                src="{{ project.image.url }}"
+
+                                {% if LANGUAGE_CODE == "fa" %}
+                                    alt="{{ project.title_fa|default:project.title }}"
+                                {% else %}
+                                    alt="{{ project.title }}"
+                                {% endif %}
+
+                                loading="lazy"
+                                decoding="async"
+                            >
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="project-content">
+
+
+                        <div class="project-labels">
+
+                            <span class="project-category">
+                                {{ project.get_category_display }}
+                            </span>
+
+
+                            <span class="project-level">
+                                {{ project.get_level_display }}
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+
+                            {% if LANGUAGE_CODE == "fa" %}
+                                {{ project.title_fa|default:project.title }}
+                            {% else %}
+                                {{ project.title }}
+                            {% endif %}
+
+                        </h3>
+
+
+                        <p>
+
+                            {% if LANGUAGE_CODE == "fa" %}
+                                {{ project.description_fa|default:project.description }}
+                            {% else %}
+                                {{ project.description }}
+                            {% endif %}
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            {% for tech in project.technology_list %}
+
+                                <span>{{ tech }}</span>
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <div class="project-meta">
+
+                            <span>
+                                📅 {{ project.year }}
+                            </span>
+
+
+                            {% if project.duration %}
+
+                                <span>
+                                    ⏱ {{ project.duration }}
+                                </span>
+
+                            {% endif %}
+
+
+                            <span class="project-status {{ project.status }}">
+                                {{ project.get_status_display }}
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-buttons">
+
+
+                            {% if project.live_url %}
+
+                                <a
+                                    href="{{ project.live_url }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn-demo"
+                                >
+                                    🌐 {% trans "Live Demo" %}
+                                </a>
+
+                            {% endif %}
+
+
+                            {% if project.github_url %}
+
+                                <a
+                                    href="{{ project.github_url }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn-github"
+                                >
+                                    💻 GitHub
+                                </a>
+
+                            {% endif %}
+
+
+                            <a
+                                href="{% url 'project_details' project.id %}"
+                                class="btn-details"
+                            >
+                                📄 {% trans "Details" %}
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            {% empty %}
+
+                <p>
+                    {% trans "No projects available yet." %}
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="projects-cta">
+
+    <div class="container">
+
+        <h2>
+            {% trans "Interested in Working Together?" %}
+        </h2>
+
+
+        <p>
+            {% trans "I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software." %}
+        </p>
+
+
+        <div class="cta-buttons">
+
+            <a
+                href="{% url 'contact' %}"
+                class="btn btn-primary"
+            >
+                {% trans "Contact Me" %}
+            </a>
+
+
+            <a
+                href="{% url 'resume' %}"
+                class="btn btn-secondary"
+            >
+                {% trans "View Resume" %}
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 </main>
-   
+<!-- =========================
+     Footer
+========================= -->
 <footer class="footer">
 
     <div class="container">
 
         <div class="footer-grid">
 
-            <!-- About -->
 
+            <!-- About -->
             <div class="footer-column">
 
-                <h3>Rohullah Sadat</h3>
+                <h3>
+                    Rohullah Sadat
+                </h3>
 
                 <p>
-                    Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products.
+                    {% trans "Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products." %}
                 </p>
 
             </div>
 
+
             <!-- Quick Links -->
-
             <div class="footer-column">
 
-                <h3>Quick Links</h3>
+                <h3>
+                    {% trans "Quick Links" %}
+                </h3>
 
                 <ul>
-
-                   <li><a href="{% url 'home' %}">Home</a></li>
-
-            <li><a href="{% url 'about' %}">About</a></li>
-
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-
-            <li><a href="{% url 'books' %}">Books</a></li>
-
-            <li><a href="{% url 'articles' %}">Articles</a></li>
-
-            <li><a href="{% url 'gallery' %}">Gallery</a></li>
-
-            <li><a href="{% url 'resume' %}">Resume</a></li>
-
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-
-                </ul>
-
-            </div>
-            <!-- Resources -->
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-
-                  <li>
-    <a href="https://github.com/rohullahsadat1997" target="_blank "rel="noopener noreferrer">
-        <i class="fab fa-github"></i> GitHub
-    </a>
-</li>
-
-<li>
-    <a href="https://www.linkedin.com/in/rohullah-sadat-524424236" target="_blank"rel="noopener noreferrer">
-        <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-</li>
-
-<li>
-    <a href="mailto:rohullahsadat1997@gmail.com">
-        <i class="fas fa-envelope"></i> Email
-    </a>
-</li>
 
                     <li>
-    <a href="resume.html">
-        <i class="fas fa-file-pdf"></i> Download Resume
-    </a>
-</li>
+                        <a href="{% url 'home' %}">
+                            {% trans "Home" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            {% trans "About" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            {% trans "Projects" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'books' %}">
+                            {% trans "Books" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'articles' %}">
+                            {% trans "Articles" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gallery' %}">
+                            {% trans "Gallery" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resume' %}">
+                            {% trans "Resume" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            {% trans "Contact" %}
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
+
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Resources" %}
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="https://github.com/rohullahsadat1997"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/rohullah-sadat-524424236"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:rohullahsadat1997@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            {% trans "Email" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                            download
+                        >
+                            <i class="fas fa-file-pdf"></i>
+                            {% trans "Download Resume" %}
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
             <!-- Contact -->
             <div class="footer-column">
-                <h3>Contact</h3>
+
+                <h3>
+                    {% trans "Contact" %}
+                </h3>
+
                 <p>
-    <a href="mailto:rohullahsadat1997@gmail.com">
+                    <a href="mailto:rohullahsadat1997@gmail.com">
+                        {% trans "Email Me" %}
+                    </a>
+                </p>
 
-    <i class="fas fa-envelope"></i>
+                <p>
+                    {% trans "Available for Freelance" %}
+                </p>
 
-    rohullahsadat1997@gmail.com
+                <p>
+                    {% trans "Open to Collaboration" %}
+                </p>
 
-    </a>
-    </p>
-                <p>Available for Freelance</p>
-                <p>Open to Collaboration</p>
             </div>
+
         </div>
+
+
         <div class="footer-bottom">
+
             <p>
                 © 2026 Rohullah Sadat.
-                All Rights Reserved.
+                {% trans "All Rights Reserved." %}
             </p>
+
             <p>
-                Built with ❤️ using HTML, CSS & JavaScript.
+                {% trans "Built with ❤️ using HTML, CSS &amp; JavaScript." %}
             </p>
+
         </div>
+
     </div>
+
 </footer>
 
-<button id="backToTop" class="back-to-top">
+
+<!-- =========================
+     Back To Top
+========================= -->
+<button
+    class="back-to-top"
+    type="button"
+    aria-label="{% trans 'Back to top' %}"
+>
     <i class="fas fa-arrow-up"></i>
 </button>
 
-<div class="lightbox">
-    <span class="close-lightbox">&times;</span>
-
-    <img class="lightbox-image" src="" alt="">
-
-    <button class="lightbox-prev">
-        &#10094;
-    </button>
-
-    <button class="lightbox-next">
-        &#10095;
-    </button>
-
-</div>
 {% endblock %}
+

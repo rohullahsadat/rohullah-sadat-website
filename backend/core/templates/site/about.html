@@ -1,5 +1,6 @@
 {% extends "site/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block meta_description %}
 Learn more about Rohullah Sadat, a Full Stack Developer, author, and future AI entrepreneur, including his journey, skills, mission, vision, and career goals.
 {% endblock %}
@@ -44,58 +45,58 @@ About Rohullah Sadat | Full Stack Developer
 
         <ul class="nav-list">
 
-            <li>
-                <a href="{% url 'home' %}">
-                    Home
-                </a>
-            </li>
+           <li>
+    <a href="{% url 'home' %}">
+        {% trans "Home" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'about' %}">
-                    About
-                </a>
-            </li>
+<li>
+    <a href="{% url 'about' %}">
+        {% trans "About" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'projects' %}">
-                    Projects
-                </a>
-            </li>
+<li>
+    <a href="{% url 'projects' %}">
+        {% trans "Projects" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'books' %}">
-                    Books
-                </a>
-            </li>
+<li>
+    <a href="{% url 'books' %}">
+        {% trans "Books" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'articles' %}">
-                    Articles
-                </a>
-            </li>
+<li>
+    <a href="{% url 'articles' %}">
+        {% trans "Articles" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'gallery' %}">
-                    Gallery
-                </a>
-            </li>
+<li>
+    <a href="{% url 'gallery' %}">
+        {% trans "Gallery" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'resume' %}">
-                    Resume
-                </a>
-            </li>
+<li>
+    <a href="{% url 'resume' %}">
+        {% trans "Resume" %}
+    </a>
+</li>
 
-            <li>
-                <a href="{% url 'contact' %}">
-                    Contact
-                </a>
-            </li>
+<li>
+    <a href="{% url 'contact' %}">
+        {% trans "Contact" %}
+    </a>
+</li>
 
         </ul>
 
     </nav>
-
+{% include "site/partials/language_switcher.html" %}
     <button class="menu-toggle" aria-label="Open Menu">
         <i class="fas fa-bars"></i>
     </button>
@@ -121,13 +122,13 @@ About Rohullah Sadat | Full Stack Developer
     <div class="section-header">
 
         <h1>
-            About Me
-        </h1>
+    {% trans "About Me" %}
+</h1>
 
-        <p>
-            Learn more about my journey, skills and future goals.
-        </p>
-
+<p>
+    {% trans "Learn more about my journey, skills and future goals." %}
+</p>
+     
     </div>
 
 
@@ -167,8 +168,8 @@ About Rohullah Sadat | Full Stack Developer
             <article class="about-card">
 
                 <h3>
-                    🎯 My Mission
-                </h3>
+    🎯 {% trans "My Mission" %}
+</h3>
 
                 <p>
               {{ about_profile.mission }}
@@ -180,8 +181,8 @@ About Rohullah Sadat | Full Stack Developer
             <article class="about-card">
 
                 <h3>
-                    🚀 My Vision
-                </h3>
+    🎯 {% trans "My Mission" %}
+</h3>
 
                <p>
     {{ about_profile.vision }}
@@ -193,8 +194,8 @@ About Rohullah Sadat | Full Stack Developer
             <article class="about-card">
 
                 <h3>
-                    💎 My Values
-                </h3>
+    💎 {% trans "My Values" %}
+</h3>
 
                 <p>
     {{ about_profile.values }}
@@ -224,13 +225,12 @@ About Rohullah Sadat | Full Stack Developer
         </span>
 
         <h3>
-            Location
-        </h3>
+    {% trans "Location" %}
+</h3>
 
-        <p>
-            Afghanistan
-        </p>
-
+<p>
+    {% trans "Afghanistan" %}
+</p>
     </div>
 
 
@@ -241,12 +241,12 @@ About Rohullah Sadat | Full Stack Developer
         </span>
 
         <h3>
-            Focus
-        </h3>
+    {% trans "Focus" %}
+</h3>
 
-        <p>
-            Full Stack Development
-        </p>
+<p>
+    {% trans "Full Stack Development" %}
+</p>
 
     </div>
 
@@ -258,12 +258,12 @@ About Rohullah Sadat | Full Stack Developer
         </span>
 
         <h3>
-            Current Goal
-        </h3>
+    {% trans "Current Goal" %}
+</h3>
 
-        <p>
-            AI & Software Engineering
-        </p>
+<p>
+    {% trans "AI & Software Engineering" %}
+</p>
 
     </div>
 
@@ -275,12 +275,12 @@ About Rohullah Sadat | Full Stack Developer
         </span>
 
         <h3>
-            Languages
-        </h3>
+    {% trans "Languages" %}
+</h3>
 
-        <p>
-            Persian • Pashto • English
-        </p>
+<p>
+    {% trans "Persian • Pashto • English" %}
+</p>
 
     </div>
 
@@ -300,12 +300,12 @@ About Rohullah Sadat | Full Stack Developer
     <div class="section-header">
 
         <h2>
-            My Journey
-        </h2>
+    {% trans "My Journey" %}
+</h2>
 
-        <p>
-            The path that shaped my career and future vision.
-        </p>
+<p>
+    {% trans "The path that shaped my career and future vision." %}
+</p>
 
     </div>
 
@@ -322,13 +322,12 @@ About Rohullah Sadat | Full Stack Developer
             <div class="timeline-content">
 
                 <h3>
-                    Started Software Development Journey
-                </h3>
+    {% trans "Started Software Development Journey" %}
+</h3>
 
-                <p>
-                    Began learning Python and explored the fundamentals
-                    of programming.
-                </p>
+<p>
+    {% trans "Began learning Python and explored the fundamentals of programming." %}
+</p>
 
             </div>
 
@@ -344,14 +343,12 @@ About Rohullah Sadat | Full Stack Developer
             <div class="timeline-content">
 
                 <h3>
-                    Built Real Projects
-                </h3>
+    {% trans "Built Real Projects" %}
+</h3>
 
-                <p>
-                    Developed practical Python projects and strengthened
-                    problem-solving skills.
-                </p>
-
+<p>
+    {% trans "Developed practical Python projects and strengthened problem-solving skills." %}
+</p>
             </div>
 
         </div>
@@ -366,14 +363,12 @@ About Rohullah Sadat | Full Stack Developer
             <div class="timeline-content">
 
                 <h3>
-                    Web Development & Full Stack Path
-                </h3>
+    {% trans "Web Development & Full Stack Path" %}
+</h3>
 
-                <p>
-                    Learned HTML, CSS and JavaScript while creating
-                    responsive websites.
-                </p>
-
+<p>
+    {% trans "Learned HTML, CSS and JavaScript while creating responsive websites." %}
+</p>
             </div>
 
         </div>
@@ -381,23 +376,21 @@ About Rohullah Sadat | Full Stack Developer
 
         <div class="timeline-item">
 
-            <div class="timeline-year">
-                Future
-            </div>
+           <div class="timeline-year">
+    {% trans "Future" %}
+</div>
 
-            <div class="timeline-content">
+<div class="timeline-content">
 
-                <h3>
-                    AI Engineering & Technology Company
-                </h3>
+    <h3>
+        {% trans "AI Engineering & Technology Company" %}
+    </h3>
 
-                <p>
-                    Building innovative software solutions and AI-powered
-                    products that create meaningful impact.
-                </p>
+    <p>
+        {% trans "Building innovative software solutions and AI-powered products that create meaningful impact." %}
+    </p>
 
-            </div>
-
+</div>
         </div>
 
 
@@ -414,15 +407,13 @@ About Rohullah Sadat | Full Stack Developer
 
 
 <div class="container">
+<h2>
+    {% trans "Interested in Working Together?" %}
+</h2>
 
-    <h2>
-        Interested in Working Together?
-    </h2>
-
-    <p>
-        I'm always open to discussing new projects, creative ideas,
-        and opportunities to build meaningful software.
-    </p>
+<p>
+    {% trans "I'm always open to discussing new projects, creative ideas, and opportunities to build meaningful software." %}
+</p>
 
 
     <div class="cta-buttons">
@@ -431,7 +422,7 @@ About Rohullah Sadat | Full Stack Developer
             href="{% url 'contact' %}"
             class="btn btn-primary"
         >
-            Contact Me
+        {% trans "Contact Me" %}
         </a>
 
 
@@ -440,7 +431,7 @@ About Rohullah Sadat | Full Stack Developer
             class="btn btn-secondary"
             target="_blank"
         >
-            View Resume
+           {% trans "View Resume" %}
         </a>
 
     </div>
@@ -451,200 +442,200 @@ About Rohullah Sadat | Full Stack Developer
 
 </main>
 
-<!-- Footer -->
 
+<!-- =========================
+     Footer
+========================= -->
 <footer class="footer">
 
-<div class="container">
+    <div class="container">
 
-    <div class="footer-grid">
-
-
-        <!-- About -->
-        <div class="footer-column">
-
-            <h3>
-                Rohullah Sadat
-            </h3>
-
-            <p>
-                Full Stack Developer, Author, and Future AI Entrepreneur
-                passionate about building impactful digital products.
-            </p>
-
-        </div>
+        <div class="footer-grid">
 
 
-        <!-- Quick Links -->
-        <div class="footer-column">
+            <!-- About -->
+            <div class="footer-column">
 
-            <h3>
-                Quick Links
-            </h3>
+                <h3>
+                    Rohullah Sadat
+                </h3>
 
-            <ul>
+                <p>
+                    {% trans "Full Stack Developer, Author, and Future AI Entrepreneur passionate about building impactful digital products." %}
+                </p>
 
-                <li>
-                    <a href="{% url 'home' %}">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'about' %}">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'projects' %}">
-                        Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'books' %}">
-                        Books
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'articles' %}">
-                        Articles
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'gallery' %}">
-                        Gallery
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'resume' %}">
-                        Resume
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'contact' %}">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
+            </div>
 
 
-        <!-- Resources -->
-        <div class="footer-column">
+            <!-- Quick Links -->
+            <div class="footer-column">
 
-            <h3>
-                Resources
-            </h3>
+                <h3>
+                    {% trans "Quick Links" %}
+                </h3>
 
-            <ul>
+                <ul>
 
-                <li>
-                    <a
-                        href="https://github.com/rohullahsadat1997"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'home' %}">
+                            {% trans "Home" %}
+                        </a>
+                    </li>
 
-                <li>
-                    <a
-                        href="https://www.linkedin.com/in/rohullah-sadat-524424236"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'about' %}">
+                            {% trans "About" %}
+                        </a>
+                    </li>
 
-                <li>
+                    <li>
+                        <a href="{% url 'projects' %}">
+                            {% trans "Projects" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'books' %}">
+                            {% trans "Books" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'articles' %}">
+                            {% trans "Articles" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'gallery' %}">
+                            {% trans "Gallery" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resume' %}">
+                            {% trans "Resume" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            {% trans "Contact" %}
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Resources" %}
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="https://github.com/rohullahsadat1997"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/rohullah-sadat-524424236"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:rohullahsadat1997@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            {% trans "Email" %}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
+                            download
+                        >
+                            <i class="fas fa-file-pdf"></i>
+                            {% trans "Download Resume" %}
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h3>
+                    {% trans "Contact" %}
+                </h3>
+
+                <p>
                     <a href="mailto:rohullahsadat1997@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                        Email
+                        {% trans "Email Me" %}
                     </a>
-                </li>
+                </p>
 
-                <li>
-                    <a
-                        href="{% static 'site/documents/Rohullah-Sadat-Full-Stack-Developer-CV.pdf' %}"
-                        target="_blank"
-                    >
-                        <i class="fas fa-file-pdf"></i>
-                        Download Resume
-                    </a>
-                </li>
+                <p>
+                    {% trans "Available for Freelance" %}
+                </p>
 
-            </ul>
+                <p>
+                    {% trans "Open to Collaboration" %}
+                </p>
+
+            </div>
 
         </div>
 
 
-        <!-- Contact -->
-        <div class="footer-column">
-
-            <h3>
-                Contact
-            </h3>
+        <div class="footer-bottom">
 
             <p>
-                <a href="mailto:rohullahsadat1997@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                    rohullahsadat1997@gmail.com
-                </a>
+                © 2026 Rohullah Sadat.
+                {% trans "All Rights Reserved." %}
             </p>
 
             <p>
-                💼 Available for Freelance
-            </p>
-
-            <p>
-                🤝 Open to Collaboration
+                {% trans "Built with ❤️ using HTML, CSS &amp; JavaScript." %}
             </p>
 
         </div>
 
-
     </div>
-
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 Rohullah Sadat | Full Stack Developer
-        </p>
-
-        <p>
-            Built with ❤️ using HTML, CSS & JavaScript.
-        </p>
-
-    </div>
-
-</div>
 
 </footer>
 
-<!-- Back To Top -->
 
+<!-- =========================
+     Back To Top
+========================= -->
 <button
-id="backToTop"
-class="back-to-top"
-aria-label="Back to top"
-
+    class="back-to-top"
+    type="button"
+    aria-label="{% trans 'Back to top' %}"
 >
-
-<i class="fas fa-arrow-up"></i>
-
+    <i class="fas fa-arrow-up"></i>
 </button>
 
 {% endblock %}
+
