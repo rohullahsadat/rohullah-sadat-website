@@ -17,13 +17,15 @@ SITE_URL = os.getenv(
     "https://rohullahsadat.com",
 )
 
-DEBUG = os.getenv("DEBUG", "True").lower() == "true"
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "testserver",
     "rohullah-sadat-website-production.up.railway.app",
     "rohullahsadat.com",
     "www.rohullahsadat.com",
 ]
-
 CSRF_TRUSTED_ORIGINS = [
     "https://rohullah-sadat-website-production.up.railway.app",
     "https://rohullahsadat.com",
