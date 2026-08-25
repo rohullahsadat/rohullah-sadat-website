@@ -24,6 +24,11 @@ ALLOWED_HOSTS = [
     "www.rohullahsadat.com",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://rohullah-sadat-website-production.up.railway.app",
+    "https://rohullahsadat.com",
+    "https://www.rohullahsadat.com",
+]
 # =========================================================
 # APPLICATIONS
 # =========================================================
