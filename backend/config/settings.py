@@ -18,11 +18,10 @@ SITE_URL = os.getenv(
 )
 
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
-
 ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "testserver",
+    "rohullah-sadat-website-production.up.railway.app",
+    "rohullahsadat.com",
+    "www.rohullahsadat.com",
 ]
 
 # =========================================================
