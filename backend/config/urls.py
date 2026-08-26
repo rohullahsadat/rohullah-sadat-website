@@ -55,7 +55,10 @@ urlpatterns = [
         name="robots",
     ),
 ]
-
+urlpatterns += static(
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT
+)
 
 urlpatterns += i18n_patterns(
     # Main pages
@@ -67,6 +70,7 @@ urlpatterns += i18n_patterns(
     path("gallery/", gallery, name="gallery"),
     path("resume/", resume, name="resume"),
     path("contact/", contact, name="contact"),
+    
 
     # Books
     path(
@@ -95,3 +99,5 @@ if settings.DEBUG:
         settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT,
     )
+from django.conf import settings
+from django.conf.urls.static import static
