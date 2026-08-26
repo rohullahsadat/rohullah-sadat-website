@@ -292,7 +292,7 @@ def create_project_detail(
     **kwargs
 ):
 
-    if created:
+    if created and not kwargs.get("raw", False):
         ProjectDetail.objects.create(
             project=instance
         )
