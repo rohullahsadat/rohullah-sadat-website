@@ -103,33 +103,12 @@ TEMPLATES = [
 # =========================================================
 # DATABASE
 # =========================================================
-DATABASE_URL = os.getenv("DATABASE_URL")
-
-if DATABASE_URL:
-    from urllib.parse import urlparse
-
-    db_url = urlparse(DATABASE_URL)
-
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": db_url.path.lstrip("/"),
-            "USER": db_url.username,
-            "PASSWORD": db_url.password,
-            "HOST": db_url.hostname,
-            "PORT": db_url.port or 5432,
-            "OPTIONS": {
-                "sslmode": "require",
-            },
-        }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "data" / "db.sqlite3",
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
+}
 
 # =========================================================
 # PASSWORD VALIDATION
