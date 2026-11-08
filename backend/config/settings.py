@@ -1,5 +1,8 @@
+
 from pathlib import Path
+from urllib.parse import urlparse, unquote
 import os
+
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,12 +15,16 @@ load_dotenv(BASE_DIR / ".env")
 # =========================================================
 
 SECRET_KEY = os.getenv("SECRET_KEY")
+
 SITE_URL = os.getenv(
     "SITE_URL",
     "https://rohullahsadat.com",
 )
 
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+
+RENDER_HOST = os.getenv("RENDER_EXTERNAL_HOSTNAME")
+
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
@@ -26,11 +33,22 @@ ALLOWED_HOSTS = [
     "rohullahsadat.com",
     "www.rohullahsadat.com",
 ]
+
+if RENDER_HOST:
+    ALLOWED_HOSTS.append(RENDER_HOST)
+
 CSRF_TRUSTED_ORIGINS = [
     "https://rohullah-sadat-website-production.up.railway.app",
     "https://rohullahsadat.com",
     "https://www.rohullahsadat.com",
 ]
+
+if RENDER_HOST:
+    CSRF_TRUSTED_ORIGINS.append(
+        f"https://{RENDER_HOST}"
+    )
+
+
 # =========================================================
 # APPLICATIONS
 # =========================================================
@@ -43,7 +61,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
-
     "core",
 ]
 
@@ -51,19 +68,19 @@ INSTALLED_APPS = [
 # =========================================================
 # MIDDLEWARE
 # =========================================================
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-
     "django.middleware.locale.LocaleMiddleware",
-
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
 
 # =========================================================
 # URL / WSGI
@@ -81,13 +98,10 @@ WSGI_APPLICATION = "config.wsgi.application"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-
         "DIRS": [
             BASE_DIR / "templates",
         ],
-
         "APP_DIRS": True,
-
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.request",
@@ -103,12 +117,34 @@ TEMPLATES = [
 # =========================================================
 # DATABASE
 # =========================================================
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "data" / "db.sqlite3",
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if DATABASE_URL:
+    db_url = urlparse(DATABASE_URL)
+
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": unquote(db_url.path.lstrip("/")),
+            "USER": unquote(db_url.username or ""),
+            "PASSWORD": unquote(db_url.password or ""),
+            "HOST": db_url.hostname,
+            "PORT": db_url.port or 5432,
+            "OPTIONS": {
+                "sslmode": "require",
+            },
+        }
     }
-}
+
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "data" / "db.sqlite3",
+        }
+    }
+
 
 # =========================================================
 # PASSWORD VALIDATION
@@ -151,6 +187,7 @@ TIME_ZONE = "Asia/Kabul"
 
 USE_TZ = True
 
+
 # =========================================================
 # STATIC FILES
 # =========================================================
@@ -160,7 +197,9 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "core" / "static",
 ]
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -169,12 +208,14 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+
 # =========================================================
 # MEDIA FILES
 # =========================================================
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "data" / "media"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # =========================================================
 # RESEND EMAIL
